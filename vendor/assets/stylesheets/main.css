@@ -471,8 +471,34 @@ textarea.form-control {
 
 /* Gb Menu */
 
+.gb-menu-first {
+
+	background-color: #000;
+	height: 10px;
+    z-index: 99999999;
+    position: fixed;
+    width: 100%;
+
+}
+.gb-menu-first a.link-top{
+
+    color: #fff;
+   	padding: 8px;
+   	background-color: #21294c;
+   	float: right;
+   }
+
+
+.gb-menu-first a.icons{
+
+    color: #fff;
+   	padding: 8px;
+   	background-color: #21294c;
+   }
+
+
 .gb-menu {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	z-index: 99999999;
 }
@@ -492,6 +518,7 @@ textarea.form-control {
 .navbar-brand {
 	height: 70px;
 	padding: 12px 15px;
+	position: absolute;
 }
 
 .navbar.navbar-fixed-top {
