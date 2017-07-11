@@ -180,7 +180,7 @@ button {
 }
 
 .btn.button-white {
-	color: #21294C;
+	color: #000932;
 	margin-right: 10px;
 	background-color: #fff;
 	border-color: #fff;	
@@ -188,8 +188,8 @@ button {
 
 .btn.button-white:before,
 .btn.button-white:after {
-	border-top-color: #21294C
-	border-bottom-color: #21294C
+	border-top-color: #3A4266;
+	border-bottom-color: #3A4266;
 }
 
 .btn.button-white:hover {
@@ -228,7 +228,7 @@ textarea.form-control {
 .title-section h1,
 .page-title h1 {
 	text-align: center;
-
+	position: relative;
 	display: inline-block;	
 }
 
@@ -496,9 +496,8 @@ textarea.form-control {
    	background-color: #21294c;
    }
 
-
 .gb-menu {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	z-index: 99999999;
 }
@@ -518,7 +517,6 @@ textarea.form-control {
 .navbar-brand {
 	height: 70px;
 	padding: 12px 15px;
-	position: absolute;
 }
 
 .navbar.navbar-fixed-top {
@@ -669,7 +667,7 @@ textarea.form-control {
 	display: table;
 	position: relative;
 	z-index: 1;
-	background-image: url(../images/capa.jpg);
+	background-image: url(../images/black-and-white-city-man-people.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -838,8 +836,9 @@ address a {
 /* Gb Cta 1 */
 
 .gb-cta-1 {
-	background-color: #e94b4c;
-	background-image: url(../images/bg/cta-1-bg.jpg);
+	background-color:  #21294C;
+
+	
 }
 
 .cta-info {
@@ -1181,8 +1180,7 @@ address a {
 /* Gb Brand */
 
 .gb-brand {
-	background-color: #e94b4c;
-	background-image: url(../images/bg/brand-bg.jpg);
+	background-color: #fff;
 }
 
 .brand-slider {
@@ -1303,8 +1301,8 @@ address a {
 /* Gb Cta 2 */
 
 .gb-cta-2 {
-	background-color: #e94b4c;
-	background-image: url(../images/bg/cta-2-bg.jpg);
+
+	background-image: url(../images/inscribe-se.jpg);
 }
 
 .gb-cta-2 .title-section {
@@ -2006,17 +2004,22 @@ img.mfp-img {
 
 /* Gb Footer */
 
+/* Gb Footer */
+
 .gb-footer {
-	padding: 35px 0;
-	border-top: 1px solid #21294C;
-	text-transform: capitalize;
-	background-color: #21294C;
+	padding: 30px 0;
+	background-image: url(/images/footer.png);
+    line-height: 5px;
 }
-.gb-footer a {
-	font-weight: 700;
+
+.gb-footer i{
+	font-size: 30px;
+	vertical-align: middle;
+	line-height: 50px;
 }
-.gb-footer a:hover {
-	color: #fff;
+
+.gb-footer i:hover {
+	opacity: 0.4%;
 }
 
 /* ==========================================================================
@@ -2136,4 +2139,13 @@ a, input, .btn, .btn:before,
 
 .style-chooser-inner ul li.preset6 a {
 	background-color: #ff00bf;
+}
+
+
+/* MY CUSTOMIZATION */
+
+.title-partners{
+
+	margin-bottom: 80px;
+	text-align: center;
 }
