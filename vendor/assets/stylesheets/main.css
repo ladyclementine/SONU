@@ -755,6 +755,7 @@ textarea.form-control {
 
 .upcoming-events .title-section {
 	margin-bottom: 0;
+
 }
 
 .event-content {
@@ -1262,7 +1263,7 @@ address a {
 	left: 10%;
 	bottom: 50%;
 	margin-bottom: -230px;
-	background-color: #fff;
+	background-color: #3a4266;
 	padding: 40px 60px;
 	border-radius: 4px;
 	max-width: 400px;
@@ -1302,7 +1303,7 @@ address a {
 
 .gb-cta-2 {
 
-	background-image: url(../images/inscribe-se.jpg);
+	background-image: url(../images/inscribe2.jpeg);
 }
 
 .gb-cta-2 .title-section {
