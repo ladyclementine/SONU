@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="SONU ADMIN - 2017 - BY GTi Engenharia Jr">
+        <meta name="author" content="Coderthemes">
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- jVectorMap -->
+    <link href="css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+
+
+        <title>SONU - Admin</title>
+
+
+        <!-- App css -->
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag  'dashboard' %>
+    </head>
+
+    <body class="nav-md">
+
+          <%= render 'crew/admins/shared/shared' %>
+ 
+          <%=yield%>
+          <%= javascript_include_tag 'dashboard'%>
+            <!-- jQuery -->
+             
+        
+    </body>
+
+
+</html>

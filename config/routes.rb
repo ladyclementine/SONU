@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   namespace :crew do
     devise_for :admins,
     controllers:{
@@ -15,9 +14,15 @@ Rails.application.routes.draw do
       password: 'secret',
       unlock: 'unblock'
     }
+
+    devise_scope :admins do
+    authenticated  do
+
+    resources :admins  
+    root 'admins#index', as: :authenticated_admin_root
+    end
   end
-
-
+end
 
   #ROTAS DO SITE
   root 'site#index'
