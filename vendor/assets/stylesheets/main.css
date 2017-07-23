@@ -1326,9 +1326,9 @@ address a {
 
 .about-info {
 	font-size: 14px;
-	color: #aeaeae;
+	color: #000;
 	line-height: 24px;
-	max-width: 470px;
+	max-width: 100%;
 }
 
 .about-info h1 {

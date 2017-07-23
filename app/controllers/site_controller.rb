@@ -54,6 +54,7 @@ class SiteController < ApplicationController
   end
 
   def apresentation
+    @crew_apresentations = Crew::Apresentation.all
   end
 
   def solidary
