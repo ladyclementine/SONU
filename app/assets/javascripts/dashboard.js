@@ -1,30 +1,35 @@
+//= require admin_template/adminto/js/modernizr.min.js
+//= require admin_template/adminto/js/jquery.min.js
+//= require admin_template/adminto/js/bootstrap.min.js
+//= require admin_template/adminto/js/detect.js
+//= require admin_template/adminto/js/fastclick.js
+//= require admin_template/adminto/js/jquery.blockUI.js
+//= require admin_template/adminto/js/waves.js
+//= require admin_template/adminto/js/jquery.nicescroll.js
+//= require admin_template/adminto/js/jquery.slimscroll.js
+//= require admin_template/adminto/js/jquery.scrollTo.min.js
 
-//= require admin_template/gentelella/vendors/jquery/dist/jquery.min.js
-//= require admin_template/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js
-//= require admin_template/gentelella/vendors/fastclick/lib/fastclick.js
+//= require admin_template/adminto/js/jquery.knob.js
+//= require admin_template/adminto/js/morris.min.js
+//= require admin_template/adminto/js/raphael-min.js
+//= require admin_template/adminto/js/jquery.dashboard.js
+//= require admin_template/adminto/js/jquery.core.js
+//= require admin_template/adminto/js/jquery.app.js
 
-//= require admin_template/gentelella/vendors/nprogress/nprogress.js
-//= require admin_template/gentelella/vendors/Chart.js/dist/Chart.min.js
+//= require admin_template/adminto/css/plugins/datatables/jquery.dataTables.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.bootstrap.js
 
-//= require admin_template/gentelella/vendors/bernii/gauge.js/dist/gauge.min.js
-//= require admin_template/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js
 
-//= require admin_template/gentelella/vendors/iCheck/icheck.min.js
-//= require admin_template/gentelella/vendors/skycons/skycons.js
-
-//= require admin_template/gentelella/vendors/Flot/jquery.flot.js
-//= require admin_template/gentelella/vendors/Flot/jquery.flot.pie.js
-//= require admin_template/gentelella/vendors/Flot/jquery.flot.time.js
-//= require admin_template/gentelella/vendors/Flot/jquery.flot.stack.js
-//= require admin_template/gentelella/vendors/Flot/jquery.flot.resize.js
-
-//= require admin_template/gentelella/production/js/flot/jquery.flot.orderBars.js
-//= require admin_template/gentelella/production/js/flot/date.js
-//= require admin_template/gentelella/production/js/flot/jquery.flot.spline.js
-//= require admin_template/gentelella/production/js/flot/curvedLines.js
-
-//= require admin_template/gentelella/production/js/maps/jquery-jvectormap-2.0.3.min.js
-
-//= require admin_template/gentelella/production/js/moment/moment.min.js
-//= require admin_template/gentelella/production/js/datepicker/daterangepicker.js
-//= require admin_template/gentelella/build/js/custom.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.bootstrap.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.buttons.min.js
+//= require admin_template/adminto/css/plugins/datatables/buttons.bootstrap.min.js
+//= require admin_template/adminto/css/plugins/datatables/jszip.min.js
+//= require admin_template/adminto/css/plugins/datatables/pdfmake.min.js
+//= require admin_template/adminto/css/plugins/datatables/vfs_fonts.js
+//= require admin_template/adminto/css/plugins/datatables/buttons.html5.min.js
+//= require admin_template/adminto/css/plugins/datatables/buttons.print.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.fixedHeader.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.keyTable.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.responsive.min.js
+//= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.js
+//= require admin_template/adminto/css/plugins/datatables/dataTables.scroller.min.js

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  
+  namespace :crew do
+    resources :apresentations
+
+  end
   namespace :crew do
     devise_for :admins,
     controllers:{

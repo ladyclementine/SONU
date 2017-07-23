@@ -1,14 +1,21 @@
 /*
+*= require admin_template/adminto/css/morris.css
+*= require admin_template/adminto/css/bootstrap.min.css
+*= require admin_template/adminto/css/core.css
+*= require admin_template/adminto/css/components.css
+*= require admin_template/adminto/css/icons.css
+*= require admin_template/adminto/css/pages.css
+*= require admin_template/adminto/css/menu.css
+*= require admin_template/adminto/css/responsive.css
 
-*= require admin_template/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css
-*= require admin_template/gentelella/vendors/font-awesome/css/font-awesome.min.css
-*= require admin_template/gentelella/vendors/iCheck/skins/flat/green.css
-*= require admin_template/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css
-*= require admin_template/gentelella/production/css/maps/jquery-jvectormap-2.0.3.css
-*= require admin_template/gentelella/build/css/custom.min.css
 
 
 
+*= require admin_template/adminto/css/plugins/datatables/jquery.dataTables.min.css
+*= require admin_template/adminto/css/plugins/datatables/buttons.bootstrap.min.css
+*= require admin_template/adminto/css/plugins/datatables/fixedHeader.bootstrap.min.css
+*= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.css
+*= require admin_template/adminto/css/plugins/datatables/scroller.bootstrap.min.css
 
 
 
