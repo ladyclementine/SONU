@@ -1,6 +1,6 @@
 class Crew::ApresentationsController < Crew::BaseController
   before_action :set_crew_apresentation, only: [:show, :edit, :update, :destroy]
-  layout "admin_dashboard"
+
   # GET /crew/apresentations
   # GET /crew/apresentations.json
   def index

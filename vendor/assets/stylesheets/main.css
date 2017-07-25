@@ -216,6 +216,12 @@ textarea.form-control {
 	padding: 100px 0;
 }
 
+.col-centered {
+  width: 50%;	
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
 .title-section,
 .page-title {
 	text-align: center;
@@ -381,7 +387,7 @@ textarea.form-control {
 	padding: 200px 0 100px;
 	position: relative;
 	z-index: 1;
-	background-image: url(../images/bg/breadcrumb-bg.jpg);
+	background-image: url(../images/sonupeople.jpg);
 }
 
 .gb-breadcrumb:before {

@@ -17,7 +17,7 @@
 *= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.css
 *= require admin_template/adminto/css/plugins/datatables/scroller.bootstrap.min.css
 
-
+*= require admin_template/adminto/css/plugins/fileuploads/css/dropify.min.css
 
 
 */

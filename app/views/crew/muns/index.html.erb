@@ -1,0 +1,44 @@
+<div class="row">
+   <div class="col-md-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+            </ul>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">Carta de Apresentação</h4>
+            <table  class="table m-0">
+            <thead>
+               <tr>
+                  <th>Título</th>
+                  <th>Descrição</th>
+                  <th colspan="2">Configurações</th>
+               </tr>
+            </thead>
+            <tbody>
+                <% @crew_muns.each do |crew_mun| %>
+                  <tr>
+                    <td><%= crew_mun.title %></td>
+                    <td><%= raw crew_mun.description %></td>
+                    <td><%= link_to 'Show', crew_mun %></td>
+                    <td><%= link_to 'Edit', edit_crew_mun_path(crew_mun) %></td>
+                    <td><%= button_to "delete", crew_mun, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+            <br>
+
+            <%= link_to 'Adicionar Conteúdo', new_crew_mun_path %>
+      </div>
+   </div>
+   <!-- end col -->
+</div>

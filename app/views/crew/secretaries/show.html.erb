@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @crew_secretary.office %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crew_secretary.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= raw @crew_secretary.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @crew_secretary.photo %>
+</p>
+
+<%= link_to 'Edit', edit_crew_secretary_path(@crew_secretary) %> |
+<%= link_to 'Back', crew_secretaries_path %>

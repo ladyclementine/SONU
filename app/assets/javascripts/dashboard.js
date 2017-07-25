@@ -33,3 +33,27 @@
 //= require admin_template/adminto/css/plugins/datatables/dataTables.responsive.min.js
 //= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.js
 //= require admin_template/adminto/css/plugins/datatables/dataTables.scroller.min.js
+//= require admin_template/adminto/css/plugins/fileuploads/js/dropify.min.js
+
+
+
+
+$('.dropify').dropify({
+                messages: {
+                    'default': 'Arraste e solte ou clique para substituir',
+                    'replace': 'Arraste e solte ou clique para substituir',
+                    'remove': 'Remover',
+                    'error': 'Ooops, Algo anexado errado.'
+                },
+                error: {
+                    'fileSize': 'The file size is too big (1M max).'
+                }
+            });
+
+dataConfirmModal.setDefaults({
+  title: 'Você tem certeza?',
+  text: 'Deseja fazer isso?',
+  commit: 'Sim, prosseguir!',
+  cancel: 'Não, cancelar!',
+  zIindex: 10099
+});

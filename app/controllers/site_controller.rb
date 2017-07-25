@@ -36,9 +36,11 @@ class SiteController < ApplicationController
   end
 
   def muns
+    @crew_muns = Crew::Mun.all.order("created_at ASC")
   end
 
   def parties
+    @crew_parties = Crew::Party.all.order("created_at ASC")
   end
 
   def partners
@@ -51,6 +53,7 @@ class SiteController < ApplicationController
   end
 
   def secretary
+    @crew_secretaries = Crew::Secretary.all.order("created_at ASC")
   end
 
   def apresentation

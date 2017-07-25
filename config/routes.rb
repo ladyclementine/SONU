@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   
-  
+
+  namespace :crew do
+    resources :parties
+  end
+  namespace :crew do
+    resources :muns
+  end
+  namespace :crew do
+    resources :secretaries
+  end
   namespace :crew do
     resources :apresentations
 
