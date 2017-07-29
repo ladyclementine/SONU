@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crew_blog.title %>
+</p>
+
+<p>
+  <strong>Introdution:</strong>
+  <%= @crew_blog.introdution %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crew_blog.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= (image_tag @crew_blog.photo) %>
+</p>
+
+
+<%= link_to 'Edit', edit_crew_blog_path(@crew_blog) %> |
+<%= link_to 'Back', crew_blogs_path %>

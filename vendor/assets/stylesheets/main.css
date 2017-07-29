@@ -176,7 +176,7 @@ button {
 .button-red:hover {
 	color: #e94b4c;
 	background-color: #fff;
-	border-color: #e94b4c;
+	border-color: #3a4266;
 }
 
 .btn.button-white {
@@ -887,6 +887,14 @@ address a {
 	margin-bottom: 50px;
 }
 
+.speaker ul li>p {
+	color: #fff;
+	text-align: justify;
+	font-size: 10px;
+}
+
+
+
 .speaker-image {
 	position: relative;
 	overflow: hidden;
@@ -897,12 +905,13 @@ address a {
 	font-size: 14px;
 	text-align: center;
 	position: absolute;
-	bottom: -100px;
+	bottom: 100%;
 	width: 100%;
 }
 
 .speaker:hover .speaker-social {
 	bottom: 0;
+	height: 100%;
 }
 
 .speaker-social a,
@@ -1975,7 +1984,7 @@ img.mfp-img {
 .pagination>.active>span:focus, 
 .pagination>.active>span:hover {
 	color: #fff;
-	border-color: #e94b4c;
+	border-color: #3a4266;
 }
 
 .pagination>li:first-child>a, 

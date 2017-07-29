@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+   <div class="col-md-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+            </ul>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">Festas</h4>
+            <table  class="table m-0">
+            <thead>
+               <tr>
+                  <th>Título</th>
+                  <th>Descrição</th>
+                  <th colspan="2">Configurações</th>
+               </tr>
+            </thead>
+            <tbody>
+              <% @crew_parties.each do |crew_party| %>
+                <tr>
+                  <td><%= crew_party.title %></td>
+                  <td><%= raw crew_party.description %></td>
+                  <td><%= link_to 'Show', crew_party, class: 'btn btn-success' %></td>
+                  <td><%= link_to 'Edit', edit_crew_party_path(crew_party), class: 'btn btn-warning' %></td>
+                  <td><%= button_to 'Destroy', crew_party, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<h1>Crew Parties</h1>
+          <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @crew_parties.each do |crew_party| %>
-      <tr>
-        <td><%= crew_party.title %></td>
-        <td><%= raw crew_party.description %></td>
-        <td><%= link_to 'Show', crew_party %></td>
-        <td><%= link_to 'Edit', edit_crew_party_path(crew_party) %></td>
-        <td><%= link_to 'Destroy', crew_party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Crew Party', new_crew_party_path %>
+          <%= link_to 'Adicionar conteúdo', new_crew_party_path, class: 'btn btn-primary' %>
+      </div>
+   </div>
+   <!-- end col -->
+</div>

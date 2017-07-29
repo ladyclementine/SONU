@@ -1,33 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+   <div class="col-md-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+            </ul>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">O secretariado</h4>
+            <table  class="table m-0">
+            <thead>
+               <tr>
+                  <th>Cargo</th>
+                  <th>Nome</th>
+                  <th>Imagem</th>
+                  <th colspan="2">Configurações</th>
+               </tr>
+            </thead>
+            <tbody>
+              <% @crew_secretaries.each do |crew_secretary| %>
+                <tr>
+                  <td><%= crew_secretary.office %></td>
+                  <td><%= crew_secretary.name %></td>
+                  <td><%= (image_tag crew_secretary.photo.thumb) %></td>
+                  <td><%= link_to 'Show', crew_secretary, class: 'btn btn-success' %></td>
+                  <td><%= link_to 'Edit', edit_crew_secretary_path(crew_secretary), class: 'btn btn-warning' %></td>
+                  <td><%= button_to "delete", crew_secretary, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<h1>Crew Secretaries</h1>
+          <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Office</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @crew_secretaries.each do |crew_secretary| %>
-      <tr>
-        <td><%= crew_secretary.office %></td>
-        <td><%= crew_secretary.name %></td>
-        <td><% raw crew_secretary.description %></td>
-        <td><%= (image_tag crew_secretary.photo.thumb) %></td>
-        <td><%= link_to 'Show', crew_secretary %></td>
-        <td><%= link_to 'Edit', edit_crew_secretary_path(crew_secretary) %></td>
-        <td><%= button_to "delete", crew_secretary, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Crew Secretary', new_crew_secretary_path %>
+          <%= link_to 'Novo conteúdo', new_crew_secretary_path, class: 'btn btn-primary' %>
+      </div>
+   </div>
+   <!-- end col -->
+</div>

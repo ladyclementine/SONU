@@ -1,4 +1,5 @@
 class SiteController < ApplicationController
+  before_action :get_blog,  only: [:show]
   layout 'site'
 
   
@@ -24,12 +25,14 @@ class SiteController < ApplicationController
   end
 
   def diretory
+    @crew_diretories = Crew::Diretory.all.order("created_at ASC")
   end
 
   def faq
   end
 
   def fortaleza
+    @crew_fortalezas = Crew::Fortaleza.all
   end
 
   def inscription
@@ -67,12 +70,22 @@ class SiteController < ApplicationController
   end
 
   def story
-  end
-
-  def story
+    @crew_stories = Crew::Story.all
   end
 
   def press
+  end
+
+  def news
+    @crew_blogs = Crew::Blog.all.order("created_at DESC")
+  end
+
+  def show
+  end
+
+  private
+  def get_blog
+    @crew_blogs= Crew::Blog.find(params[:id]) 
   end
 
 end

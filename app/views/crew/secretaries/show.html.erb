@@ -17,7 +17,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @crew_secretary.photo %>
+  <%= (image_tag @crew_secretary.photo_url(:thumb)) %>
 </p>
 
 <%= link_to 'Edit', edit_crew_secretary_path(@crew_secretary) %> |

@@ -1,20 +1,17 @@
 Rails.application.routes.draw do
-  
 
   namespace :crew do
-    resources :parties
-  end
-  namespace :crew do
-    resources :muns
-  end
-  namespace :crew do
-    resources :secretaries
+    resources :blogs
   end
   namespace :crew do
     resources :apresentations
-
-  end
-  namespace :crew do
+    resources :secretaries
+    resources :muns
+    resources :parties
+    resources :stories
+    resources :fortalezas
+    resources :diretories
+    
     devise_for :admins,
     controllers:{
       sessions: "crew/admins/sessions",
@@ -62,6 +59,7 @@ end
   get 'site/story'
   get 'site/news'
   get 'site/press'
+  get '/site/news/:id' => 'site#show', as: :news
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

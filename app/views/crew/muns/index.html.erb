@@ -13,7 +13,7 @@
                <li><a href="#">Separated link</a></li>
             </ul>
          </div>
-         <h4 class="header-title m-t-0 m-b-30">Carta de Apresentação</h4>
+         <h4 class="header-title m-t-0 m-b-30">O que são Muns?</h4>
             <table  class="table m-0">
             <thead>
                <tr>
@@ -27,8 +27,8 @@
                   <tr>
                     <td><%= crew_mun.title %></td>
                     <td><%= raw crew_mun.description %></td>
-                    <td><%= link_to 'Show', crew_mun %></td>
-                    <td><%= link_to 'Edit', edit_crew_mun_path(crew_mun) %></td>
+                    <td><%= link_to 'Show', crew_mun, class: 'btn btn-success' %></td>
+                    <td><%= link_to 'Edit', edit_crew_mun_path(crew_mun), class: 'btn btn-warning' %></td>
                     <td><%= button_to "delete", crew_mun, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
                   </tr>
                 <% end %>
@@ -37,7 +37,7 @@
 
             <br>
 
-            <%= link_to 'Adicionar Conteúdo', new_crew_mun_path %>
+            <%= link_to 'Adicionar Conteúdo', new_crew_mun_path, class: 'btn btn-primary' %>
       </div>
    </div>
    <!-- end col -->

@@ -27,15 +27,15 @@
                <tr>
                   <td><%= crew_apresentation.title %></td>
                   <td><%= raw crew_apresentation.description %></td>
-                  <td><%= link_to 'Show', crew_apresentation %></td>
-                  <td><%= link_to 'Edit', edit_crew_apresentation_path(crew_apresentation) %></td>
+                  <td><%= link_to 'Show', crew_apresentation, class: 'btn btn-success' %></td>
+                  <td><%= link_to 'Edit', edit_crew_apresentation_path(crew_apresentation), class: 'btn btn-warning' %></td>
                   <td><%= button_to "delete", crew_apresentation, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
                </tr>
                <% end %>
             </tbody>
          </table>
          <br>
-         <%= link_to 'Adicionar conteúdo', new_crew_apresentation_path %>
+         <%= link_to 'Adicionar conteúdo', new_crew_apresentation_path, class: 'btn btn-primary' %>
       </div>
    </div>
    <!-- end col -->

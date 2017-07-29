@@ -1,2 +1,40 @@
-<h1>Site#fortaleza</h1>
-<p>Find me in app/views/site/fortaleza.html.erb</p>
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="title-white">
+						<h1>
+							
+							<span>Fortaleza</span>
+						
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><%= link_to 'Fortaleza', site_fortaleza_path%></li>
+						<li class="active" ><%= link_to 'FAQ', site_story_path %></li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->	
+
+		<div class="gb-about gb-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="about-info">
+				               <% @crew_fortalezas.each do |crew_fortaleza| %>
+				            	<div class="speaker">
+				            	<div class="speaker-title">
+				                  <h2><%= crew_fortaleza.title %></h2>
+				                  </br>
+				                  <p><%= raw crew_fortaleza.description %></p>
+				       			</div>
+				       			</div>
+				               <% end %>
+
+				 
+							</br>
+						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.gb-about -->	

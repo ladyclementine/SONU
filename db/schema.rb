@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725041734) do
+ActiveRecord::Schema.define(version: 20170729040807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,31 @@ ActiveRecord::Schema.define(version: 20170725041734) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "crew_blogs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "introdution"
+    t.text     "description"
+    t.string   "photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "crew_diretories", force: :cascade do |t|
+    t.string   "office"
+    t.string   "name"
+    t.text     "description"
+    t.string   "photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "crew_fortalezas", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "crew_muns", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -58,6 +83,13 @@ ActiveRecord::Schema.define(version: 20170725041734) do
     t.string   "name"
     t.text     "description"
     t.string   "photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "crew_stories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

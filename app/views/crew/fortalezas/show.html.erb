@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crew_fortaleza.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= raw @crew_fortaleza.description %>
+</p>
+
+<%= link_to 'Edit', edit_crew_fortaleza_path(@crew_fortaleza) %> |
+<%= link_to 'Back', crew_fortalezas_path %>
