@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  namespace :crew do
-    resources :blogs
-  end
+   
+
   namespace :crew do
     resources :apresentations
     resources :secretaries
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
     resources :stories
     resources :fortalezas
     resources :diretories
+    resources :partners
+    resources :solidaries
+    resources :schools
+    resources :blogs
     
     devise_for :admins,
     controllers:{
@@ -28,12 +31,29 @@ Rails.application.routes.draw do
 
     devise_scope :admins do
     authenticated  do
-
+    resources :users  
     resources :admins  
     root 'admins#index', as: :authenticated_admin_root
     end
   end
 end
+
+devise_for :users,
+  controllers: {
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    registrations: "users/registrations",
+    confirmations: 'users/confirmations'
+  },
+    path: "/",
+  path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    password: 'secret',
+    unlock: 'unblock',
+    registration: 'cadastro',
+    sign_up: 'new'
+  }
 
   #ROTAS DO SITE
   root 'site#index'

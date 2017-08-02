@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crew_school.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crew_school.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @crew_school.photo %>
+</p>
+
+<%= link_to 'Edit', edit_crew_school_path(@crew_school) %> |
+<%= link_to 'Back', crew_schools_path %>

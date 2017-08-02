@@ -4,6 +4,7 @@ class SiteController < ApplicationController
 
   
   def index
+    @crew_blogs = Crew::Blog.all.order("created_at DESC")
   end
 
   def academic
@@ -25,7 +26,7 @@ class SiteController < ApplicationController
   end
 
   def diretory
-    @crew_diretories = Crew::Diretory.all.order("created_at ASC")
+   @crew_diretories = Crew::Diretory.all
   end
 
   def faq
@@ -53,6 +54,7 @@ class SiteController < ApplicationController
   end
 
   def schools
+     @crew_schools = Crew::School.all
   end
 
   def secretary

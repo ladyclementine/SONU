@@ -31,23 +31,16 @@
 									
 									<div class="pull-left">
 										<span class="post-date">
-											<span class="post-date">
 										<%= @crew_blogs.created_at.strftime("%d") %>
 										<span><%= @crew_blogs.created_at.strftime("%B/%Y") %></span>
+
 										</span>
 										<span class="share"><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></span>
 									</div>
-									
 
 									<div class="media-body">
 										<h2 class="entry-title"><%= link_to @crew_blogs.title, news_path(@crew_blogs) %></h2>
-										<div class="entry-meta">
-											<ul class="gb-list">
-												<li>By<a href="#"> Admin</a></li>
-												<li>In<a href="#"> Corporate</a></li>
-												<li>3<a href="#"> Comments</a></li>
-											</ul>
-										</div>
+										</br>
 										<div class="entry-summary">
 											
 											<blockquote><%= raw @crew_blogs.introdution%></blockquote>

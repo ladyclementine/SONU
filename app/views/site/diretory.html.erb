@@ -11,8 +11,8 @@
 						</h1>
 					</div>
 					<ol class="breadcrumb">
-						<li><%=link_to 'A Diretoria', site_diretory_path %></li>
-						<li class="active"> <%= link_to 'O QUE SÃO MUNS?', site_muns_path %></li>
+						<li><%=link_to 'A Diretoria', site_apresentation_path %></li>
+						<li class="active"> <%= link_to 'O Secretariado', site_secretary_path %></li>
 					</ol>				
 				</div>
 			</div><!-- /.container -->
@@ -25,7 +25,7 @@
 						<div class="speaker">
 							<div class="speaker-image">
 								
-								<%= image_tag crew_diretory.photo_url, class: "img-responsive"%>
+								<%= image_tag crew_diretory.photo_url(:medio) , class: "img-responsive"%>
 								<ul class="speaker-social gb-list list-inline">
 									<li><p><%= raw crew_diretory.description%><p></li>
 								</ul>

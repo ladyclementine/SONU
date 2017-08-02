@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crew Partners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crew_partners.each do |crew_partner| %>
+      <tr>
+        <td><%= crew_partner.title %></td>
+        <td><% crew_partner.photos.each do |photo| %>
+              <%= image_tag photo %>
+              <% end %></td>
+        <td><%= link_to 'Show', crew_partner %></td>
+        <td><%= link_to 'Edit', edit_crew_partner_path(crew_partner) %></td>
+        <td><%= button_to 'Destroy', crew_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crew Partner', new_crew_partner_path %>

@@ -28,7 +28,7 @@
                 <tr>
                   <td><%= crew_secretary.office %></td>
                   <td><%= crew_secretary.name %></td>
-                  <td><%= (image_tag crew_secretary.photo.thumb) %></td>
+                  <td><%= image_tag crew_secretary.photo_url(:thumb)unless crew_secretary.photo.blank? %></td>
                   <td><%= link_to 'Show', crew_secretary, class: 'btn btn-success' %></td>
                   <td><%= link_to 'Edit', edit_crew_secretary_path(crew_secretary), class: 'btn btn-warning' %></td>
                   <td><%= button_to "delete", crew_secretary, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>

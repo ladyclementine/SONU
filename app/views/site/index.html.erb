@@ -27,81 +27,58 @@
             </div><!-- /.banner-info -->
         </div><!-- /.gb-banner -->
         
-        <div class="upcoming-events gb-section text-center">
+    <div class="gb-section text-center">
             <div class="container">
-                
+            <div class="title-partners">
                     <h1 class="color-red">
-                      
-                         <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                       
-                        <span>Notícias</span>
-                
-                            <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                        
+                        <span>ÚLTIMAS NOTÍCIAS</span>
                     </h1>
-               
-                <div class="event-content">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>27 <span>Jul</span></p>
-                                </div>
-                                <div class="event-info">
-                                    <h2>Berlin, Germany</h2>
-                                    <address><p>30217 new street road Berlin, Germany</p></address>
-                                    <a href="#" class="btn btn-default">Get a Ticket</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>12 <span>Jul</span></p>
-                                </div>
-                                <h2>Munich, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>12 <span>Aug</span></p>
-                                </div>
-                                <h2>Hamburg, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>09 <span>Sep</span></p>
-                                </div>
-                                <h2>Cologne, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
-                        </div>
-                    </div><!-- /.row -->
                 </div>
-            </div><!-- /.container -->
-        </div><!-- /.upcoming-events -->
-        
+
+                <div class="blog-content">
+                <div class="row">
+                <% @crew_blogs[0..3].each do |crew_blogs| %>
+                    <div class="col-sm-6 col-md-3">
+
+
+                            <div class="gb-post gb-box-shadow">
+                                <div class="entry-header">
+
+                                    <div class="entry-thumbnail">
+                                        <a href="blog-details.html"><%= (image_tag crew_blogs.photo, class: "img-responsive") %></a>
+                                    </div>
+                                </div>
+                                <div class="post-date-index">
+                                    <p><%= crew_blogs.created_at.strftime("%d") %></p>
+                                    <span><%= crew_blogs.created_at.strftime("%B") %></span>
+                                </div>
+                
+                                <div class="entry-content-index">
+
+                                        <h2 class="entry-title-index"><a href="blog-details.html"><%= link_to crew_blogs.title, news_path(crew_blogs) %></a></h2>
+                                </div>
+                            </div><!-- /.gb-post -->
+                            </div>
+                        <% end %>
+                </div>
+            </div>
+            <%= link_to 'Veja mais', new_user_registration_path ,class: "btn btn-default" %>
+        </div>        
+</div>
+
         <div class="gb-cta-1 gb-section gb-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 white-color">
+                    <div class="col-md-8 white-color">
                         <h1>A SONU</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor</p>
+                            <p>O Programa Simulação da Organização das Nações Unidas, veiculado à Pró-Reitoria de Extensão da Universidade Federal do Ceará (UFC) e realizado em parceria com a Universidade de Fortaleza (Unifor), é o primeiro modelo de simulação de organismos internacionais no estado do Ceará, sendo organizada por alunos bolsistas e voluntários de diversas instituições de Ensino Superior de Fortaleza, sob a orientação de docentes da UFC. </p>
                         <div class="buttons">
                             <a href="#" class="btn button-white">Conheça</a>
                         </div>
                       </div>  
-                    <div class="col-md-6">
-                        <iframe width="555" height="359" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
+                      </br>
+                    <div class="col-md-4">
+                        <iframe width="300" height="300" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div><!-- /.container -->
@@ -145,11 +122,12 @@
             <div class="contact-info">
                 <div class="event">
                     <div class="gb-time color-red">
-                        <p>12 <span>Jul</span></p>
+                        <p>SONU<span>Br</span></p>
                     </div>
-                    <h2>Berlin, Germany</h2>
-                    <address><p>30217 new street road Berlin, Germany</p></address>
-                    <a href="#" class="btn btn-default">Get a Ticket</a>
+                    <h2>Centro, Fortaleza-CE</h2>
+                    <address><p>Rua Meton de Alencar S/N</p></address>
+                    <address><p>contato@sonu.com.br</p></address>
+                    <a href="#" class="btn btn-default">Fale Conosco</a>
                 </div>
                 <ul class="contact-social gb-list list-inline">
                     <li><a href="#"><img src="images/others/facebook.png" alt="Icon" class="img-responsive"></a></li>
@@ -170,7 +148,7 @@
                 </div>      
                 <div class="cta-info">
                     <p>Cadastrando-se no site, você tem a vantagem de rapidamente se inscrever em algum evento da SONU, sem precisa elaborar todo o cadastro antes.</p>
-                    <a href="#" class="btn btn-default">Cadastre-se</a>
+                    <%= link_to 'Cadastre-se', new_user_registration_path ,class: "btn btn-default" %>
                 </div>
             </div><!-- /.container -->
         </div><!-- /.gb-cta-2 -->

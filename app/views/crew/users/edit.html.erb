@@ -1,0 +1,196 @@
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box">
+      
+         <h4 class="header-title m-t-0 m-b-30">Editar Usuário - <%=@user.name%></h4>
+         <%= form_for @user, :html => {class: 'form-horizontal'},  url: {action: "update"} do |f| %>
+         <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Nome</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :name, :id => 'name', placeholder: '', class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">CPF</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :cpf, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Data de Nascimento</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :birthday, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Estado</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :state, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Bairro</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :district, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Número da casa</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :adress_number, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Telefone Residencial</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :phone, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Universidade</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :university, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Matrícula</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :registration_id, class: 'form-control'%>
+                     </div>
+                  </div>
+               
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6">
+    
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">RG</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :general_register, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Sexo</label>
+                     <div class="col-md-10">
+                        <%= f.select(:gender,['Masculino', 'Feminino', 'Prefiro não declarar'], {}, { :class => 'form-control select2' }) %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Cidade</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :city, class: 'form-control'%>
+                     </div>
+                  </div>
+                   <div class="form-group">
+                     <label class="col-md-2 control-label">Cep</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :cep, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Rua</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :adress, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Complemento</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :complement, class: 'form-control'%>
+                     </div>
+                  </div>
+                   <div class="form-group">
+                     <label class="col-md-2 control-label">Celular</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :cel, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Semestre</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :semester, class: 'form-control'%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Facebook Profile</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :facebook_profile_link, class: 'form-control'%>
+                     </div>
+                  </div> 
+            </div>
+
+            
+            
+            <!-- end col -->
+         </div>
+         <% unless @user.comitee.nil? %>
+            <h5 class="header-title m-t-0 m-b-30"><b>Dados do evento - <%=@user.comitee.name %></b></h5>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Justifique a escolha das três primeiras opções:</label>
+                     <div class="col-md-10">
+                        <%= f.text_area :justify,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% if @user.comitee.question_1 != "" %>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label"><%= @user.comitee.question_1 %></label>
+                     <div class="col-md-10">
+                        <%= f.text_area :answer_1,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% end %>
+                  <% if @user.comitee.question_3 != "" %>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label"><%= @user.comitee.question_3 %></label>
+                     <div class="col-md-10">
+                        <%= f.text_area :answer_3,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% end %>
+                  <% if @user.comitee.question_5 != "" %>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label"><%= @user.comitee.question_5 %></label>
+                     <div class="col-md-10">
+                        <%= f.text_area :answer_5,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% end %>
+               </div>
+               <div class="col-lg-6">
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Escreva suas experiências em simulações</label>
+                     <div class="col-md-10">
+                        <%= f.text_area :experience,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% if @user.comitee.question_2 != "" %>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label"><%= @user.comitee.question_2 %></label>
+                     <div class="col-md-10">
+                        <%= f.text_area :answer_2,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% end %>
+                  <% if @user.comitee.question_4 != "" %>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label"><%= @user.comitee.question_4 %></label>
+                     <div class="col-md-10">
+                        <%= f.text_area :answer_4,  class: 'form-control'%>
+                     </div>
+                  </div>
+                  <% end %>
+               </div>
+            </div>
+         <% end %>
+         <button type="submit" class="btn btn-success btn-block btn-trans waves-effect w-md waves-success m-b-5">SALVAR</button>
+         <% end %>
+         <!-- end row -->
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- end row -->

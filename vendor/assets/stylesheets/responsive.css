@@ -371,4 +371,10 @@
 		margin-bottom: 20px;
 	}
 }
+/*login-page*/
+@media (max-width: 768px){
 
+.wrapper-page {
+    width: 90%;
+}
+}

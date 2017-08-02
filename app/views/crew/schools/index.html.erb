@@ -1,0 +1,43 @@
+<div class="row">
+   <div class="col-md-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="zmdi zmdi-more-vert"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+            </ul>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">SONU Escolas</h4>
+         <table  class="table m-0">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @crew_schools.each do |crew_school| %>
+                <tr>
+                  <td><%= crew_school.title %></td>
+                  <td><%= link_to 'Show', crew_school , class: 'btn btn-success'%></td>
+                  <td><%= link_to 'Edit', edit_crew_school_path(crew_school), class: 'btn btn-warning' %></td>
+                  <td><%= button_to "delete", crew_school, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <br>
+
+          <%= link_to 'Novo conteúdo', new_crew_school_path, class: 'btn btn-primary' %>
+      </div>
+   </div>
+   <!-- end col -->
+</div>

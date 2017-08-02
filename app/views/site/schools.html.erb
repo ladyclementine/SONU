@@ -1,2 +1,41 @@
-<h1>Site#schools</h1>
-<p>Find me in app/views/site/schools.html.erb</p>
+<div class="gb-breadcrumb-schools gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="title-white">
+						<h1>
+							
+							<img src="/images/sonu-escolas.png">
+						
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><%= link_to 'SONU Escolas', site_schools_path%></li>
+						<li class="active" ><%= link_to 'SONU Solidária', site_story_path %></li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->
+
+		<div class="gb-about gb-section">
+			<div class="container">
+				<div class="row">
+
+					<% @crew_schools.each do |crew_school| %>
+					<div class="col-md-12">
+						<div class="about-info">
+
+						</br>
+							<div class="speaker">
+				            	<div class="speaker-title">
+							<h2><%= crew_school.title %></h2>
+						<%= image_tag crew_school.photo_url(:thumb) if crew_school.photo.present?%>
+							</div>
+								</div>
+							<p><%= raw crew_school.description%></p>
+							</br>
+						</div>
+					</div>
+				<% end %>	
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.gb-about -->	
