@@ -9,8 +9,8 @@
 						</h1>
 					</div>
 					<ol class="breadcrumb">
-						<li><%= link_to 'Notícias', site_news_path %></li>
-						<li class="active"><%= link_to 'Publicações', site_secretary_path %></li>
+						<li><%= link_to 'Notícias', noticias_path %></li>
+						<li class="active"><%= link_to 'Publicações', secretary_path %></li>
 					</ol>				
 				</div>
 			</div><!-- /.container -->
@@ -39,7 +39,7 @@
 									</div>
 
 									<div class="media-body">
-										<h2 class="entry-title"><%= link_to @crew_blogs.title, news_path(@crew_blogs) %></h2>
+										<h2 class="entry-title"><%= link_to @crew_blogs.title, noticias_path(@crew_blogs) %></h2>
 										</br>
 										<div class="entry-summary">
 											

@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
   before_action :get_blog,  only: [:show]
+  before_action :get_user,  only: [:perfil]
   layout 'site'
 
   
@@ -37,6 +38,7 @@ class SiteController < ApplicationController
   end
 
   def inscription
+     @comitees = Comitee.all
   end
 
   def muns

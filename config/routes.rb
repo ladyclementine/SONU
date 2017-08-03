@@ -31,6 +31,9 @@ Rails.application.routes.draw do
 
     devise_scope :admins do
     authenticated  do
+    resources :comitees do 
+    patch 'unsubscribe_user/:user_id' => 'comitees#unsubscribe_user', as: :user_unsubscribe
+    end
     resources :users  
     resources :admins  
     root 'admins#index', as: :authenticated_admin_root
@@ -54,6 +57,16 @@ devise_for :users,
     registration: 'cadastro',
     sign_up: 'new'
   }
+    get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
+    get 'comitee/:id' => 'comitees#show', as: :show_comitee
+    patch 'users/change_cotist/:comitee_id' => 'users#change_cotist', as: :update_cotist_user
+    get 'payment' => 'checkout#pagseguro'
+    put 'comitee/:id/update' => 'comitees#update', as: :update_user_comitee
+    get 'perfil' => 'site#perfil', as: :perfil_user
+    get 'perfil/edit' => 'users/registrations#edit'
+    put 'perfil' => 'users/registrations#update'
+
+
 
   #ROTAS DO SITE
   root 'site#index'
@@ -63,23 +76,23 @@ devise_for :users,
   get 'site/comitees'
   get 'site/contact'
   get 'site/cronogram'
-  get 'site/diretory'
+  get '/a-diretoria' => 'site#diretory', as: :diretory
   get 'site/faq'
-  get 'site/fortaleza'
-  get 'site/inscription'
-  get 'site/muns'
-  get 'site/parties'
-  get 'site/partners'
-  get 'site/perfil'
-  get 'site/schools'
-  get 'site/secretary'
-  get 'site/apresentation'
-  get 'site/solidary'
+  get '/fortaleza' => 'site#fortaleza', as: :fortaleza
+  get '/inscricoes'=> 'site#inscription', as: :inscription
+  get '/o-que-sao-muns' => 'site#muns', as: :muns
+  get '/festas' => 'site#parties', as: :parties
+  get '/parceiros' => 'site#partners', as: :partners
+  get '/sonu-escolas' => 'site#schools', as: :schools
+  get '/o-secretariado' => 'site#secretary', as: :secretary
+  get '/carta-de-apresentacao' => 'site#apresentation', as: :apresentation
+  get '/sonu-solidaria' => 'site#solidary', as: :solidary
   get 'site/speeches'
-  get 'site/story'
-  get 'site/news'
+  get '/historia-da-sonu' => 'site#story', as: :story
+  get '/noticias' => 'site#news'
   get 'site/press'
-  get '/site/news/:id' => 'site#show', as: :news
+  get '/noticias/:id' => 'site#show', as: :news
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

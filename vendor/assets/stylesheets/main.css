@@ -185,7 +185,7 @@ button {
 }
 
 .button-red:hover {
-	color: #e94b4c;
+	color: #21294C;
 	background-color: #fff;
 	border-color: #3a4266;
 }
@@ -225,7 +225,7 @@ button {
 }
 
 textarea.form-control {
-	height: 10px;
+
 	padding: 20px;
 	resize: none;
 }
@@ -1334,9 +1334,13 @@ address a {
 .gb-contact .event:hover {
 	padding-bottom: 30px;
 }
+.contact-address address{
 
+	text-align: justify;
+}
 .contact-social {
 	margin-top: 35px;
+	font-size: 25px;
 }
 
 .gb-contact .contact-info.contact-address {
@@ -2395,4 +2399,14 @@ a, input, .btn, .btn:before,
     border: 1px solid black;
     background: rgba(33, 41, 76, 0.9 );
     color: #fff;
+}
+.logout-user{
+
+	color: #fff;
+	background-color: #bf1c1c;
+}
+.logout-user:hover{
+
+	opacity: 0.5;
+	transition: 0.8s;
 }

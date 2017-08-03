@@ -1,2 +1,57 @@
-<h1>Site#inscription</h1>
-<p>Find me in app/views/site/inscription.html.erb</p>
+<div class="gb-breadcrumb-login-cadastro gb-bg white-color">
+   <div class="container">
+      <div class="breadcrumb-info text-center">
+         <div class="title-white">
+            <h1>
+               <span>Eventos</span>
+            </h1>
+         </div>
+      </div>
+   </div>
+   <!-- /.container -->
+</div>
+<!-- /.gb-breadcrumb -->
+
+
+<div class="upcoming-events gb-section text-center">
+         <div class="container">
+               <h1 class="color-red">
+                  <span>Eventos Abertos</span>
+               </h1>
+            <div class="event-content">
+               <div class="row">
+                  <% @comitees.each do |comitee| %>
+                     <% if comitee.is_active %>
+                  <div class="col-sm-6 col-md-3">
+                     <div class="event">
+                        <div class="gb-time color-red">
+                           <p><%=comitee.start_date.strftime("%d")%> <span><%=comitee.start_date.strftime("/%m/%y")%></span></p>
+                        </div>
+                        <div class="event-info">
+                           <h2> <%= link_to show_comitee_path(comitee) do %><%=comitee.name%><% end %></h2>
+                           <p><strong><%=comitee.type_event%></strong></p>
+
+                           <%= link_to show_comitee_path(comitee) do %>
+                           <%= image_tag comitee.photo_url(:thumb)%>
+                           <% end %>
+                           <%= link_to 'saiba mais' %>
+                           <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>  
+
+                              <span class="label label-success">INSCRITO</span>
+                           
+                           <% end %>
+
+                           <%= link_to show_comitee_path(comitee), class: "btn btn-default" do %>
+
+                           <span>Inscreva-se</span>
+                           <% end %>
+                        </div>
+                     </div>
+                  </div>
+                  <%end%>
+                  <%end%>    
+               </div><!-- /.row -->
+            </div>
+         </div><!-- /.container -->
+      </div><!-- /.upcoming-events -->
+

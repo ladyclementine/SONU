@@ -16,7 +16,8 @@
 <div class="wrapper-page">
   <div class="m-t-40 card-box">
                 <div class="text-center">
-                    <h4 class="text-uppercase font-bold m-b-0">Cadastrar</h4>
+                    <%= image_tag ("/images/logobranca-iloveimg-resized (2).png"), alt:"Logo"%>
+                    <h5 class="text-uppercase font-bold m-b-0">Cadastrar</h5>
                 </div>
     
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { id: "formu", method: :post }) do |f| %>
@@ -78,9 +79,9 @@
                         
                         <div class="form-group ">
                         <div class="col-xs-12">
+
                         <div> Sexo </div>
                         <div> 
-                       
                         <label for="gender_male">
                            <%= f.radio_button :gender, 'M' %> 
                             Masculino
@@ -172,9 +173,12 @@
                         
                         <div class="form-group ">
                         <div class="col-xs-12">
-                        <input type="checkbox" id="agree" name="agree"> Eu li e concordo com os <a class='iframe' href="/termos.html">Termos de Uso</a> do site. </div>
+                        <input type="checkbox" id="agree" name="agree"> Eu li e concordo com os <a class='iframe' href="/termos.html">Termos de Uso</a> do site. 
+        
+                        </div>
                         </div>
 
+                        <br>
                         <div class="form-group ">
                         <div class="col-xs-12">
                          <%= f.submit "Cadastrar", class: "btn btn-login" %>

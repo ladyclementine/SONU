@@ -1,0 +1,132 @@
+
+<div class="gb-breadcrumb-login-cadastro gb-bg white-color">
+         <div class="container">
+            <div class="breadcrumb-info text-center">
+               <div class="title-white">
+                  <h1>
+                     
+                     <span>Eventos</span>
+                  
+                  </h1>
+               </div>         
+            </div>
+         </div><!-- /.container -->
+      </div><!-- /.gb-breadcrumb -->
+<div class="container">
+            <div class="row">
+               <div class="col-md-12">
+
+               <h2><%=@comitee.name %></h2>
+               
+               <div><i class="fa fa-calendar"></i> 
+               <%=@comitee.start_date.strftime("%d/%m/%Y") %> - <%=@comitee.end_date.strftime("%d/%m/%Y") %>
+               </div>
+
+               <div> 
+                  <%=@comitee.type_event %> - 
+                  <span>
+                  <% if current_user.is_cotist == true %>
+                  
+                  <h6>VOCÊ É COTISTA</h6>
+                  <p>Caso não haja vaga para cotista, você pode optar por pagar o valor de <strong>não cotista</strong> e adquirir a vaga!</p>
+                  
+                  <%=link_to update_cotist_user_path(@comitee), method: 'PATCH' do%> Alterar 
+                  <% end %>
+                  </br>
+                  <span class="label label-success" >Valor: <%= @comitee.paid_comitee_value(current_user) %></span>
+                  <%else %>
+
+                  <h6>VOCE NÃO É COTISTA</h6>
+                   <span class="label label-success" >Valor: <%= @comitee.paid_comitee_value(current_user) %></span>
+                  <% end %>
+
+
+
+                  </br></br>
+               </div>
+               <% if @comitee.is_active %>
+
+               <% if current_user.comitee_id.nil? || @comitee.id != @current_user.comitee_id %>
+
+               <% if @comitee.is_full?(current_user) %>
+
+               <div> <%= current_user.is_cotist ? 'Não há vagas para cotista.' : 'Nao há vagas para não cotista.' %> </div>
+               <% else %>
+               <%= form_for @user, url: { :action => "update" }, html: { method: :put } do |f| %>
+               <% if @user.errors.any? %>
+               <script type="text/javascript">
+                  toastr.error('<%= pluralize(@user.errors.count, "error") %> encontrados: </br><% @user.errors.full_messages.each do |message| %><%= message %></br><% end %>', "Aviso");
+               </script>
+               <% end %>
+
+               <input type=hidden name=id_evento id="id_evento" value="<%=@comitee.id%>">
+               
+               <% if @comitee.dual %>
+               CPF da Dupla:
+               <%= f.text_field :cpf_dual, id:"cpf_dupla" %> * É necessário a dupla estar cadastrado no sistema.
+               <div id="loading" style="display:none"><img src="images/loading.gif"></div>
+               <div id="result-nome"></div>
+               <br>
+               <% end %>
+               
+               Justifique a escolha das três primeiras opções:<br>
+               <%= f.text_area :justify, style: "width:500px; height:200px"%><br><br>
+               Escreva suas experiências em simulações:<br>
+               <%= f.text_area :experience, style: "width:500px; height:200px"%><br><br>
+               <% if @comitee.question_1 != "" %>
+               <%= @comitee.question_1 %>:<br>
+               <%= f.text_area :answer_1, style: "width:500px; height:200px"%><br><br>
+               <% end %>
+               <% if @comitee.question_2 != "" %>
+               <%= @comitee.question_2  %>:<br>
+               <%= f.text_area :answer_2, style: "width:500px; height:200px"%><br><br>
+               <% end %>
+               <% if @comitee.question_3 != "" %>
+               <%= @comitee.question_3  %>:<br>
+               <%= f.text_area :answer_3, style: "width:500px; height:200px"%><br><br>
+               <% end %>
+               <% if @comitee.question_4 != "" %>
+               <%= @comitee.question_4  %>:<br>
+               <%= f.text_area :answer_4, style: "width:500px; height:200px"%><br><br>
+               <% end %>
+               <% if @comitee.question_5 != "" %>
+               <%= @comitee.question_5  %>:<br>
+               <%= f.text_area :answer_5, style: "width:500px; height:200px"%><br><br>
+               <% end %>
+               Link Perfil Facebook:
+               <%= f.text_field :face_link, style: "width:400px"%>
+               <div id=submitx>
+                  <input class="btn btn-large btn-black" type=submit value=Inscrever>
+               </div>
+               <div id="loading2" style="display:none"><img src="images/loading.gif"></div>
+               <% end %>
+            </div>
+            <% end %>
+            <% else %>
+
+            <% if @user.paid_on.nil? %>
+            <% if (@user.comitee.dual? && @user.lider_dual==true) || !@user.comitee.dual? %>
+            <div style="margin-top:30px"><%= link_to payment_path, target: '_blank' do %>
+               <input src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/120x53-pagar.gif" type="image" class="btn-pagseguro">
+               <% end %>
+            </div>
+            <% else %>
+            Sua dupla foi encarregada de pagar =)
+            <% end %>
+            <% else %>
+            Pago!
+            <% end %>
+
+            <% end %>
+            <% else %>
+            <div style="margin-top:30px"> Evento Finalizado! </div>
+            <% end %>
+         </div>
+         <div style="clear:both"></div>
+      </div>
+   </div>
+
+   <div id="result-nome2" style="color:#fff"></div>
+</div>
+</div>
+</div>

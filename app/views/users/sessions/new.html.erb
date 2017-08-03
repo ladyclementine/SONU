@@ -2,10 +2,12 @@
 <div class="gb-breadcrumb-login-cadastro gb-bg white-color">
          <div class="container">
             <div class="breadcrumb-info text-center">
-               <div class="title-white">
+               <div class="title-blue">
                   <h1>
                      
                      <span>Acesse sua conta</span>
+                        <h4>Não possui conta?</h4>
+                        <%= link_to 'Cadastre-se', new_user_registration_path , class: "btn button-white" %>
                   
                   </h1>
                </div>         
@@ -19,8 +21,7 @@
                 <%= image_tag ("/images/logobranca-iloveimg-resized (2).png"), alt:"Logo"%>
                     <h5 class="text-uppercase font-bold m-b-0">Entrar</h5>
                 </div>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: { class: 'form-horizontal m-t-20'}) do |f| %>
-
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: { class: 'form-horizontal m-t-20'}) do |f| %>
 
                 <div class="panel-body">
       
@@ -38,14 +39,12 @@
 
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <div class="checkbox checkbox-custom">
+                            <div class="checkbox checkbox-custom">
                                 <% if devise_mapping.rememberable? -%>
                                     <%= f.check_box :remember_me, id: "checkbox-signup" %>
                                     <%= f.label :remember_me, for: "checkbox-signup" %>
                                 <% end -%>
-
-                                </div>
-
+                            </div>
                             </div>
                         </div>
 

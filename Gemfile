@@ -35,7 +35,7 @@ gem 'devise'
 gem "wysiwyg-rails"
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-
+gem "pagseguro-oficial", "~> 2.5.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

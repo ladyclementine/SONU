@@ -1,43 +1,121 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div id="content">
+    
+    <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      
+            <div id="page-header">
+              
+                <div class="row">
+                  <div class="span12">
+                      
+                        <h2> Alterar Cadastro </h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+      
+      <div class="row">
+              <div class="span12">
+                  
+                    
+          <div>
+        
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="quadrado">
+          
+          <div class="descricao">
+          
+            <div class="cad-tit"> Nome Completo </div>
+            <div class="cad-desc"> <%= f.text_field :name, style: "width:400px" %></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Email </div>
+            <div class="cad-desc"> 
+            <%= f.email_field :email, style: "width:350px", disabled: true%></div>
+            <div class="clear"></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+            
+            <div class="cad-tit"> RG </div>
+            <div class="cad-desc"> <%= f.text_field :general_register %> </div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> CPF </div>
+            <div class="cad-desc"> <%= f.text_field :cpf, id: "cpf" %></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Data de Nascimento </div>
+            <div class="cad-desc"> <%= f.text_field :birthday, style: "width:120px"%>  </div>
+            <div class="clear"></div>
+            
+            
+            <div class="cad-tit"> Sexo </div>
+            <div class="cad-desc"> 
+            
+            <%= f.select(:gender,['Masculino', 'Feminino', 'Prefiro não declarar'], {}, { :class => 'form-control select2' }) %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+            </div>
+            <div class="clear"></div>
+            
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+            <div class="cad-tit"> CEP </div>
+            <div class="cad-desc"> <%= f.text_field :cep, id: "cep" %> </div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Endereço </div>
+            <div class="cad-desc"> <%= f.text_field :adress, style: "width:300px" %></div>
+            <div class="cad-tit" style="width:40px"> Nº </div>
+            <div class="cad-desc"> <%= f.text_field :adress_number, style: "width:60px" %> </div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Complemento </div>
+            <div class="cad-desc"> <%= f.text_field :complement%></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Bairro </div>
+            <div class="cad-desc"> <%= f.text_field :district%></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Cidade </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+            <div class="cad-desc">  <%= f.text_field :city %> </div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Telefone </div>
+            <div class="cad-desc"><%= f.text_field :phone, style: "width:130px", id: "phone" %></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Celular </div>
+            <div class="cad-desc"> <%= f.text_field :cel, style: "width:130px", id: "cel" %></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Instituição de Ensino </div>
+            <div class="cad-desc"> <%= f.text_field :university, style: "width:400px" %></div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Matícula </div>
+            <div class="cad-desc"> <%= f.text_field :registration_id, style: "width:400px" %> (Opcional, caso não possua)</div>
+            <div class="clear"></div>
+            
+            <div class="cad-tit"> Semestre </div>
+            <div class="cad-desc">  <%= f.text_field :semester, style: "width:400px" %> (Opcional, caso não possua matrícula)</div>
+            <div class="clear"></div>
+            <br><br>
+            
+            <div style="text-align:center"> <input type=submit value=Alterar> </div>
+          </div>
+        </div>
+        <% end %>
+        
+        
+        
+      </div>
+                    
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+      
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    </div>

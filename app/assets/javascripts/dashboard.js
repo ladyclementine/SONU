@@ -34,7 +34,7 @@
 //= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.js
 //= require admin_template/adminto/css/plugins/datatables/dataTables.scroller.min.js
 //= require admin_template/adminto/css/plugins/fileuploads/js/dropify.min.js
-
+//= require admin_template/adminto/css/plugins/toastr/toastr.min.js
 
 
 

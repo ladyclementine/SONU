@@ -54,6 +54,15 @@
                         <%= f.text_field :university, class: 'form-control'%>
                      </div>
                   </div>
+
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Cotista?</label>
+                     <div class="col-md-10">
+                     <%= f.select(:is_cotist,['', 'Cotista', 'Não Cotista'], {}, { :class => 'form-control select2' }) %>
+
+                     </div>
+                  </div>
+
                   <div class="form-group">
                      <label class="col-md-2 control-label">Matrícula</label>
                      <div class="col-md-10">
@@ -125,7 +134,7 @@
             
             <!-- end col -->
          </div>
-         <% unless @user.comitee.nil? %>
+         <% unless @user.comitee_id.nil? %>
             <h5 class="header-title m-t-0 m-b-30"><b>Dados do evento - <%=@user.comitee.name %></b></h5>
             <div class="row">
                <div class="col-lg-6">

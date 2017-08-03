@@ -20,7 +20,7 @@
                <tr>
                   <td><%= user.name.nil? ? 'Não Informado' : user.name.titleize%></td>
                   <td><%= user.email%></td>
-                  <td><%= user.comitee.nil? ? 'Não cadastrado' : user.comitee.name %></td>
+                  <td><%= user.comitee_id.nil? ? 'Não cadastrado' : user.comitee.name %></td>
                   <td><%= user.type_user%></td>
                   <td><%= user.created_at.strftime("%d/%m/%Y  %H:%M:%S") %></td>
                   <td>
