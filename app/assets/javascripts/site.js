@@ -8,72 +8,45 @@
 //= require  magnific-popup.min.js
 //= require  main.js   
 //= require admin_template/adminto/css/plugins/toastr/toastr.min.js
-$(document).ready(function() {
-    
-    // validate signup form on keyup and submit
-    $("#formu").validate({
-        rules: {
-            "user[name]": "required",
-            "user[general_register]": "required",
-            "user[cpf]": "required",
-            "user[birthday]": "required",
-            celular: "required",
-            "user[gender]": "required",
-            instituicao: "required",
-            link_facebook: "required",
-            
-            
-            
-            "user[email]": {
-                required: true,
-                email: true
-            },
-            confemail: {
-                required: true,
-                email: true,
-                equalTo: "#email"
-            },
-            "user[password]": {
-                required: true,
-                minlength: 6
-            },
-            confsenha: {
-                required: true,
-                minlength: 6,
-                equalTo: "#senha"
-            },
-            
-            agree: "required"
-        },
-        messages: {
-            "user[name]": "Campo Obrigatório",
-            "user[general_register]": "Campo Obrigatório",
-            "user[cpf]": "Campo Obrigatório",
-            "user[birthday]": "Campo Obrigatório",
-            celular: "Campo Obrigatório",
-            "user[gender]": "Campo Obrigatório",
-            instituicao: "Campo Obrigatório",
-            link_facebook: "Campo Obrigatório",
 
-            "user[email]": {
-                required: "Campo Obrigatório",
+$(document).ready(function() {
+
+$('#cpf_dupla').blur(function(){
+        
+        $.ajax({
+            url: "/comitee/cpf/cpf_find",
+            type: "GET",
+            data: { cpf:$('#cpf_dupla').val(), id:$('#id_evento').val() },
+            dataType: "json",
+            success: function(sucesso){
+                if (sucesso.success===true){
+                    var check = '<span style="color:#3c9332">'+ sucesso.name +'! </span>';
+                    $('#result-nome').html(check);
+                } else {
+                    $('#result-nome').html(sucesso.msg);
+                }
+            },
+            error: function(){
+                $('#result-nome').html('Desculpe pelo transtorno, houve um erro, tente novamente.');
+            },
+            complete: function(){
+                $('#result-nome').css({"display":"block"});
+                $('#loading').css({"display":"none"});
                 
-            },
-            confemail: {
-                required: "Campo Obrigatório",
-                equalTo: "Confirmação de email não confere."
-            },
+            }
             
-            
-            "user[password]": {
-                required: "Campo Obrigatório",
-                minlength: "A senha deve conter no mínimo 6 dígitos"
-            },
-            confsenha: {
-                required: "Campo Obrigatório",
-                minlength: "A confirmação de senha deve conter no mínimo 6 dígitos",
-                equalTo: "Confirmação de senha não confere."
-            },
-            agree: "Obrigatório aceitar o termo de uso do site!"
-        }
+        });  
+        
     });
+
+
+});
+
+  $('#categories_event').multiSelect({
+  afterSelect: function(values){
+    var count = $("#categories_event :selected").length;
+    if (count > 5) {
+        $("#categories_event").multiSelect('deselect', values);
+        alert("Você só pode selecionar 5!")
+    }
+  }});

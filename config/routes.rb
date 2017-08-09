@@ -57,24 +57,39 @@ devise_for :users,
     registration: 'cadastro',
     sign_up: 'new'
   }
-    get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
+  devise_scope :user do
+    authenticated :user do
+      #root to: 'user_dashboard#index',  as: :authenticated_user_root
+      get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
+      put 'comitee/:id/update' => 'comitees#update', as: :update_user_comitee
+      get 'payment' => 'checkout#pagseguro'
+      get 'users/change_cotist/:comitee_id' => 'users#change_cotist', as: :update_cotist_user
+      get 'perfil' => 'site#perfil', as: :perfil_user
+
+      get 'perfil/edit' => 'users/registrations#edit'
+      put 'perfil' => 'users/registrations#update'
+
+
+    end
+    unauthenticated :user do
+      #root to: "users/sessions#new", as: :unauthenticated_user_root
+    end
+
     get 'comitee/:id' => 'comitees#show', as: :show_comitee
-    patch 'users/change_cotist/:comitee_id' => 'users#change_cotist', as: :update_cotist_user
-    get 'payment' => 'checkout#pagseguro'
-    put 'comitee/:id/update' => 'comitees#update', as: :update_user_comitee
-    get 'perfil' => 'site#perfil', as: :perfil_user
-    get 'perfil/edit' => 'users/registrations#edit'
-    put 'perfil' => 'users/registrations#update'
+    post 'confirm_payment' => 'notifications#confirm_payment', as: :confirm_payment
 
+  end
 
+ 
 
   #ROTAS DO SITE
+
   root 'site#index'
   get 'site/academic'
   get 'site/beta'
   get 'site/certificates'
   get 'site/comitees'
-  get 'site/contact'
+  get '/contato' => 'site#contact', as: :contact
   get 'site/cronogram'
   get '/a-diretoria' => 'site#diretory', as: :diretory
   get 'site/faq'

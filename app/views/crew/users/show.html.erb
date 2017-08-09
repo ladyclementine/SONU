@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%=  @user.email %>
+</p>
+<p>
+  <strong>Cpf:</strong>
+  <%=  @user.cpf %>
+</p>
+<p>
+  <strong>RG:</strong>
+  <%=  @user.general_register %>
+</p>
+<p>
+  <strong>Aniversário:</strong>
+  <%=  @user.birthday %>
+</p>
+<p>
+  <strong>Endereço:</strong>
+  <%= @user.state %>/<%= @user.city %></br>
+  <%=  @user.adress %>/<%=  @user.adress_number %>/
+  <%= @user.cep %>
+</p>
+<p>
+  <strong>Contato:</strong>
+  <%= @user.cel %>
+</p>
+
+<p>
+  <strong>Universidade/semestre:</strong>
+  <%= @user.university %>/<%= @user.semester %>
+
+</p>
+<p>
+  <strong>Link do facebook:</strong>
+  <%= @user.facebook_profile_link%>
+  
+</p>
+
+<%= link_to 'Back', crew_users_path %>

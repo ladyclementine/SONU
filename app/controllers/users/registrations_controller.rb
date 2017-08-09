@@ -1,9 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   layout 'site'
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
-
+  #before_action :configure_account_update_params, only: [:update]
   before_action :configure_sign_up_params, only: [:create]
+  #before_action :get_user
 
   def create
     @user = User.new(inscription_params)
@@ -18,11 +18,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    @user.cpf = Cpf.new(params[:user][:cpf])
+
     respond_to do |format|
       if @user.save && @user.update_attributes(user_params)
-        flash[:success] = "Cadastro atualizado."
-        format.html {  redirect_to perfil_edit_path }
+        flash[:success] = 'Cadastro atualizado.'
+        format.html {  redirect_to perfil_user_path }
       else
         format.html { render 'edit'}
         format.json {  render json: @user.errors }
@@ -91,9 +91,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+   #def configure_account_update_params
+     #devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+   #end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

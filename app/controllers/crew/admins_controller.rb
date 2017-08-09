@@ -3,6 +3,11 @@ class Crew::AdminsController < Crew::BaseController
 
  
   def index
+    @users = User.all.count 
+    @female_users = User.where("gender = 'Feminino'").all.count
+    @percent_female_user = ((@female_users * 100.0 )/@users) 
+    @male_users = User.where("gender = 'Masculino'").all.count
+    @percent_male_user = ((@male_users * 100.0 )/@users) 
   end
 
 

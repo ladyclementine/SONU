@@ -88,9 +88,9 @@
             <div class="container">
                     <div class="title-partners">
                     <h1>
-                        <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                        <span>Nossos Parceiros</span>
-                        <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
+
+                        <span>NOSSOS PARCEIROS</span>
+
                     </h1>
                     </div>
                 </div>
@@ -121,18 +121,17 @@
             <div id="gmap"></div>
             <div class="contact-info">
                 <div class="event">
-                    <div class="gb-time color-red">
-                        <p>SONU<span>Br</span></p>
-                    </div>
                     <h2>Centro, Fortaleza-CE</h2>
                     <address><p>Rua Meton de Alencar S/N</p></address>
                     <address><p>contato@sonu.com.br</p></address>
-                    <a href="#" class="btn btn-default">Fale Conosco</a>
+                    <%= link_to contact_path, class: "btn btn-default" do %>
+                    <span>Fale Conosco</span>
+                    <% end %>
                 </div>
                 <ul class="contact-social gb-list list-inline">
-                    <li><a href="#"><img src="images/others/facebook.png" alt="Icon" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="images/others/youtube.png" alt="Icon" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="images/others/instagram.png" alt="Icon" class="img-responsive"></a></li>
+                    <li><a class="icons" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a class="icons" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
                 </ul>               
             </div>
         </div><!-- /.gb-contact -->

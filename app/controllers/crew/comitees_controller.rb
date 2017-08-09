@@ -40,7 +40,7 @@ class Crew::ComiteesController < Crew::BaseController
   def days3
     data = Time.now.getutc
     @users = User.where('inscription_date <= :three_days_ago', :three_days_ago => Time.now - 3.days
-).where(paid_on: nil)
+  ).where(paid_on: nil)
   end
 
   def unsubscribe_user
@@ -59,8 +59,10 @@ class Crew::ComiteesController < Crew::BaseController
     @user.paid_on = nil
     @user.payment_status = 'Pendente'
     if @user.save(:validate => false)
-       redirect_to crew_comitee_path(@comitee_id), notice: "Removido com sucesso."
+      flash[:success] ='Removido com sucesso.'
+       redirect_to crew_comitee_path(@comitee_id)
     else
+
       flash[:error] = "Erro ao remover usuário."
       redirect_to crew_comitee_path(@comitee_id)
     end

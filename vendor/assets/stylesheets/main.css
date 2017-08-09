@@ -525,8 +525,13 @@ textarea.form-control {
 
     color: #fff;
    	padding: 8px;
-   	background-color: #19203d;
    	float: right;
+   }
+   .gb-menu-first a.link-top:hover{
+
+   	background-color: #19203d;
+   	-webkit-transition: 1s; /* Safari */
+    transition: 1s;
    }
 
 
@@ -2410,3 +2415,4 @@ a, input, .btn, .btn:before,
 	opacity: 0.5;
 	transition: 0.8s;
 }
+

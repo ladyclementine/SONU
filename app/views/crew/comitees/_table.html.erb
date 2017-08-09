@@ -8,6 +8,7 @@
             <thead>
                <tr>
                   <th>Nome</th>
+                  <th>Tipo de evento</th>
                   <th>Data</th>
                   <th>Data Final</th>
                   <th>Total não cotista</th>
@@ -24,12 +25,20 @@
                <% @comitees.each do |comitee| %>
                <tr>
                   <td><%=comitee.name%></td>
+                  <td><%=comitee.type_event%>/
+                    <% if comitee.dual == true %>
+                        <span>dupla</span>
+                        <% else %>
+                        <span>individual</span> 
+                     <% end %>  
+                  </td>
                   <td><%=comitee.start_date.strftime("%d/%m/%Y")%></td>
                   <td><%=comitee.end_date.strftime("%d/%m/%Y")%></td>
                   <td><%=comitee.users.where(is_cotist:false).count %>/<%=comitee.limit%></td>
                   <td><%=comitee.users.where(is_cotist:true).count %>/<%=comitee.limit_cotist%></td>
                   <td><%=comitee.value_not_cotist%></td>
                   <td><%=comitee.value_cotist%></td>
+
                   <td><%= link_to  edit_crew_comitee_path(comitee) do %><button data-toggle="tooltip" data-placement="left" title="Editar comitê" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i> </button> <% end %></td>
 
                      <td><%= link_to  crew_comitee_path(comitee) do %>
@@ -37,6 +46,7 @@
 
                       <td><button data-toggle="tooltip" data-placement="left" title="Remover todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-inverse m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-user-times"></i></button>
                       </td>
+                      
                       <td><%=link_to '', data: {confirm: "Deseja apagar o comitê #{comitee.name}?"} do %>
                      <button data-toggle="tooltip" data-placement="left" title="Apagar comitê" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %></td>
 

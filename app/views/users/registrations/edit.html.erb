@@ -1,121 +1,164 @@
 
-
-<div id="content">
-    
-    <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-      
-            <div id="page-header">
-              
-                <div class="row">
-                  <div class="span12">
-                      
-                        <h2> Alterar Cadastro </h2>
-                        
-                    </div><!-- end .span12 -->
-                </div><!-- end .row -->
-                
-            </div><!-- end #page-header -->
-      
-      <div class="row">
-              <div class="span12">
+<div class="gb-breadcrumb-login-cadastro gb-bg white-color">
+         <div class="container">
+            <div class="breadcrumb-info text-center">
+               <div class="title-white">
+                  <h1>
+                     
+                     <span>Alterar cadastro</span>
                   
-                    
-          <div>
-        
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="quadrado">
-          
-          <div class="descricao">
-          
-            <div class="cad-tit"> Nome Completo </div>
-            <div class="cad-desc"> <%= f.text_field :name, style: "width:400px" %></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Email </div>
-            <div class="cad-desc"> 
-            <%= f.email_field :email, style: "width:350px", disabled: true%></div>
-            <div class="clear"></div>
-
-            
-            <div class="cad-tit"> RG </div>
-            <div class="cad-desc"> <%= f.text_field :general_register %> </div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> CPF </div>
-            <div class="cad-desc"> <%= f.text_field :cpf, id: "cpf" %></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Data de Nascimento </div>
-            <div class="cad-desc"> <%= f.text_field :birthday, style: "width:120px"%>  </div>
-            <div class="clear"></div>
-            
-            
-            <div class="cad-tit"> Sexo </div>
-            <div class="cad-desc"> 
-            
-            <%= f.select(:gender,['Masculino', 'Feminino', 'Prefiro não declarar'], {}, { :class => 'form-control select2' }) %>
-
+                  </h1>
+               </div>         
             </div>
-            <div class="clear"></div>
-            
+         </div><!-- /.container -->
+      </div><!-- /.gb-breadcrumb -->
 
-            <div class="cad-tit"> CEP </div>
-            <div class="cad-desc"> <%= f.text_field :cep, id: "cep" %> </div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Endereço </div>
-            <div class="cad-desc"> <%= f.text_field :adress, style: "width:300px" %></div>
-            <div class="cad-tit" style="width:40px"> Nº </div>
-            <div class="cad-desc"> <%= f.text_field :adress_number, style: "width:60px" %> </div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Complemento </div>
-            <div class="cad-desc"> <%= f.text_field :complement%></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Bairro </div>
-            <div class="cad-desc"> <%= f.text_field :district%></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Cidade </div>
+<div class="wrapper-page">
+  <div class="m-t-40 card-box">
+                <div class="text-center">
+                    <%= image_tag ("/images/logobranca-iloveimg-resized (2).png"), alt:"Logo"%>
+                    <h5 class="text-uppercase font-bold m-b-0">Alterar cadastro</h5>
+                </div>
+    
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                <%= devise_error_messages! %>
+                 <div class="panel-body">
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Nome Completo </div>
+                        <div><%= f.text_field :name, id:"name", class: 'form-control'%> *</div>
+                        </div>
+                        </div>
 
-            <div class="cad-desc">  <%= f.text_field :city %> </div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Telefone </div>
-            <div class="cad-desc"><%= f.text_field :phone, style: "width:130px", id: "phone" %></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Celular </div>
-            <div class="cad-desc"> <%= f.text_field :cel, style: "width:130px", id: "cel" %></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Instituição de Ensino </div>
-            <div class="cad-desc"> <%= f.text_field :university, style: "width:400px" %></div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Matícula </div>
-            <div class="cad-desc"> <%= f.text_field :registration_id, style: "width:400px" %> (Opcional, caso não possua)</div>
-            <div class="clear"></div>
-            
-            <div class="cad-tit"> Semestre </div>
-            <div class="cad-desc">  <%= f.text_field :semester, style: "width:400px" %> (Opcional, caso não possua matrícula)</div>
-            <div class="clear"></div>
-            <br><br>
-            
-            <div style="text-align:center"> <input type=submit value=Alterar> </div>
-          </div>
-        </div>
-        <% end %>
-        
-        
-        
-      </div>
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Email </div>
+                        <div> <%= f.email_field :email, id:"email", placeholder:'', class: 'form-control',disabled: true%> *</div>
+                        </div>
+                        </div>
+
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> RG </div>
+                        <div> <%= f.text_field :general_register, id:"rg", class: 'form-control' %> * </div>
+                        </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> CPF </div>
+                        <div> <%= f.text_field :cpf, id:"cpf", class: 'form-control' %> * </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Data de Nascimento </div>
+                        <div> <%= f.text_field :birthday, id:"birthday", class: 'form-control'%>  * </div>
+                        </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+
+                        <div> Sexo </div>
+                        <div> 
+                        <label for="gender_male">
+                           <%= f.radio_button :gender, 'Masculino' %> 
+                            Masculino
+                        </label>
+
+                        <label for="gender_female">
+                            <%= f.radio_button :gender, 'Feminino' %> 
+                            Feminino
+                        </label>
+                         *
+                        </div>
+                        </div></div>
+                        
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> CEP </div>
+                        <div> <%= f.text_field :cep, id:"cep", class: 'form-control' %>  </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Endereço </div>
+                        <div> <%= f.text_field :adress, id:"adress", class: 'form-control' %> </div>
+                        <div > Nº </div>
+                        <div>  <%= f.text_field :adress_number, id:"adress_number", class: 'form-control' %> </div>
+                        </div></div>
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Complemento </div>
+                        <div> <%= f.text_field :complement, id:"complement" , class: 'form-control'%> </div>
+                        </div></div>
+
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Bairro </div>
+                        <div>  <%= f.text_field :district, id:"district" , class: 'form-control'%> </div>
+                        </div></div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Cidade </div>
                     
-                </div><!-- end .span12 -->
-            </div><!-- end. row -->
-      
-    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                        <div> <%= f.text_field :city, id:"city" , class: 'form-control'%> </div>
+                        </div></div>
 
-    </div>
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Telefone </div>
+                        <div> <%= f.text_field :phone, id:"phone", class: 'form-control'%></div>
+                        </div></div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Celular </div>
+                        <div> <%= f.text_field :cel, id:"cel", class: 'form-control' %> *</div>
+                        </div></div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Instituição de Ensino </div>
+                        <div> <%= f.text_field :university, id:"university", class: 'form-control' %> *</div>
+                        </div>
+                        </div>
+
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Matícula </div>
+                        <div> <%= f.text_field :registration_id, id:"registration_id", class: 'form-control'%> (Opcional, caso não possua)</div>
+                        </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div> Semestre </div>
+                        <div> <%= f.text_field :semester, id:"semester" , class: 'form-control'%> (Opcional, caso não possua matrícula)</div>
+                        </div>
+                        </div>
+                        
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                        <div>Link Perfil Facebook  </div>
+                        <div> <%= f.text_field :facebook_profile_link, id:"facebook_profile_link" , class: 'form-control'%> *</div>
+                        </div></div>
+
+                        <br>
+                        <div class="form-group ">
+                        <div class="col-xs-12">
+                         <%= f.submit "Alterar", class: "btn btn-login" %>
+                         </div>
+                         </div>
+                    </div>
+                </div>
+                <% end %>
+</div>

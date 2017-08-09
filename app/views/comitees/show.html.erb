@@ -30,7 +30,7 @@
                   <h6>VOCÊ É COTISTA</h6>
                   <p>Caso não haja vaga para cotista, você pode optar por pagar o valor de <strong>não cotista</strong> e adquirir a vaga!</p>
                   
-                  <%=link_to update_cotist_user_path(@comitee), method: 'PATCH' do%> Alterar 
+                  <%=link_to update_cotist_user_path(@comitee), method: 'get' do%> Alterar 
                   <% end %>
                   </br>
                   <span class="label label-success" >Valor: <%= @comitee.paid_comitee_value(current_user) %></span>
@@ -61,14 +61,28 @@
 
                <input type=hidden name=id_evento id="id_evento" value="<%=@comitee.id%>">
                
-               <% if @comitee.dual %>
+               <% if @comitee.dual? %>
                CPF da Dupla:
-               <%= f.text_field :cpf_dual, id:"cpf_dupla" %> * É necessário a dupla estar cadastrado no sistema.
-               <div id="loading" style="display:none"><img src="images/loading.gif"></div>
+               <%= f.text_field :cpf_dual, id: 'cpf_dupla' %> * É necessário a dupla estar cadastrada no sistema.
                <div id="result-nome"></div>
                <br>
                <% end %>
+               <div> Quem efetuará o pagamento?</div>
+                        <div> 
+                        <label>
+                           <%= f.radio_button :lider_dual, 'Titular da dupla' %> 
+                            Eu
+                        </label>
+
+                        <label>
+                            <%= f.radio_button :gender, 'Não titular' %> 
+                            Minha dupla
+                        </label>
+                         *
+                        </div>
+                        </div></div>
                
+
                Justifique a escolha das três primeiras opções:<br>
                <%= f.text_area :justify, style: "width:500px; height:200px"%><br><br>
                Escreva suas experiências em simulações:<br>
@@ -105,10 +119,14 @@
             <% else %>
 
             <% if @user.paid_on.nil? %>
-            <% if (@user.comitee.dual? && @user.lider_dual==true) || !@user.comitee.dual? %>
-            <div style="margin-top:30px"><%= link_to payment_path, target: '_blank' do %>
+
+               <% if (@user.comitee.dual? && @user.lider_dual==true) || !@user.comitee.dual? %>
+
+            <div><%= link_to payment_path, target: '_blank' do %>
+
                <input src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/120x53-pagar.gif" type="image" class="btn-pagseguro">
-               <% end %>
+            <% end %>
+
             </div>
             <% else %>
             Sua dupla foi encarregada de pagar =)
@@ -119,14 +137,15 @@
 
             <% end %>
             <% else %>
-            <div style="margin-top:30px"> Evento Finalizado! </div>
+            <h6><%= " Sua dupla: #{User.where(cpf: Cpf.new(current_user.cpf_dual)).first.name.capitalize}"  %></h6>
+            <div> Evento Finalizado! </div>
             <% end %>
          </div>
          <div style="clear:both"></div>
       </div>
    </div>
 
-   <div id="result-nome2" style="color:#fff"></div>
+   <div id="result-nome2"></div>
 </div>
 </div>
 </div>

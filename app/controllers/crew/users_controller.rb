@@ -1,5 +1,5 @@
 class Crew::UsersController < Crew::BaseController
-  before_action :load_user, only: [:edit, :update]
+  before_action :load_user, only: [:edit, :update, :show]
 
   layout 'admin_dashboard'
 

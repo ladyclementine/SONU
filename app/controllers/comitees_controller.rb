@@ -1,4 +1,5 @@
 class ComiteesController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   layout 'site'
   before_action :authenticate_user!
   before_action :load_comitee
@@ -8,9 +9,9 @@ class ComiteesController < ApplicationController
   before_action :check_user_exist_in_comitee, only: [:update, :show]
   
   def show
+    @users = @comitee.users
   end
 
-  
   def check_cpf
     user = User.where(cpf: Cpf.new(params[:cpf]))
     if user.any? && user.first != current_user
@@ -33,6 +34,7 @@ class ComiteesController < ApplicationController
         format.html {  redirect_to show_comitee_path(@user.comitee_id) }
       else
         @user.comitee_id = nil
+        flash[:error] = "Erro ao completar cadastro."
         format.html { render 'show' }
         format.json { render json: @user.errors }
       end
@@ -42,6 +44,7 @@ class ComiteesController < ApplicationController
   def check_dual_cpf
     @c = Comitee.find(params[:id_evento])
     if @c.dual?
+
       if user_params[:cpf_dual].nil?
         #ERRO, É NECESSARIO CPF
         flash[:error] = "Este comitê necessita de uma dupla"
@@ -71,11 +74,11 @@ class ComiteesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:cpf_dual, :categories_ids, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link)
+    params.require(:user).permit(:cpf_dual, :lider_dual, :categories_ids, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link)
   end
 
   def check_user_exist_in_comitee
-    if !current_user.comitee_id.nil? && current_user.comitee.end_date > Time.now 
+    if !current_user.comitee.nil? && current_user.comitee.end_date > Time.now 
 
     end
     if !current_user.comitee_id.nil? && current_user.comitee_id != @comitee.id

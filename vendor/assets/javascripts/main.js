@@ -209,3 +209,6 @@ jQuery(function ($) {
 // script end
 });
 
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });

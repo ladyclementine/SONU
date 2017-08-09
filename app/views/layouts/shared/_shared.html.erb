@@ -7,7 +7,7 @@
                 <a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i>
                     </a>
    
-                <a class="link-top" href="#">Login</a>
+                <%= link_to 'Login', new_user_session_path, class: "link-top" %>
                 <%= link_to 'Cadastre-se', new_user_registration_path , class: "link-top" %>
   
             
@@ -70,8 +70,11 @@
                                 </ul>  
                             </li>
                             <li><%= link_to 'Parceiros', partners_path %></li>
-                            <li><%= link_to 'Contato', site_contact_path %></li>
+                            <li><%= link_to 'Contato', contact_path %></li>
                             <li><%= link_to 'Inscrições', inscription_path %></li>
+                            <% if user_signed_in? %>
+                            <li><%= link_to 'Perfil', perfil_user_path%></li>
+                            <% end %>
 
                         </ul>   
                     </div>

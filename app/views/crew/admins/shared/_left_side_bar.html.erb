@@ -31,11 +31,14 @@
                         	<li class="text-muted menu-title">Navigation</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                                <%= link_to crew_admins_path, class: "waves-effect" do %><i class="fa fa-hashtag"></i> <span> Página principal </span> <% end %>
                             </li>
 
                             <li>
-                                <a href="typography.html" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> Typography </span> </a>
+                                <%= link_to  crew_users_path, class: "waves-effect" do %><i class="fa fa-users"></i><span>Usuários</span><% end %> 
+                            </li>
+                            <li>
+                                <%= link_to  crew_comitees_path, class: "waves-effect" do %><i class="fa fa-gavel" aria-hidden="true"></i><span>Comitês</span><% end %> 
                             </li>
 
                             <li class="has_sub">

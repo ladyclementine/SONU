@@ -1,5 +1,7 @@
 class Comitee < ApplicationRecord
   has_many :users
+  has_many :category_events
+  
   mount_uploader :photo, PhotoUploader
   enum type_event: { "Ensino Superior": 1,  "Ensino Médio": 0}
 

@@ -13,45 +13,98 @@
 <!-- /.gb-breadcrumb -->
 
 
-<div class="upcoming-events gb-section text-center">
-         <div class="container">
-               <h1 class="color-red">
-                  <span>Eventos Abertos</span>
-               </h1>
-            <div class="event-content">
-               <div class="row">
-                  <% @comitees.each do |comitee| %>
-                     <% if comitee.is_active %>
-                  <div class="col-sm-6 col-md-3">
-                     <div class="event">
-                        <div class="gb-time color-red">
-                           <p><%=comitee.start_date.strftime("%d")%> <span><%=comitee.start_date.strftime("/%m/%y")%></span></p>
-                        </div>
-                        <div class="event-info">
-                           <h2> <%= link_to show_comitee_path(comitee) do %><%=comitee.name%><% end %></h2>
-                           <p><strong><%=comitee.type_event%></strong></p>
 
-                           <%= link_to show_comitee_path(comitee) do %>
+      <div class="gb-pricing gb-section text-center">
+         <div class="container">
+             <div class="title-partners">
+                    <h1>
+
+                        <span>Eventos abertos</span>
+
+                    </h1>
+                    </div>
+            <div class="row">
+               <% @comitees.each do |comitee| %>
+                     <% if comitee.is_active %>
+               <div class="col-sm-4">
+                  <div class="gb-price active">
+                     <div class="price-info">
+                        <h2> <%= link_to show_comitee_path(comitee) do %><%=comitee.name %><% end %></h2>
+                        <% if comitee.dual == true %>
+                                    <h4><i class="fa fa-user" aria-hidden="true"><i class="fa fa-user" aria-hidden="true">  Evento de dupla</i></i></h4>
+                                    <% else %>
+                                    <h4><i class="fa fa-user" aria-hidden="true"> Evento individual</i></h4> 
+                           <% end %>
+
+                           <% if comitee.type_event = 1 %>
+                           <h4><i class="fa fa-graduation-cap" aria-hidden="true">Ensino superior</i>
+                           </h4>
+                           <% else %>
+                           <h4><i class="fa fa-book" aria-hidden="true">Ensino médio </i></h4>
+
+                           <% end %>
+                        <span class="per-month"><p><%=comitee.start_date.strftime("%d")%> <span><%=comitee.start_date.strftime("/%m/%y")%></span></p></span>
+                     </div>
+                     <%= link_to show_comitee_path(comitee) do %>
                            <%= image_tag comitee.photo_url(:thumb)%>
                            <% end %>
-                           <%= link_to 'saiba mais' %>
                            <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>  
 
-                              <span class="label label-success">INSCRITO</span>
-                           
-                           <% end %>
-
-                           <%= link_to show_comitee_path(comitee), class: "btn btn-default" do %>
+                              <div class="label label-success">INSCRITO</div>
+                           <% else %>
+                              <%= link_to show_comitee_path(comitee), class: "btn button-red" do %>
 
                            <span>Inscreva-se</span>
                            <% end %>
-                        </div>
-                     </div>
+                           <% end %>
                   </div>
-                  <%end%>
-                  <%end%>    
-               </div><!-- /.row -->
-            </div>
-         </div><!-- /.container -->
-      </div><!-- /.upcoming-events -->
+               </div>
+                <%end%>
+               <%end%>
 
+            </div>
+            <!--INSCRIÇOES ENCERRADAS -->
+
+            <div class="title-partners">
+                    <h1>
+
+                        <span>Eventos Fechados</span>
+
+                    </h1>
+            </div>
+
+         <% @comitees.each do |comitee| %>
+         <% if comitee.is_passed %>
+         <div>
+            <%= link_to show_comitee_path(comitee) do %>
+            <%= image_tag (comitee.photo_url), class:"fotoborda", id:"inscricoes_imagem" %>
+            <% end %>
+         </div>
+         <div>
+            <h4>
+               <%= link_to show_comitee_path(comitee) do %><%=comitee.name%><% end %>
+            </h4>
+         </div>
+         <div>
+            <i class="fa fa-calendar"></i>
+            <%=comitee.start_date%>
+         </div>
+         <div>
+            <%=comitee.grade%>
+         </div>
+         <!--
+            <div style="text-align:left">
+               <i class="fa fa-clock-o"></i>
+               Fila de Espera
+            </div>
+            -->
+         <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
+         <span class="label label-success">INSCRITO</span>
+         <% end %>
+         <%end%>
+         <%end%>
+
+
+
+         </div>
+      </div>    

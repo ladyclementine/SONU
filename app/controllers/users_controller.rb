@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :get_user
   layout 'site'
+  
   def change_cotist
     if @user.comitee_id.nil?
       if @user.is_cotist == true
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
         @user.is_cotist = true
       end
       if @user.save!(:validate => false)
-        flash[:success] = "Alterado com sucesso. Solicitaremos a documentação caso você seja cotista."
+        flash[:success] = "Alterado com sucesso."
         redirect_to show_comitee_path(params[:comitee_id])
       else
         flash[:error] = "Erro ao alterar. Entre em contato!"
