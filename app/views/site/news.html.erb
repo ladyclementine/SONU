@@ -15,7 +15,7 @@
 				</div>
 			</div><!-- /.container -->
 		</div><!-- /.gb-breadcrumb -->	
-<div class="bg-page-content">
+		<div class="bg-page-content">
 			<div class="container">
 				<div class="row">
 					<% @crew_blogs.each do |crew_blogs| %>
@@ -46,18 +46,13 @@
 									</div>
 								</div>
 							</div><!-- /.gb-post -->
-
-
 						</div><!-- /.blog-content -->
-						<ul class="pagination">
-							<li><a href="#">1</a></li>
-							<li class="active"><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-						</ul>
 					</div>
-					<% end %>
-				</div>
-			</div><!-- /.container -->
-		</div><!-- /.gb-page-content -->
+				<% end %>
+					<div class="digg_pagination">
+						<%= will_paginate @crew_blogs %>
+
+					</div>
+			</div>
+		</div><!-- /.container -->
+	</div><!-- /.gb-page-content -->

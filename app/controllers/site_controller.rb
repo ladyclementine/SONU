@@ -81,7 +81,7 @@ class SiteController < ApplicationController
   end
 
   def news
-    @crew_blogs = Crew::Blog.all.order("created_at DESC")
+    @crew_blogs = Crew::Blog.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
   def show

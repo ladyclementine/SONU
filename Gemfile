@@ -38,7 +38,7 @@ gem 'mini_magick'
 gem "pagseguro-oficial", "~> 2.5.0"
 gem 'maskedinput-rails'
 gem 'brazilian-rails'
-
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
