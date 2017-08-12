@@ -4,7 +4,10 @@
   <strong>Nome:</strong>
   <%= @user.name %>
 </p>
-
+<p>
+  <strong>Gênero:</strong>
+  <%= @user.gender %>
+</p>
 <p>
   <strong>Email:</strong>
   <%=  @user.email %>
@@ -42,5 +45,27 @@
   <%= @user.facebook_profile_link%>
   
 </p>
+<p>
+  <strong>Respostas:</strong>
+  </br><span>Resposta 1: </span><%= @user.answer_1%></br>
+  <span>Resposta 2: </span><%= @user.answer_2%></br>
+  <span>Resposta 3: </span><%= @user.answer_3%></br>
+  <span>Resposta 4: </span><%= @user.answer_4%></br>
+</p>
+<p>
+  <strong>Categorias:</strong>
+  </br><%= @user.categories_ids%></br>
+</p>
+<p>
+  <strong>Justificativa:</strong>
+  </br><%= @user.justify%></br>
+
+</p>
+<p>
+  <strong>Experiências:</strong>
+  </br><%= @user.experience%></br>
+
+</p>
+
 
 <%= link_to 'Back', crew_users_path %>

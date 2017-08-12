@@ -1,2 +1,60 @@
-<h1>Site#cronogram</h1>
-<p>Find me in app/views/site/cronogram.html.erb</p>
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="page-title">
+						<h1>
+							<span class="before-top"></span>
+							<span>Event Schedule</span>
+							<span class="before-bottom"></span>
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">Schedule</li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->	
+
+		<div class="gb-schedules gb-section text-center">
+			<div class="container">
+				<% @crew_big_sonu_schedules.each do |crew_big_sonu_schedule| %>
+				<div class="schedule-content text-left">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab"><span>Day One</span>
+						<%= crew_big_sonu_schedule.start.strftime("%d/%B/%y") %></a></li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="one">
+							<div class="schedule">
+								<ul class="gb-list">
+									
+									<li class="expandable">
+										<div class="row">
+											<div class="col-sm-9 col-md-10">
+												<div class="schedule-info">
+													<h2><%= raw crew_big_sonu_schedule.activity %></h2>
+													<div class="schedule-summary">
+														<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+													</div>
+													<ul class="gb-list">
+														<li><i class="fa fa-clock-o" aria-hidden="true"></i><span>Horário:</span> <%= crew_big_sonu_schedule.start.strftime("%H:%M") %></li>
+														<li><i class="fa fa-google-plus" aria-hidden="true"></i><span>Venue:</span> Hall 1, Building A</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+								
+								</ul>							
+							</div><!-- /.schedule -->
+						</div>
+					</div>
+
+				</div><!-- /.schedule-content -->		
+				<% end %>		
+			</div><!-- /.container -->
+
+		</div><!-- /.gb-section -->
+
+

@@ -27,9 +27,9 @@
             </div><!-- /.banner-info -->
         </div><!-- /.gb-banner -->
         
-    <div class="gb-section text-center">
+    <div class=" gb-section text-center">
             <div class="container">
-            <div class="title-partners">
+            <div class="title-index">
                     <h1 class="color-red">
                         <span>ÚLTIMAS NOTÍCIAS</span>
                     </h1>
@@ -68,17 +68,10 @@
 
         <div class="gb-cta-1 gb-section gb-bg">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 white-color">
-                        <h1>A SONU</h1>
-                            <p>O Programa Simulação da Organização das Nações Unidas, veiculado à Pró-Reitoria de Extensão da Universidade Federal do Ceará (UFC) e realizado em parceria com a Universidade de Fortaleza (Unifor), é o primeiro modelo de simulação de organismos internacionais no estado do Ceará, sendo organizada por alunos bolsistas e voluntários de diversas instituições de Ensino Superior de Fortaleza, sob a orientação de docentes da UFC. </p>
-                        <div class="buttons">
-                            <a href="#" class="btn button-white">Conheça</a>
-                        </div>
-                      </div>  
+                <div class="row"> 
                       </br>
-                    <div class="col-md-4">
-                        <iframe width="300" height="300" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
+                    <div class="col-md-12 text-center">
+                        <iframe width="700" height="350" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div><!-- /.container -->
@@ -86,7 +79,7 @@
 
         <div class="gb-brand gb-section gb-bg ">
             <div class="container">
-                    <div class="title-partners">
+                    <div class="title-index">
                     <h1>
 
                         <span>NOSSOS PARCEIROS</span>
@@ -129,9 +122,9 @@
                     <% end %>
                 </div>
                 <ul class="contact-social gb-list list-inline">
-                    <li><a class="icons" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a class="icons" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                    <li><a class="icons" href="www.facebook.com/sonu.ufc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a class="icons" href="www.instagram.com/sonu_ufc"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a class="icons" href="www.flickr.com/sonufotografia"><i class="fa fa-flickr" aria-hidden="true"></i></a>
                 </ul>               
             </div>
         </div><!-- /.gb-contact -->
@@ -147,7 +140,8 @@
                 </div>      
                 <div class="cta-info">
                     <p>Cadastrando-se no site, você tem a vantagem de rapidamente se inscrever em algum evento da SONU, sem precisa elaborar todo o cadastro antes.</p>
-                    <%= link_to 'Cadastre-se', new_user_registration_path ,class: "btn btn-default" %>
+                    <%= link_to new_user_registration_path ,class: "btn btn-default" do %><span>Cadastre-se</span>
+                    <% end %>
                 </div>
             </div><!-- /.container -->
         </div><!-- /.gb-cta-2 -->

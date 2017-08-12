@@ -5,6 +5,7 @@ class Crew::ComiteesController < Crew::BaseController
 
   def index
     @comitees = Comitee.all
+
   end
 
   def edit
@@ -64,6 +65,31 @@ class Crew::ComiteesController < Crew::BaseController
     else
 
       flash[:error] = "Erro ao remover usuário."
+      redirect_to crew_comitee_path(@comitee_id)
+    end
+  end
+  
+  def unsubscribe_user_all
+    @users = @comitee.users.all
+    @comitee_id = @users.comitee_id
+    @users.comitee_id = nil
+    @users.cpf_dual = nil
+    @users.answer_1 = nil
+    @users.answer_2 = nil
+    @users.answer_3 = nil
+    @users.answer_4 = nil
+    @users.answer_5 = nil
+    @users.justify = nil
+    @users.experience = nil
+    @users.face_link = nil
+    @users.paid_on = nil
+    @users.payment_status = 'Pendente'
+    if @users.save(:validate => false)
+      flash[:success] ='Removido com sucesso.'
+       redirect_to crew_comitee_path(@comitee_id)
+    else
+
+      flash[:error] = "Erro ao remover usuários."
       redirect_to crew_comitee_path(@comitee_id)
     end
   end

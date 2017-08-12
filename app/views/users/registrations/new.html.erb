@@ -13,12 +13,7 @@
          </div><!-- /.container -->
       </div><!-- /.gb-breadcrumb -->
 
-<div class="wrapper-page">
   <div class="m-t-40 card-box">
-                <div class="text-center">
-                    <%= image_tag ("/images/logobranca-iloveimg-resized (2).png"), alt:"Logo"%>
-                    <h5 class="text-uppercase font-bold m-b-0">Cadastrar</h5>
-                </div>
     
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { id: "formu", method: :post }) do |f| %>
                  <div class="panel-body">
@@ -83,12 +78,12 @@
                         <div> Sexo </div>
                         <div> 
                         <label for="gender_male">
-                           <%= f.radio_button :gender, 'M' %> 
+                           <%= f.radio_button :gender, 'Masculino' %> 
                             Masculino
                         </label>
 
                         <label for="gender_female">
-                            <%= f.radio_button :gender, 'F' %> 
+                            <%= f.radio_button :gender, 'Feminino' %> 
                             Feminino
                         </label>
                          *
@@ -187,4 +182,3 @@
                     </div>
                 </div>
                 <% end %>
-</div>

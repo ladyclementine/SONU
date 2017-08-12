@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   before_action :get_blog,  only: [:show]
   before_action :get_user,  only: [:perfil]
+  before_action :get_comitee, only: [:show_comitee]
   layout 'site'
 
   
@@ -18,12 +19,18 @@ class SiteController < ApplicationController
   end
 
   def comitees
+    @crew_big_sonu_comitees = Crew::BigSonuComitee.all.order("created_at ASC")
   end
+
+  def show_comitee
+    @crew_big_sonu_comitees = Crew::BigSonuComitee.all.order("created_at ASC")
+  end  
 
   def contact
   end
 
   def cronogram
+    @crew_big_sonu_schedules = Crew::BigSonuSchedule.all
   end
 
   def diretory
@@ -84,6 +91,7 @@ class SiteController < ApplicationController
     @crew_blogs = Crew::Blog.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
+
   def show
   end
 
@@ -91,5 +99,9 @@ class SiteController < ApplicationController
   def get_blog
     @crew_blogs= Crew::Blog.find(params[:id]) 
   end
+
+  def get_comitee
+    @crew_big_sonu_comitee = Crew::BigSonuComitee.find(params[:id])
+  end 
 
 end

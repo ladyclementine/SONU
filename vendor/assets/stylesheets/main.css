@@ -884,7 +884,7 @@ address a {
 /* Gb Cta 1 */
 
 .gb-cta-1 {
-	background-color:  #21294C;
+	background-image: url(/images/background-blue.png);
 
 	
 }
@@ -918,7 +918,61 @@ address a {
 	color: #fff;
 	border-color: #fff;
 }
+/* Gb Speakers */
 
+.comitee {
+	color: #29333f;
+	margin-bottom: 50px;
+}
+
+.comitee-image {
+	position: relative;
+	overflow: hidden;
+	border: 2px solid #3A4266;
+}
+
+.comitee-social {
+	padding: 15px;
+	font-size: 14px;
+	text-align: center;
+	position: absolute;
+	bottom: -100px;
+	width: 100%;
+	background-color: #3A4266;
+}
+
+.comitee:hover .comitee-social {
+	bottom: 0;
+}
+
+.comitee-social a,
+.comitee-social a:hover {
+	color: #fff;
+}
+
+.comitee h2 {
+	font-size: 20px;
+	position: relative;
+	margin-bottom: 25px;
+}
+.comitee-social h5{
+	color: #fff;
+}
+
+.comitee h2:before {
+	background-color: #3a4266;
+	position: absolute;
+	content: "";
+	bottom: -15px;
+	left: 0;
+	width: 50px;
+	height: 2px;
+	-webkit-transform: rotate(1deg);
+	-moz-transform: rotate(1deg);
+	-ms-transform: rotate(1deg);
+	-o-transform: rotate(1deg);
+	transform: rotate(1deg);	
+}
 
 
 /* Gb Speakers */
@@ -948,6 +1002,18 @@ address a {
 	position: absolute;
 	bottom: 100%;
 	width: 100%;
+}
+.comitees {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+}
+.speaker:hover .comitees {
+	bottom: 0;
+	
 }
 
 .speaker:hover .speaker-social {
@@ -1453,6 +1519,12 @@ address a {
 	margin-bottom: 30px;
 	background-color: #fdfdfd;
 	border-bottom: 1px solid transparent;
+}
+
+.gb-post .comitee-image-center{
+
+	text-align: center;
+	
 }
 
 .gb-post:hover {
@@ -2136,8 +2208,8 @@ img.mfp-img {
  ========================================================================== */
 
 a, input, .btn, .btn:before,
-.btn:after, .speaker-social,
-.speaker h2, .slick-dots li:before,
+.btn:after, .comitee-social, .comitee h2,
+.speaker-social, .speaker h2, .slick-dots li:before,
 .schedule-content .nav-tabs>li>:after,
 .read-more, .share, .gb-post,
 .entry-thumbnail:before, .gallery-overlay,
@@ -2253,10 +2325,11 @@ a, input, .btn, .btn:before,
 
 /* MY CUSTOMIZATION */
 
-.title-partners{
+.title-index{
 
-	margin-bottom: 80px;
-	text-align: center;
+	margin-bottom: 100px;
+	text-align: left;
+	border-left: 30px solid grey;
 }
 
 

@@ -44,7 +44,8 @@
                      <td><%= link_to  crew_comitee_path(comitee) do %>
                      <button data-toggle="tooltip" data-placement="left" title="Ver todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-primary m-b-5"> <i class="fa fa-users"></i>  </button><% end %></td>
 
-                      <td><button data-toggle="tooltip" data-placement="left" title="Remover todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-inverse m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-user-times"></i></button>
+                      <td><%= link_to crew_comitee_users_unsubscribe_all_path(comitee), method: 'get' do %>
+                      <button data-toggle="tooltip" data-placement="left" title="Remover todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-inverse m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-user-times"></i></button><% end %>
                       </td>
                       
                       <td><%=link_to '', data: {confirm: "Deseja apagar o comitê #{comitee.name}?"} do %>

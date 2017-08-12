@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :comitee
+  has_many :category_events
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	
@@ -10,6 +12,13 @@ class User < ApplicationRecord
   
   usar_como_cpf :cpf
 
+  #VALIDAÇÕES DO EVENTO
+  validates :justify, presence: true, :allow_nil => true
+  validates :experience, presence: true, :allow_nil => true
+  validates :face_link, presence: true, :allow_nil => true
+  validates_with QuestionsValidator
+  #EVENTOS ANSWER
+  
 
 
 

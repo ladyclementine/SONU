@@ -1,0 +1,2 @@
+module Crew::CategoryEventHelper
+end

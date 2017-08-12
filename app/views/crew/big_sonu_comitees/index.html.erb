@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crew_big_sonu_comitees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crew_big_sonu_comitees.each do |crew_big_sonu_comitee| %>
+      <tr>
+        <td><%= crew_big_sonu_comitee.name %></td>
+        <td><%= crew_big_sonu_comitee.description %></td>
+        <td><%= crew_big_sonu_comitee.photo %></td>
+        <td><%= link_to 'Show', crew_big_sonu_comitee %></td>
+        <td><%= link_to 'Edit', edit_crew_big_sonu_comitee_path(crew_big_sonu_comitee) %></td>
+        <td><%= link_to 'Destroy', crew_big_sonu_comitee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crew_big_sonu_comitee', new_crew_big_sonu_comitee_path %>

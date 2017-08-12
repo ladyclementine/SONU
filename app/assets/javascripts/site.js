@@ -11,6 +11,15 @@
 
 $(document).ready(function() {
 
+jQuery(function($){
+   $("#cpf_dupla").mask("999.999.999-99");
+   $("#cpf").mask("999.999.999-99");
+   $("#cep").mask("99.999-999");
+   $("#birthday").mask("99/99/9999");
+   $("#phone").mask("(99) 99999-9999");
+   $("#cel").mask("(99) 99999-9999");
+});
+
 $('#cpf_dupla').blur(function(){
         
         $.ajax({

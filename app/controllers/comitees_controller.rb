@@ -24,13 +24,26 @@ class ComiteesController < ApplicationController
       render json: {success: false, msg: "Nada encontrado!"}
     end
   end
-
+  def completar
+    @users = @comitee.users
+    respond_to do |format|
+      @user.comitee_id = params[:id_evento]
+      if @user.update_attributes(user_params)
+        flash[:success] = "Cadastro completo, realize o pagamento para garantir sua vaga."
+        format.html {  redirect_to show_comitee_path(@user.comitee_id) }
+      else
+        @user.comitee_id = nil
+        format.html { render 'show' }
+        format.json { render json: @user.errors }
+      end
+    end
+  end
   def update
     respond_to do |format|
       @user.comitee_id = params[:id_evento]
       @user.inscription_date = Time.now
-      if @user.update_attributes(user_params)
-        flash[:success] = "Cadastro completo, realize o pagamento para garantir sua vaga."
+      if @user.update_attributes(user_params_inscription)
+        flash[:success] = "Você garantiu sua vaga. Agora, complete a inscrição para efetuar o pagamento"
         format.html {  redirect_to show_comitee_path(@user.comitee_id) }
       else
         @user.comitee_id = nil
@@ -45,7 +58,7 @@ class ComiteesController < ApplicationController
     @c = Comitee.find(params[:id_evento])
     if @c.dual?
 
-      if user_params[:cpf_dual].nil?
+      if user_params_inscription[:cpf_dual].nil?
         #ERRO, É NECESSARIO CPF
         flash[:error] = "Este comitê necessita de uma dupla"
         redirect_to show_comitee_path(params[:id_evento])
@@ -73,8 +86,8 @@ class ComiteesController < ApplicationController
     @comitee = Comitee.find(params[:id])
   end
 
-  def user_params
-    params.require(:user).permit(:cpf_dual, :lider_dual, :categories_ids, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link)
+  def user_params_inscription
+    params.require(:user).permit(:cpf_dual, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link, :categories_ids => [])
   end
 
   def check_user_exist_in_comitee
@@ -82,7 +95,7 @@ class ComiteesController < ApplicationController
 
     end
     if !current_user.comitee_id.nil? && current_user.comitee_id != @comitee.id
-      flash[:error] = "Você já cadastrado em um Comitê"
+      flash[:error] = "Você já está cadastrado em um Comitê"
       redirect_to inscription_path
     end
   end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= raw @crew_big_sonu_schedule.activity %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @crew_big_sonu_schedule.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @crew_big_sonu_schedule.end %>
+</p>
+
+<%= link_to 'Edit', edit_crew_big_sonu_schedule_path(@crew_big_sonu_schedule) %> |
+<%= link_to 'Back', crew_big_sonu_schedules_path %>
