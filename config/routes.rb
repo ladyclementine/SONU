@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-
-  namespace :crew do
-    resources :big_sonu_schedules
-  end
   namespace :crew do
     resources :apresentations
     resources :secretaries
@@ -18,14 +14,14 @@ Rails.application.routes.draw do
     resources :blogs
     resources :category_event
     resources :big_sonu_comitees
-    
+    resources :big_sonu_schedules
+
     devise_for :admins,
     controllers:{
       sessions: "crew/admins/sessions",
       passwords: "crew/admins/passwords",
       confirmations: 'crew/admins/confirmations'
     },
-      path: '/',
     path_names: {
       sign_in: 'login',
       sign_out: 'logout',
@@ -34,20 +30,24 @@ Rails.application.routes.draw do
     }
 
     devise_scope :admins do
-    authenticated  do
-    resources :comitees do 
-    get 'unsubscribe_user/:user_id' => 'comitees#unsubscribe_user', as: :user_unsubscribe
-    get 'unsubscribe_users' => 'comitees#unsubscribe_user_all', as: :users_unsubscribe_all
-    end
-    resources :users  
-    resources :admins  
-    
-    root 'admins#index', as: :authenticated_admin_root
+      authenticated  do
+        resources :comitees do
+          get 'unsubscribe_user/:user_id' => 'comitees#unsubscribe_user', as: :user_unsubscribe
+          get 'unsubscribe_users' => 'comitees#unsubscribe_user_all', as: :users_unsubscribe_all
+        end
+        resources :users
+        resources :admins
+      end
+
+      unauthenticated :user do
+        
+      end
+      
+      root 'admins#index', as: :authenticated_admin_root
     end
   end
-end
 
-devise_for :users,
+  devise_for :users,
   controllers: {
     sessions: "users/sessions",
     passwords: "users/passwords",
@@ -86,7 +86,7 @@ devise_for :users,
 
   end
 
- 
+
 
   #ROTAS DO SITE
 
@@ -94,7 +94,7 @@ devise_for :users,
   get 'site/academic'
   get 'site/beta'
   get 'site/certificates'
-  get '/comites' => 'site#comitees' 
+  get '/comites' => 'site#comitees'
   get '/comites/:id' => 'site#show_comitee', as: :big_sonu_comitees
   get '/contato' => 'site#contact', as: :contact
   get 'site/cronogram'

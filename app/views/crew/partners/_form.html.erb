@@ -17,6 +17,7 @@
          <div class="row">
             <div class="col-md-12">
                     <%= form_for(crew_partner) do |f| %>
+                    
                       <% if crew_partner.errors.any? %>
                         <div id="error_explanation">
                           <h2><%= pluralize(crew_partner.errors.count, "error") %> prohibited this crew_partner from being saved:</h2>

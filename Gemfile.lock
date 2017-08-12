@@ -41,6 +41,7 @@ GEM
     aitch (0.5.0)
       nokogiri (>= 1.6.0)
     arel (7.1.4)
+    awesome_print (1.8.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
     brI18n (3.3.0)
@@ -216,6 +217,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   brazilian-rails
   byebug
   carrierwave (~> 1.0)

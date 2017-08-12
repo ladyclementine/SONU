@@ -1,13 +1,11 @@
 
-
-//= require jquery.min.js
 //= require  bootstrap.min.js
 //= require  countdown.js
 //= require  slick.min.js
 //=	require  gmaps.min.js
 //= require  magnific-popup.min.js
 //= require  main.js   
-//= require admin_template/adminto/css/plugins/toastr/toastr.min.js
+//= require multi-selec/js/jquery.multi-select.js
 
 $(document).ready(function() {
 

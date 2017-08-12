@@ -98,15 +98,6 @@ ActiveRecord::Schema.define(version: 20170811175912) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "crew_diretories", force: :cascade do |t|
-    t.string   "office"
-    t.string   "name"
-    t.text     "description"
-    t.string   "photo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "crew_fortalezas", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -130,9 +121,9 @@ ActiveRecord::Schema.define(version: 20170811175912) do
 
   create_table "crew_partners", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "photos"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "photos",     default: [],              array: true
   end
 
   create_table "crew_schools", force: :cascade do |t|
@@ -217,6 +208,7 @@ ActiveRecord::Schema.define(version: 20170811175912) do
     t.integer  "comitee_id"
     t.boolean  "is_cotist",              default: false
     t.string   "payment_status"
+    t.integer  "category_events_id"
     t.integer  "categories_ids"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["general_register", "cpf"], name: "index_users_on_general_register_and_cpf", unique: true, using: :btree

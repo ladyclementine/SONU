@@ -7,6 +7,7 @@ class SiteController < ApplicationController
   
   def index
     @crew_blogs = Crew::Blog.all.order("created_at DESC")
+    @partners = Crew::Partner.all
   end
 
   def academic

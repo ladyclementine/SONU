@@ -1,5 +1,4 @@
 /*
-*= require admin_template/adminto/css/morris.css
 *= require admin_template/adminto/css/bootstrap.min.css
 *= require admin_template/adminto/css/core.css
 *= require admin_template/adminto/css/components.css
@@ -7,17 +6,7 @@
 *= require admin_template/adminto/css/pages.css
 *= require admin_template/adminto/css/menu.css
 *= require admin_template/adminto/css/responsive.css
-
-
-
-
-*= require admin_template/adminto/css/plugins/datatables/jquery.dataTables.min.css
-*= require admin_template/adminto/css/plugins/datatables/buttons.bootstrap.min.css
-*= require admin_template/adminto/css/plugins/datatables/fixedHeader.bootstrap.min.css
-*= require admin_template/adminto/css/plugins/datatables/responsive.bootstrap.min.css
-*= require admin_template/adminto/css/plugins/datatables/scroller.bootstrap.min.css
-
 *= require admin_template/adminto/css/plugins/fileuploads/css/dropify.min.css
 *= require admin_template/adminto/css/plugins/toastr/toastr.min.css
-
 */
+
