@@ -15,9 +15,10 @@
     <% @crew_partners.each do |crew_partner| %>
       <tr>
         <td><%= crew_partner.title %></td>
-        <td><% crew_partner.photos.each do |photo| %>
-              <%= image_tag photo %>
-              <% end %></td>
+        <td><% crew_partner.photos.each do |image| %>
+          <%= image_tag(image.url(:small))%>
+        <% end %>
+        </td>
         <td><%= link_to 'Show', crew_partner %></td>
         <td><%= link_to 'Edit', edit_crew_partner_path(crew_partner) %></td>
         <td><%= button_to 'Destroy', crew_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +30,4 @@
 <br>
 
 <%= link_to 'New Crew Partner', new_crew_partner_path %>
+

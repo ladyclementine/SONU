@@ -11,6 +11,9 @@
    <!-- /.container -->
 </div>
 <!-- /.gb-breadcrumb -->
+
+
+                      
 <div class="container">
    <div class="row">
       <div class="col-md-12">
@@ -24,14 +27,13 @@
             <% if current_user.is_cotist == true %>
             <h6>VOCÊ É COTISTA</h6>
             <p>Caso não haja vaga para cotista, você pode optar por pagar o valor de <strong>não cotista</strong> e adquirir a vaga!</p>
-            <%=link_to update_cotist_user_path(@comitee), method: 'get' do%> Alterar 
-            <% end %>
             </br>
             <span class="label label-success" >Valor: <%= @comitee.paid_comitee_value(current_user) %></span>
             <%else %>
             <h6>VOCE NÃO É COTISTA</h6>
             <span class="label label-success" >Valor: <%= @comitee.paid_comitee_value(current_user) %></span>
             <% end %>
+            <%=link_to 'Alterar', update_cotist_user_path(@comitee), method: 'get' %>  
             </br></br>
          </div>
          <% if @comitee.is_active %>
@@ -42,7 +44,7 @@
          <%= form_for @user, url: { :action => "update" }, html: { method: :put } do |f| %>
          <% if @user.errors.any? %>
          <script type="text/javascript">
-            toastr.error('<%= pluralize(@user.errors.count, "error") %> encontrados: </br><% @user.errors.full_messages.each do |message| %><%= message %></br><% end %>', "Aviso");
+              toastr.error('<%= pluralize(@user.errors.count, "error") %> encontrados: </br><% @user.errors.full_messages.each do |message| %><%= message %></br><% end %>', "Aviso");
          </script>
          <% end %>
          <input type=hidden name=id_evento id="id_evento" value="<%=@comitee.id%>">
@@ -66,75 +68,76 @@
       </div>
    </div>
    <% end %>
-<div class="form-group ">
+   <div class="form-group ">
       <div class="col-xs-12">  
-   Selecione até 5ª Opções: 
-               <%= f.select( :categories_ids, CategoryEvent.where(comitee_id: @comitee).collect {|p| [ p.name, p.id ] },{:include_hidden => false}, {:multiple => true, class: 'form-control', id: 'categories_event' } ) %>
-               <br>
+         Selecione até 5ª Opções: 
+         <%= f.select( :categories_ids, CategoryEvent.where(comitee_id: @comitee).collect {|p| [ p.name, p.id ] },{:include_hidden => false}, {:multiple => true, class: 'form-control', id: 'categories_event' } ) %>
+         <br>
+      </div>
    </div>
-      </div>            
    <div class="form-group ">
       <div class="col-xs-12">                       
          Justifique a escolha das três primeiras opções:<br>
          <%= f.text_area :justify, class: 'form-control'%><br><br>
       </div>
    </div>
-    <div class="form-group ">
+   <div class="form-group ">
       <div class="col-xs-12"> 
          Escreva suas experiências em simulações:<br>
          <%= f.text_area :experience, class: 'form-control'%><br><br>
       </div>
    </div>
-         <% if @comitee.question_1 != "" %>
-         <div class="form-group ">
+   <% if @comitee.question_1 != "" %>
+   <div class="form-group ">
       <div class="col-xs-12"> 
          <%= @comitee.question_1 %>:<br>
          <%= f.text_area :answer_1, class: 'form-control'%><br><br>
          <% end %>
-         </div>
-         </div>
-
-         <% if @comitee.question_2 != "" %>
-         <div class="form-group ">
+      </div>
+   </div>
+   <% if @comitee.question_2 != "" %>
+   <div class="form-group ">
       <div class="col-xs-12"> 
          <%= @comitee.question_2  %>:<br>
          <%= f.text_area :answer_2, class: 'form-control'%><br><br>
          <% end %>
-         </div></div>
-         <% if @comitee.question_3 != "" %>
-         <div class="form-group ">
+      </div>
+   </div>
+   <% if @comitee.question_3 != "" %>
+   <div class="form-group ">
       <div class="col-xs-12"> 
          <%= @comitee.question_3  %>:<br>
          <%= f.text_area :answer_3, class: 'form-control'%><br><br>
          <% end %>
-         </div></div>
-         <% if @comitee.question_4 != "" %>
-         <div class="form-group ">
+      </div>
+   </div>
+   <% if @comitee.question_4 != "" %>
+   <div class="form-group ">
       <div class="col-xs-12"> 
          <%= @comitee.question_4  %>:<br>
          <%= f.text_area :answer_4, class: 'form-control'%><br><br>
          <% end %>
-         </div></div>
-         <% if @comitee.question_5 != "" %>
-         <div class="form-group ">
+      </div>
+   </div>
+   <% if @comitee.question_5 != "" %>
+   <div class="form-group ">
       <div class="col-xs-12"> 
          <%= @comitee.question_5  %>:<br>
          <%= f.text_area :answer_5, class: 'form-control'%><br><br>
          <% end %>
-         </div></div>
-  
+      </div>
+   </div>
    <div class="form-group ">
       <div class="col-xs-12"> 
-   Link Perfil Facebook:
-   <%= f.text_field :face_link, class: 'form-control'%><br><br>
-   </div>
+         Link Perfil Facebook:
+         <%= f.text_field :face_link, class: 'form-control'%><br><br>
       </div>
-
+   </div>
    <div class="form-group ">
       <div class="col-xs-12">
-      <%= f.submit "Cadastrar", class: "btn btn-default" %><br><br>
+         <%= f.submit "Cadastrar", class: "btn btn-default" %><br><br>
       </div>
-   </div>  
+   </div>
    <% end %>
 </div>
 <% end %>

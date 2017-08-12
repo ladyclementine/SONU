@@ -47,7 +47,6 @@ class ComiteesController < ApplicationController
         format.html {  redirect_to show_comitee_path(@user.comitee_id) }
       else
         @user.comitee_id = nil
-        flash[:error] = "Erro ao completar cadastro."
         format.html { render 'show' }
         format.json { render json: @user.errors }
       end
