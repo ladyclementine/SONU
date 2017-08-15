@@ -18,7 +18,7 @@
               <% @crew_partners.each do |crew_partner| %>
                 <tr>
                   <td><%= crew_partner.name %></td>
-                  <td><%= image_tag crew_partner.photo_url(:small) %></td>
+                  <td><%= image_tag crew_partner.photo_url(:small)unless crew_partner.photo_url.blank?  %></td>
                   <td><%= link_to  crew_partner do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
                   <%=  link_to edit_crew_partner_path(crew_partner) do %>
                       <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>
