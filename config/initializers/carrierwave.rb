@@ -1,11 +1,12 @@
-CarrierWave.configure do |config|
-  config.fog_credentials = {
-    provider:              'AWS',                        # required
-    aws_access_key_id:     Rails.application.secrets.s3_access_key_id,            # required
-    aws_secret_access_key: Rails.application.secrets.s3_secret_access_key,            # required
-    region:                'us-east-1',                  # optional, defaults to 'us-east-1'
-  }
-  config.fog_directory  = 'sonu2017aws'                          # required
-  config.fog_public     = true                                        # optional, defaults to true
-  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
+if Rails.env.production?
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+      # Configuration for Amazon S3
+      :provider              => 'AWS',
+      :aws_access_key_id     => ENV['S3_ACCESS_KEY'],
+      :aws_secret_access_key => ENV['S3_SECRET_KEY'],
+      :region                => ENV['S3_REGION']
+    }
+    config.fog_directory     =  ENV['S3_BUCKET']
+  end
 end
