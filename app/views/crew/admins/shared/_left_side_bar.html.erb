@@ -1,0 +1,98 @@
+ <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+
+                    <!-- User -->
+                    <div class="user-box">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" >
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <%= button_to destroy_crew_admin_session_path, :method=>:delete, :class=>:destroy, class: 'btn btn-danger' do %>
+                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                <% end %>    
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End User -->
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+
+                            <li>
+                                <%= link_to crew_admins_path, class: "waves-effect" do %><i class="fa fa-hashtag"></i> <span> Página principal </span> <% end %>
+                            </li>
+
+                            <li>
+                                <%= link_to  crew_users_path, class: "waves-effect" do %><i class="fa fa-users"></i><span>Usuários</span><% end %> 
+                            </li>
+                            <li>
+                                <%= link_to  crew_comitees_path, class: "waves-effect" do %><i class="fa fa-microphone" aria-hidden="true"></i><span>Comitês/Eventos</span><% end %> 
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-gavel" aria-hidden="true"></i><span> SONU grande</span> </a>
+                                <ul class="list-unstyled">
+                                    <li><%= link_to 'Comitês', crew_big_sonu_comitees_path%></li>
+                                    <li><%= link_to 'Cronograma', crew_big_sonu_schedules_path%></li>
+                                    <li><%= link_to 'O que são Muns?', crew_muns_path%></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-sitemap" aria-hidden="true"></i> <span>A SONU</span></a>
+                                <ul class="list-unstyled">
+                                    <li><%= link_to 'Carta de apresentação', crew_apresentations_path%></li>
+                                    <li><%= link_to 'O Secretariado', crew_secretaries_path%></li>
+                                    <li><%= link_to 'A diretoria', crew_muns_path%></li>
+                                    <li><%= link_to 'O que são Muns?', crew_muns_path%></li>
+                                    <li><%= link_to 'História da SONU', crew_stories_path%></li>
+                                    <li><%= link_to 'Festas', crew_parties_path%></li>
+                                    <li><%= link_to 'Fortaleza', crew_fortalezas_path%></li>
+                                    <li><%= link_to 'FAQ', crew_muns_path%></li>
+
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-sitemap" aria-hidden="true"></i> <span>Outros Projetos</span></a>
+                                <ul class="list-unstyled">
+                                    <li><%= link_to 'SONU acadêmico',crew_schools_path %></li>
+                                    <li><%= link_to 'SONU Betas',crew_schools_path %></li>
+                                    <li><%= link_to 'SONU escolas',crew_schools_path %></li>
+                                    <li><%= link_to 'SONU solidário',crew_solidaries_path %></li>
+                                    <li><%= link_to 'SONU imprensa',crew_solidaries_path %></li>
+                                    <li><%= link_to 'SONU minicursos/palestras',crew_solidaries_path %></li>
+                                    <li><%= link_to 'Notícias',crew_blogs_path %></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+                                <%= link_to crew_blogs_path, class: "waves-effect"  do %>
+                                <i class="fa fa-newspaper-o"></i>
+                                <span> Notícias </span>
+                                <% end %>
+                                
+                            </li>
+                             <li>
+                                <%= link_to crew_partners_path, class: "waves-effect"  do %>
+                                <i class="fa fa-thumbs-o-up"></i>
+                                <span> Parceiros</span>
+                                <% end %>
+                                
+                            </li>
+          
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+            <!-- Left Sidebar End -->

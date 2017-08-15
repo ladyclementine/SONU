@@ -1,0 +1,164 @@
+<div class="gb-breadcrumb-login-cadastro gb-bg white-color">
+   <div class="container">
+      <div class="breadcrumb-info text-center">
+         <div class="title-white">
+            <h1>
+               <span>Cadastrar</span>
+            </h1>
+         </div>
+      </div>
+   </div>
+   <!-- /.container -->
+</div>
+<!-- /.gb-breadcrumb -->
+<div class="wrapper-page">
+<div class="m-t-40 card-box">
+   <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { id: "formu", method: :post }) do |f| %>
+   <div class="panel-body">
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Nome Completo </div>
+            <div><%= f.text_field :name, id:"name", class: 'form-control'%> *</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Email </div>
+            <div> <%= f.email_field :email, id:"email", placeholder:'', class: 'form-control'%> *</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Confirmar Email</div>
+            <div> <input type=text name=confemail value=""  class="form-control"> * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Senha </div>
+            <div> <%= f.password_field :password, id:"senha" , class: 'form-control'%> * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Confirmar Senha </div>
+            <div> <input type=password name=confsenha class= "form-control" > * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> RG </div>
+            <div> <%= f.text_field :general_register, id:"rg", class: 'form-control' %> * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> CPF </div>
+            <div> <%= f.text_field :cpf, id:"cpf", class: 'form-control' %> * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Data de Nascimento </div>
+            <div> <%= f.text_field :birthday, id:"birthday", class: 'form-control'%>  * </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Sexo </div>
+            <div> 
+               <label for="gender_male">
+               <%= f.radio_button :gender, 'Masculino' %> 
+               Masculino
+               </label>
+               <label for="gender_female">
+               <%= f.radio_button :gender, 'Feminino' %> 
+               Feminino
+               </label>
+               *
+            </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> CEP </div>
+            <div> <%= f.text_field :cep, id:"cep", class: 'form-control' %>  </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Endereço </div>
+            <div> <%= f.text_field :adress, id:"adress", class: 'form-control' %> </div>
+            <div > Nº </div>
+            <div>  <%= f.text_field :adress_number, id:"adress_number", class: 'form-control' %> </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Complemento </div>
+            <div> <%= f.text_field :complement, id:"complement" , class: 'form-control'%> </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Bairro </div>
+            <div>  <%= f.text_field :district, id:"district" , class: 'form-control'%> </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Cidade </div>
+            <div> <%= f.text_field :city, id:"city" , class: 'form-control'%> </div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Telefone </div>
+            <div> <%= f.text_field :phone, id:"phone", class: 'form-control'%></div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Celular </div>
+            <div> <%= f.text_field :cel, id:"cel", class: 'form-control' %> *</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Instituição de Ensino </div>
+            <div> <%= f.text_field :university, id:"university", class: 'form-control' %> *</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Matrícula </div>
+            <div> <%= f.text_field :registration_id, id:"registration_id", class: 'form-control'%> (Opcional, caso não possua)</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div> Semestre </div>
+            <div> <%= f.text_field :semester, id:"semester" , class: 'form-control'%> (Opcional, caso não possua matrícula)</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <div>Link Perfil Facebook  </div>
+            <div> <%= f.text_field :facebook_profile_link, id:"facebook_profile_link" , class: 'form-control'%> *</div>
+         </div>
+      </div>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <input type="checkbox" id="agree" name="agree"> Eu li e concordo com os <a class='iframe' href="/termos.html">Termos de Uso</a> do site. 
+         </div>
+      </div>
+      <br>
+      <div class="form-group ">
+         <div class="col-xs-12">
+            <%= f.submit "Cadastrar", class: "btn btn-login" %>
+         </div>
+      </div>
+   </div>
+   <% end %>
+</div>
+</div>

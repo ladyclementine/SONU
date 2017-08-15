@@ -31,10 +31,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'devise'
+gem "wysiwyg-rails"
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
+gem "pagseguro-oficial", "~> 2.5.0"
+gem 'maskedinput-rails'
+gem 'brazilian-rails'
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "awesome_print"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crew_partner.name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @crew_partner.photo %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_crew_partner_path(@crew_partner) %> |
+<%= link_to 'Back', crew_partners_path %>

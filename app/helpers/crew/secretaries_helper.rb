@@ -1,0 +1,2 @@
+module Crew::SecretariesHelper
+end

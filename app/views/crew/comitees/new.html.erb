@@ -1,0 +1,121 @@
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box">
+      
+         <h4 class="header-title m-t-0 m-b-30">Novo Comitê</h4>
+         <div class="row">
+          <%= form_for @comitee, :html => {class: 'form-horizontal'},  url: {action: "create"} do |f| %>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Nome</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :name, :id => 'name', placeholder: '', class: 'form-control', autofocus: true%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label" for="example-email">Limite não cotista</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :limit, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Valor não cotista</label>
+                     <div class="col-md-10">
+                       <%= f.text_field :value_not_cotist, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Tipo de evento</label>
+                     <div class="col-md-10">
+                        <%= f.select :type_event, Comitee.type_events.map { |key, value| [key, key] }, {}, {class: 'form-control'}%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Descrição</label>
+                     <div class="col-md-10">
+                        <%= f.text_area :description, row: '5', class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Pergunta 1</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :question_1, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Pergunta 2</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :question_2, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Pergunta 3</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :question_3, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Pergunta 4</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :question_4, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Pergunta 5</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :question_5, class: 'form-control' %>
+                     </div>
+                  </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6">
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Dupla?</label>
+                     <div class="col-md-10">
+                        <%= f.select :dual, {false=>'Individual', true=>'Dupla'}.map { |key, value| [value, key] }, {}, {class: 'form-control'}%>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Limite Cotista</label>
+                     <div class="col-md-10">
+                        <%= f.text_field :limit_cotist, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-sm-2 control-label">Valor Cotista</label>
+                     <div class="col-sm-10">
+                        <%= f.text_field :value_cotist, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-sm-2 control-label">Data Inicial</label>
+                     <div class="col-sm-10">
+                        <%= f.text_field :start_date, class: 'form-control' %>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-sm-2 control-label">Data Final</label>
+                     <div class="col-sm-10">
+                        <%= f.text_field :end_date, class: 'form-control' %>
+                     </div>
+                  </div>
+                  
+                   <div class="form-group">
+                     <label class="col-md-2 control-label">Imagem</label>
+                     <div class="col-md-10">
+                         <%= f.file_field :photo, class:"dropify" , 'data-default-file' => @comitee.photo_url%>
+                     </div>
+                  </div>
+               
+            </div>
+
+            <button type="submit" class="btn btn-purple btn-block btn-trans waves-effect w-md waves-success m-b-5">SALVAR</button>
+            <% end %>
+            <!-- end col -->
+         </div>
+         <!-- end row -->
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- end row -->

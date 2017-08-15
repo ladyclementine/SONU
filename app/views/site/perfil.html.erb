@@ -1,2 +1,105 @@
-<h1>Site#perfil</h1>
-<p>Find me in app/views/site/perfil.html.erb</p>
+
+<div class="gb-breadcrumb-login-cadastro gb-bg white-color">
+         <div class="container">
+            <div class="breadcrumb-info text-center">
+               <div class="title-blue">
+                  <h1>
+                     
+                     <span>Perfil</span>
+                     <h4>Olá, <%= @current_user.name %> </h4>
+                     <%= button_to destroy_user_session_path, :method=>:delete, :class=>:destroy, class: 'logout-user' do %>
+                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                <% end %> 
+                  
+                  </h1>
+               </div>         
+            </div>
+         </div><!-- /.container -->
+      </div><!-- /.gb-breadcrumb -->
+
+		<div class="gb-about gb-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+                	
+                    <h3><span>Meus Dados</span></h3>
+                    <div class="table-responsive">
+					<table class="table">
+						<tr>
+							<td><strong> Nome</strong></td>
+							<td> <%= @user.name %> </td>
+						</tr>
+						<tr>
+							<td><strong> Email</strong></td>
+							<td> <%= @user.email %> </td>
+						</tr>
+						<tr>
+							<td><strong> CPF</strong></td>
+							<td> <%= @user.cpf %> </td>
+						</tr>
+						<tr>
+							<td><strong> Data Nascimento</strong></td>
+							<td> <%= @user.birthday %> </td>
+						</tr>
+						<tr>
+							<td><strong> Celular</strong></td>
+							<td> <%= @user.cel %> </td>
+						</tr>
+					</table>
+					</div>
+					<%= link_to 'Alterar dados', edit_user_registration_path, class: 'btn btn-default'  %>
+					
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+			
+			<div class="row">
+                	<div class="col-md-12">
+                    <h3><span>Minhas Inscrições</span></h3>
+                    <div class="table-responsive">
+					<table class="table">
+						<tr>
+							<td colspan="2"><strong> Evento</strong> </td>
+							<td><strong> Data de Início</strong></td>
+							<td><strong> Situação</strong> </td>
+							<td><strong> Dado do Pagamento</strong> </td>
+						</tr>
+
+						<% if !@user.comitee.nil? %>
+						<tr> 
+							<td> <%= image_tag(@user.comitee.photo_url(:thumb)) if !@user.comitee.photo.blank? %> </td>
+							<td> <%= @user.comitee.name %> </td>
+							<td> <%= @user.comitee.start_date.strftime("%d/%m/%Y") %> </td>
+							<td><% if @user.paid_on.nil? %> 
+			                     <label class="label label-warning" >
+			                     Pendente</label> 
+			                     <% else %>
+			                     <label class="label label-success" >
+			                     Pago</label> 
+			                     <% end %>                  
+                  			</td>
+							
+							<% if @user.paid_on.nil? %>
+							<% if (@user.comitee.dual? && @user.lider_dual==true) || !@user.comitee.dual? %>
+							<td> 
+							<a class= "btn btn-default" href="payment" target="_blank">Efetuar Pagamento</a>
+							</td> 
+							
+							<% else %>
+							<td> 
+							<%= " Sua dupla, #{User.where(cpf: Cpf.new(current_user.cpf_dual)).first.name.capitalize}, foi encarregada de pagar. "  %>
+							</td>
+							<% end %>
+
+							<% end %>
+							<% else %>
+							<td>Nenhuma inscrição</td>
+							
+						</tr>
+						<% end %>
+					
+					</table>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>

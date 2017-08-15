@@ -1,177 +1,156 @@
 
-        <div class="gb-banner">
-            <div class="banner-info text-center">
-                <div class="container">
-                    <h1>SONU XIII</h1>
-                    <h2><span>27-29 june</span> Fortaleza, Brazil</h2>
-                    <a href="#" class="btn button-white">Inscreva-se</a>
-                    <ul class="countdown gb-list list-inline">
-                        <li>                    
-                            <span class="days">00</span>
-                            <p>days</p>
-                        </li>
-                        <li>
-                            <span class="hours">00</span>
-                            <p>hours</p>
-                        </li>
-                        <li>
-                            <span class="minutes">00</span>
-                            <p>minutes</p>
-                        </li>
-                        <li>
-                            <span class="seconds">00</span>
-                            <p>seconds</p>
-                        </li>               
-                    </ul><!-- countdown -->                     
-                </div><!-- /.container -->
-            </div><!-- /.banner-info -->
-        </div><!-- /.gb-banner -->
-        
-        <div class="upcoming-events gb-section text-center">
-            <div class="container">
-                
-                    <h1 class="color-red">
-                      
-                         <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                       
-                        <span>Notícias</span>
-                
-                            <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                        
-                    </h1>
-               
-                <div class="event-content">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>27 <span>Jul</span></p>
-                                </div>
-                                <div class="event-info">
-                                    <h2>Berlin, Germany</h2>
-                                    <address><p>30217 new street road Berlin, Germany</p></address>
-                                    <a href="#" class="btn btn-default">Get a Ticket</a>
-                                </div>
+<div class="gb-banner">
+    <div class="banner-info text-center">
+        <div class="container">
+            <h1>SONU XIII</h1>
+            <h2><span>27-29 june</span> Fortaleza, Brazil</h2>
+            <a href="#" class="btn button-white">Inscreva-se</a>
+            <ul class="countdown gb-list list-inline">
+                <li>                    
+                    <span class="days">00</span>
+                    <p>days</p>
+                </li>
+                <li>
+                    <span class="hours">00</span>
+                    <p>hours</p>
+                </li>
+                <li>
+                    <span class="minutes">00</span>
+                    <p>minutes</p>
+                </li>
+                <li>
+                    <span class="seconds">00</span>
+                    <p>seconds</p>
+                </li>               
+            </ul><!-- countdown -->                     
+        </div><!-- /.container -->
+    </div><!-- /.banner-info -->
+</div><!-- /.gb-banner -->
+
+<div class=" gb-section text-center">
+    <div class="container">
+        <div class="title-index">
+            <h1 class="color-red">
+                <span>ÚLTIMAS NOTÍCIAS</span>
+            </h1>
+        </div>
+
+        <div class="blog-content">
+            <div class="row">
+                <% @crew_blogs[0..3].each do |crew_blogs| %>
+                <div class="col-sm-6 col-md-3">
+
+
+                    <div class="gb-post gb-box-shadow">
+                        <div class="entry-header">
+
+                            <div class="entry-thumbnail">
+                                <a href="blog-details.html"><%= (image_tag crew_blogs.photo, class: "img-responsive") %></a>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>12 <span>Jul</span></p>
-                                </div>
-                                <h2>Munich, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
+                        <div class="post-date-index">
+                            <p><%= crew_blogs.created_at.strftime("%d") %></p>
+                            <span><%= crew_blogs.created_at.strftime("%B") %></span>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>12 <span>Aug</span></p>
-                                </div>
-                                <h2>Hamburg, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
+
+                        <div class="entry-content-index">
+
+                            <h2 class="entry-title-index"><a href="blog-details.html"><%= link_to crew_blogs.title, news_path(crew_blogs) %></a></h2>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="event">
-                                <div class="gb-time color-red">
-                                    <p>09 <span>Sep</span></p>
-                                </div>
-                                <h2>Cologne, Germany</h2>
-                                <address><p>30217 new street road Berlin, Germany</p></address>
-                                <a href="#" class="btn btn-default">Get a Ticket</a>
-                            </div>
-                        </div>
-                    </div><!-- /.row -->
+                    </div><!-- /.gb-post -->
                 </div>
-            </div><!-- /.container -->
-        </div><!-- /.upcoming-events -->
-        
-        <div class="gb-cta-1 gb-section gb-bg">
+                <% end %>
+            </div>
+        </div>
+        <%= link_to 'Veja mais', noticias_path ,class: "btn btn-default" %>
+    </div>        
+</div>
+
+        <div class="gb-cta-1 gb-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 white-color">
-                        <h1>A SONU</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor</p>
-                        <div class="buttons">
-                            <a href="#" class="btn button-white">Conheça</a>
-                        </div>
-                      </div>  
                     <div class="col-md-6">
-                        <iframe width="555" height="359" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
+                        <div class="institucional">
+                            <h1>A SONU</h1>
+                            <h2>Assista nosso vídeo institucional</h2>
+                            <p>Realizada em parceria com a Universidade Federal do Ceará (UFC) e com a Universidade de Fortaleza (UNIFOR), a Simulação da Organização das Nações Unidas - SONU é o primeiro modelo a simular organismos internacionais no estado do Ceará.</p>
+                            <div class="buttons">
+                                <%= link_to apresentation_path, class: "btn button-red"  do %> <span>Carta de apresentação</span>
+                                <% end %>
+                                <br><br>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-md-6">
+                        <div class="">
+                            <figure>
+                            <div class="boxVideo">
+                            <iframe width="600" height="394"  src="https://www.youtube.com/embed/6e9JE14d260" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
             </div><!-- /.container -->
-        </div><!-- /.gb-cta-1 -->
+        </div><!-- /.gb-about -->   
 
-        <div class="gb-brand gb-section gb-bg ">
-            <div class="container">
-                    <div class="title-partners">
-                    <h1>
-                        <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                        <span>Nossos Parceiros</span>
-                        <%= image_tag '/images/folhasonu-iloveimg-resized.png'%>
-                    </h1>
-                    </div>
-                </div>
-                <div class="brand-slider text-center">
+
+
+<div class="gb-brand gb-section gb-bg ">
+    <div class="container">
+        <div class="title-index">
+            <h1>
+
+                <span>NOSSOS PARCEIROS</span>
+
+            </h1>
+        </div>
+    </div>
+    <div class="brand-slider text-center">
+        <% @partners.each do |partner|%>
+                <%= link_to partners_path do %>
                     <div class="brand">
-                        <img src="images/brand/1.jpg" alt="Image" class="img-responsive">
+                    <%= image_tag partner.photo_url(:partners) %>
                     </div>
-                    <div class="brand">
-                        <img src="images/brand/2.jpg" alt="Image" class="img-responsive">
-                    </div>
-                    <div class="brand">
-                        <img src="images/brand/3.jpg" alt="Image" class="img-responsive">
-                    </div>
-                    <div class="brand">
-                        <img src="images/brand/4.jpg" alt="Image" class="img-responsive">
-                    </div>
-                    <div class="brand">
-                        <img src="images/brand/5.jpg" alt="Image" class="img-responsive">
-                    </div>
-                    <div class="brand">
-                        <img src="images/brand/3.jpg" alt="Image" class="img-responsive">
-                    </div>
-                </div>              
-            </div><!-- /.container -->
-        </div><!-- /.gb-brand  -->
-        
-        <div class="gb-contact text-center">
-            <div id="gmap"></div>
-            <div class="contact-info">
-                <div class="event">
-                    <div class="gb-time color-red">
-                        <p>12 <span>Jul</span></p>
-                    </div>
-                    <h2>Berlin, Germany</h2>
-                    <address><p>30217 new street road Berlin, Germany</p></address>
-                    <a href="#" class="btn btn-default">Get a Ticket</a>
-                </div>
-                <ul class="contact-social gb-list list-inline">
-                    <li><a href="#"><img src="images/others/facebook.png" alt="Icon" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="images/others/youtube.png" alt="Icon" class="img-responsive"></a></li>
-                    <li><a href="#"><img src="images/others/instagram.png" alt="Icon" class="img-responsive"></a></li>
-                </ul>               
+                    <% end %>
+                    <% end %>
+               
+</div><!-- /.container -->
+</div><!-- /.gb-brand  -->
+
+<div class="gb-contact text-center">
+    <div id="gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381778.25053409673!2d-38.691692528496176!3d-3.7336214633884484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74c3f464c783f%3A0x4661c60a0c6b37ca!2sFortaleza+-+CE!5e0!3m2!1spt-BR!2sbr!4v1502672161402" width="1300" height="600" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    <div class="contact-info">
+        <div class="event">
+            <h2>Centro, Fortaleza-CE</h2>
+            <address><p>Rua Meton de Alencar S/N</p></address>
+            <address><p>Faculdade de Direito da UFC</p></address>
+            <address><p>sonu.extensao@gmail.com</p></address>
+            <%= link_to contact_path, class: "btn btn-default" do %>
+            <span>Fale Conosco</span>
+            <% end %>
+        </div>
+        <ul class="contact-social gb-list list-inline">
+            <li><a class="icons" href="www.facebook.com/sonu.ufc"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a class="icons" href="www.instagram.com/sonu_ufc"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a class="icons" href="www.flickr.com/sonufotografia"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+            </ul>               
+        </div>
+    </div><!-- /.gb-contact -->
+
+    <div class="gb-cta-2 gb-section text-center white-color gb-bg">
+        <div class="container">
+            <div class="title-partners white-title">
+                <h1>
+
+                    <span>CADASTRE-SE NO NOSSO SITE</span>
+
+                </h1>
+            </div>      
+            <div class="cta-info">
+                <p>Cadastrando-se no site, você tem a vantagem de rapidamente se inscrever em algum evento da SONU, sem precisa elaborar todo o cadastro antes.</p>
+                <%= link_to new_user_registration_path ,class: "btn btn-default" do %><span>Cadastre-se</span>
+                <% end %>
             </div>
-        </div><!-- /.gb-contact -->
-        
-        <div class="gb-cta-2 gb-section text-center white-color gb-bg">
-            <div class="container">
-                <div class="title-partners white-title">
-                    <h1>
-    
-                        <span>CADASTRE-SE NO NOSSO SITE</span>
-
-                    </h1>
-                </div>      
-                <div class="cta-info">
-                    <p>Cadastrando-se no site, você tem a vantagem de rapidamente se inscrever em algum evento da SONU, sem precisa elaborar todo o cadastro antes.</p>
-                    <a href="#" class="btn btn-default">Cadastre-se</a>
-                </div>
-            </div><!-- /.container -->
-        </div><!-- /.gb-cta-2 -->
-        
+        </div><!-- /.container -->
+    </div><!-- /.gb-cta-2 -->

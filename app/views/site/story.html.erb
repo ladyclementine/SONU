@@ -1,2 +1,42 @@
-<h1>Site#story</h1>
-<p>Find me in app/views/site/story.html.erb</p>
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="title-white">
+						<h1>
+							
+							<span>História da SONU</span>
+						
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><%= link_to 'História da SONU', story_path%></li>
+						<li class="active" ><%= link_to 'Festas', parties_path %></li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->	
+
+		<div class="gb-about gb-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="about-info">
+				               <% @crew_stories.each do |crew_story| %>
+				            	<div class="speaker">
+				            	<div class="speaker-title">
+				                  <h2><%= crew_story.title %></h2>
+				                  </br>
+				                  <p><%= raw crew_story.description %></p>
+				       			</div>
+				       			</div>
+				               <% end %>
+
+				 
+							</br>
+						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.gb-about -->	
+
+		

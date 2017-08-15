@@ -1,0 +1,37 @@
+<div class="row">
+   <div class="col-md-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+          <%= link_to 'Adicionar subcategoria de parceiro', new_crew_category_partner_path, class: 'btn btn-primary' %>
+          <%= link_to 'Adicionar Parceiro', new_crew_partner_path, class: 'btn btn-primary' %>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">Parceiros</h4>
+            <table  class="table m-0">
+            <thead>
+               <tr>
+                  <th>Nome</th>
+                  <th>Imagem</th>
+                  <th>Configurações</th>
+               </tr>
+            </thead>
+            <tbody>
+              <% @crew_partners.each do |crew_partner| %>
+                <tr>
+                  <td><%= crew_partner.name %></td>
+                  <td><%= image_tag crew_partner.photo_url(:small) %></td>
+                  <td><%= link_to  crew_partner do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
+                  <%=  link_to edit_crew_partner_path(crew_partner) do %>
+                      <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>
+                      
+                  <%= link_to crew_partner, :method=>:delete, :class=>:destroy, data: { confirm: 'Tem certeza que deseja apagar?' } do %><button data-toggle="tooltip" data-placement="left" title="Apagar" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <br>
+
+      </div>
+   </div>
+   <!-- end col -->
+</div>

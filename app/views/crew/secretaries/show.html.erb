@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @crew_secretary.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= raw @crew_secretary.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @crew_secretary.photo_url(:thumb) unless @crew_secretary.photo.blank? %>
+</p>
+
+<%= link_to 'Edit', edit_crew_secretary_path(@crew_secretary) %> |
+<%= link_to 'Back', crew_secretaries_path %>

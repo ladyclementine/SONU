@@ -1,0 +1,74 @@
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="title-white">
+						<h1>
+							
+							<span><%=" Comitê: #{@crew_big_sonu_comitee.name}" %></span>
+						
+						</h1>
+					</div>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->	
+<div class="bg-page-content blog-details">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-3">
+					<% @crew_big_sonu_comitees[0..4].each do |crew_big_sonu_comitee| %>
+						<div class="gb-sidebar">
+							<div class="widget-area">					
+
+
+								<div class="widget recent-posts">
+									<h3 class="widget_title">Outros comitês</h3>
+									<ul class="gb-list">
+										<li>
+											<span><%= @crew_big_sonu_comitee.name %></span>
+											<p><%= link_to 'Saiba mais', big_sonu_comitees_path(crew_big_sonu_comitee) %></p>
+										</li>
+			
+									</ul>
+								</div><!-- /.widget -->
+						
+							</div><!-- /.widget-area -->	
+						</div><!-- /.gb-sidebar -->		
+						<% end %>				
+					</div>
+
+					<div class="col-sm-8 col-md-9">
+						<div class="blog-content">
+							<div class="gb-post gb-box-shadow">
+								
+									<div class="comitee-image-center">
+										<%= image_tag @crew_big_sonu_comitee.photo_url(:thumb) %>
+									</div>
+									<div class="entry-content">
+									
+									<div class="pull-left">
+
+										</span>
+										<span class="share"><a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i></a></span>
+									</div>
+
+									<div class="media-body">
+										<h2 class="entry-title"><%= @crew_big_sonu_comitee.name %></h2>
+										</br>
+
+										<div class="entry-summary">
+										<p><%= raw @crew_big_sonu_comitee.description%></p>
+
+										</div>
+										
+									</div>
+
+								</div>
+							</div><!-- /.gb-post -->
+						</div><!-- /.blog-content -->
+				</div><!-- /.col -->
+		
+		</div> <!-- /.gb-row -->
+
+	</div><!-- /.container -->
+</div><!-- /.gb-page-content -->
+

@@ -1,2 +1,40 @@
-<h1>Site#comitees</h1>
-<p>Find me in app/views/site/comitees.html.erb</p>
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="">
+						<h1>
+							<span>Comitês <%= Time.now.strftime("%Y") %></span>
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Comitês</a></li>
+						<li class="active">Cronograma <%= Time.now.strftime("%Y") %></li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->
+
+		<div class="gb-speakers gb-section">
+			<div class="container">
+				<div class="row">
+					<% @crew_big_sonu_comitees.each do |crew_big_sonu_comitee| %>
+					<div class="col-sm-6 col-md-3">
+						<div class="comitee">
+							<div class="comitee-image">
+								
+								<%= image_tag crew_big_sonu_comitee.photo_url(:medio) , class: "img-responsive"%>
+								<ul class="comitee-social gb-list list-inline">
+									<li><%= link_to big_sonu_comitees_path(crew_big_sonu_comitee) do %><h5>Saiba mais</h5></li>
+									<% end %>
+								</ul>
+							</div>
+							<div class="comitee-title">
+								<h2><%= crew_big_sonu_comitee.name %></h2>
+							</div>
+						</div>
+					</div>
+	
+					<% end %>
+					</div>
+</div>
+</div>

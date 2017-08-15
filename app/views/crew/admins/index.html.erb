@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown pull-right">
+                                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-male" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <h4 class="header-title m-t-0 m-b-30">Usuários total</h4>
+
+                                        <div class="widget-detail-1">
+                                            <h2 class="p-t-10 m-b-0"> <%= @users %></h2>
+                                            <p class="text-muted">Revenue today</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown pull-right">
+                                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-female" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <h4 class="header-title m-t-0 m-b-30">Usuários que declaram gênero feminino</h4>
+
+                                    <div class="widget-chart-1">
+                                <%= "#{@percent_female_user.round(2)}%"%>
+
+                                        <div class="widget-detail-1">
+                                            <h2 class="p-t-10 m-b-0"> <%= @female_users %></h2>
+                                            <p class="text-muted">Revenue today</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card-box">
+                                    <div class="dropdown pull-right">
+                                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-male" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <h4 class="header-title m-t-0 m-b-30">Usuários que declaram gênero masculino</h4>
+
+                                    <div class="widget-chart-1">
+                                <%= "#{@percent_male_user.round(2)}%"%>
+
+                                        <div class="widget-detail-1">
+                                            <h2 class="p-t-10 m-b-0"> <%= @male_users %></h2>
+                                            <p class="text-muted">Revenue today</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+
+
+
+                        </div>
+                        <!-- end row -->

@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
           
-                <a class="icons" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a class="icons" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i>
+                <a class="icons" href="www.facebook.com/sonu.ufc"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="icons" href="www.instagram.com/sonu_ufc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a class="icons" href="https://www.flickr.com/sonufotografia/"><i class="fa fa-flickr" aria-hidden="true"></i>
                     </a>
    
-                <a class="link-top" href="#">Login</a>
-                <a class="link-top" href="#">Cadastra-se</a>
+                <%= link_to 'Login', new_user_session_path, class: "link-top" %>
+                <%= link_to 'Cadastre-se', new_user_registration_path , class: "link-top" %>
   
             
         </div>
@@ -32,46 +32,50 @@
 
                     <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active gb-dropdown"><%= link_to 'A SONU', root_path %>
+                            <li class="active gb-dropdown"><a href="">A SONU</a>
                                 <ul class="gb-dropdown-menu gb-list fadeInUp" role="menu">
-                                    <li><%= link_to 'Carta de apresentação', site_apresentation_path %></li>
-                                    <li><%= link_to 'O Secretariado', site_secretary_path%></li>
-                                    <li><%= link_to 'A Diretoria', site_diretory_path%></li>
-                                    <li><%= link_to 'O que são MUNs?',site_muns_path %></li>
-                                    <li><%= link_to 'História da SONU', site_story_path %></li>
-                                    <li><%= link_to'Festas', site_partners_path%></li>
-                                    <li><%= link_to 'Fortaleza', site_fortaleza_path%></li>
+                                    <li><%= link_to 'Carta de apresentação', apresentation_path %></li>
+                                    <li><%= link_to 'O Secretariado', secretary_path%></li>
+                                    <li><%= link_to 'A Diretoria', diretory_path%></li>
+                                    <li><%= link_to 'O que são MUNs?',muns_path %></li>
+                                    <li><%= link_to 'História da SONU', story_path %></li>
+                                    <li><%= link_to'Festas', parties_path%></li>
+                                    <li><%= link_to 'Fortaleza', fortaleza_path%></li>
                                     <li><%= link_to 'FAQ', site_faq_path%></li>
                                 </ul>
                             </li>
-                            <li class="gb-dropdown" ><a href="about.html">SONU XIII</a>
+                            <li class="gb-dropdown" ><a href="#">SONU <%= Time.now.strftime("%Y") %></a>
                                 <ul class="gb-dropdown-menu gb-list fadeInUp" role="menu">
-                                    <li><%= link_to 'Comitês', site_comitees_path %></li>
+                                    <li><%= link_to 'Comitês', comites_path %></li>
                                     <li><%= link_to 'Cronograma', site_cronogram_path %></li>
                                     <li><%= link_to'Certificados', site_certificates_path %></li>
                                 </ul>
                             </li>
-                            <li class="gb-dropdown" ><a href="speaker.html"> Outros Projetos</a>
+                            <li class="gb-dropdown" ><a href="#"> Outros Projetos</a>
                                   <ul class="gb-dropdown-menu gb-list fadeInUp" role="menu">
                                     <li><%= link_to 'SONU Acadêmico', site_academic_path %></li>
                                     <li><%= link_to 'SONU Beta', site_beta_path %></li>
-                                    <li><%= link_to 'SONU Escolas', site_schools_path %></li>
-                                    <li><%= link_to 'SONU Solidário', site_solidary_path  %></li>
+                                    <li><%= link_to 'SONU Escolas', schools_path %></li>
+                                    <li><%= link_to 'SONU Solidário', solidary_path  %></li>
                                     <li><%= link_to 'Imprensa', site_press_path%></li>
                                     <li><%= link_to 'Minicursos/Palestras', site_speeches_path %></li>
                                 </ul>  
                             </li>
-                            <li><%= link_to 'Notícias',site_news_path%></li>
-                            <li class="gb-dropdown" ><a href="blog.html">Publicações</a>
+                            <li><%= link_to 'Notícias', noticias_path%></li>
+                            <li class="gb-dropdown" ><a href="#">Publicações</a>
                                     <ul class="gb-dropdown-menu gb-list fadeInUp" role="menu">
                                     <li><a href="about.html">Compilações de Guias</a></li>
                                     <li><a href="speaker.html">Revista SONU</a></li>
+                                    <li><a href="speaker.html">Artigos</a></li>
                                     <li><a href="pricing.html">Outros (?)</a></li>
                                 </ul>  
                             </li>
-                            <li><%= link_to 'Parceiros', site_partners_path %></li>
-                            <li><%= link_to 'Contato', site_contact_path %></li>
-                            <li><%= link_to 'Inscrições', site_inscription_path %></li>
+                            <li><%= link_to 'Parceiros', partners_path %></li>
+                            <li><%= link_to 'Contato', contact_path %></li>
+                            <li><%= link_to 'Inscrições', inscription_path %></li>
+                            <% if user_signed_in? %>
+                            <li><%= link_to 'Perfil', perfil_user_path%></li>
+                            <% end %>
 
                         </ul>   
                     </div>
@@ -90,10 +94,10 @@
                     </div>
                     <div class="col-md-6 text-right">
                         <h6>REDES SOCIAIS:</h6>
-                            <a class="icons" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a class="icons" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i>
-                            </a>
+                            <a class="icons" href="www.facebook.com/sonu.ufc"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a class="icons" href="www.instagram.com/sonu_ufc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a class="icons" href="https://www.flickr.com/sonufotografia/"><i class="fa fa-flickr" aria-hidden="true"></i>
+                                </a>
 
                     </div>
 

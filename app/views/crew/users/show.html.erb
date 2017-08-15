@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Gênero:</strong>
+  <%= @user.gender %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=  @user.email %>
+</p>
+<p>
+  <strong>Cpf:</strong>
+  <%=  @user.cpf %>
+</p>
+<p>
+  <strong>RG:</strong>
+  <%=  @user.general_register %>
+</p>
+<p>
+  <strong>Aniversário:</strong>
+  <%=  @user.birthday %>
+</p>
+<p>
+  <strong>Endereço:</strong>
+  <%= @user.state %>/<%= @user.city %></br>
+  <%=  @user.adress %>/<%=  @user.adress_number %>/
+  <%= @user.cep %>
+</p>
+<p>
+  <strong>Contato:</strong>
+  <%= @user.cel %>
+</p>
+
+<p>
+  <strong>Universidade/semestre:</strong>
+  <%= @user.university %>/<%= @user.semester %>
+
+</p>
+<p>
+  <strong>Link do facebook:</strong>
+  <%= @user.facebook_profile_link%>
+  
+</p>
+<p>
+  <strong>Respostas:</strong>
+  </br><span>Resposta 1: </span><%= @user.answer_1%></br>
+  <span>Resposta 2: </span><%= @user.answer_2%></br>
+  <span>Resposta 3: </span><%= @user.answer_3%></br>
+  <span>Resposta 4: </span><%= @user.answer_4%></br>
+</p>
+<p>
+  <strong>Categorias:</strong>
+   <% #find_eventcategories_by_ids(@user.categories_ids).each do |p| %>
+   <%#=p.name %></br>
+   <%#end%>
+</p>
+<p>
+  <strong>Justificativa:</strong>
+  </br><%= @user.justify%></br>
+
+</p>
+<p>
+  <strong>Experiências:</strong>
+  </br><%= @user.experience%></br>
+
+</p>
+
+
+<%= link_to 'Back', crew_users_path %>

@@ -1,0 +1,50 @@
+
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box">
+         <div class="dropdown pull-right">
+                              <%= link_to 'Ver todas', crew_category_partners_path, class: 'btn btn-primary' %>
+         </div>
+         <h4 class="header-title m-t-0 m-b-30">Subcategorias de parceiros</h4>
+
+         <div class="row">
+            <div class="col-md-12">
+              <%= form_for @crew_category_partner, url: {action: "create"}   do |f| %>
+                <% if @crew_category_partner.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(crew_category_partner.errors.count, "error") %> prohibited this crew_category_partner from being saved:</h2>
+
+                    <ul>
+                    <% crew_category_partner.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                
+                <div class="form-group">
+                  <div class="col-md-10">
+                  <%= f.label :name do %>
+                  <span>Nome</span>
+                  <% end %>
+                  <%= f.text_field :name, class: "form-control"  %><br><br>
+                </div>  
+                  </div>
+
+                <div class="form-group m-b-0">
+                  <div class="col-md-12">
+                  <%= f.submit 'Criar subcategoria', class: 'btn btn-purple'  %>
+                </div>
+                  </div>
+
+              <% end %>
+            </div>
+            <!-- end col -->
+         </div>
+         <!-- end row -->
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- end row -->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="SONU ADMIN - 2017">
+   <meta name="author" content="GTi Engenharia Jr">
+
+   <title>SONU - Admin</title>
+   <!-- App css -->
+   <%= csrf_meta_tags %>
+   <%= stylesheet_link_tag  'dashboard' %>
+   <%= javascript_include_tag 'dashboard_top'%>
+
+</head>
+<body>
+
+  <%=yield%>
+
+  <% flash.each do |key, value| %>
+    <script type="text/javascript">
+       toastr.error('<span><%= value %></span>', "Aviso");
+    </script>
+  <% end %>
+</body>
+</html>

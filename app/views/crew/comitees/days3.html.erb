@@ -1,0 +1,32 @@
+<div class="row">
+   <div class="col-sm-12">
+   <div class="card-box table-responsive">
+   <button data-toggle="tooltip" data-placement="left" title="Remove todos que não efetuaram o pagamento." type="button" class="btn btn-danger waves-effect w-md m-b-5 pull-right">Retirar todos do comitê</button>
+         <h4 class="header-title m-t-0 m-b-30">3 dias sem pagar</h4>
+         <table id="datatable-buttons" class="table table-striped table-bordered">
+            <thead>
+               <tr>
+                  <th>Nome do comitê</th>
+                  <th>Tempo de alocação</th>
+                  <th>Nome do usuário</th>
+                  <th>Status do Pagamento</th>
+                  <th>Tipo de comitê</th>
+               </tr>
+            </thead>
+            <tbody>
+               <% @users.each do |user| %>
+               <tr>
+                  <td><%=user.comitee.name%></td>
+                  <td><%= ((Time.now - user.inscription_date) / (24*60*60)).round %> dias</td>
+                  <td><%=user.name%></td>
+                  <td><%=user.payment_status %></td>
+                  <td><%=user.comitee.dual? ? 'Duplo' : 'Indivual' %></td>
+               </tr>
+               <% end %>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- end row -->

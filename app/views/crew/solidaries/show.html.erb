@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @crew_solidary.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crew_solidary.description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @crew_solidary.photo %>
+</p>
+
+<%= link_to 'Edit', edit_crew_solidary_path(@crew_solidary) %> |
+<%= link_to 'Back', crew_solidaries_path %>

@@ -69,7 +69,7 @@ a, a:hover,
 
 .speaker-social,
 .gallery-overlay {
-	background-color: rgba(233, 75, 76, 0.9);
+	background-color: #3A4266;
 }
 
 .btn:before,
@@ -84,4 +84,8 @@ blockquote {
 	border-left-color: #21294C;
 }
 
+
+.price-info a {
+	color: #fff;
+}
 

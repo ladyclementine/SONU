@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @crew_school.title %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= raw @crew_school.description %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= image_tag @crew_school.photo_url(:small) %>
+</p>
+
+<%= link_to 'Edit', edit_crew_school_path(@crew_school) %> |
+<%= link_to 'Back', crew_schools_path %>

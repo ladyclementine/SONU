@@ -1,0 +1,58 @@
+<div class="gb-breadcrumb gb-bg white-color">
+			<div class="container">
+				<div class="breadcrumb-info text-center">
+					<div class="title-white">
+						<h1>
+							
+							<span>Notícias</span>
+						
+						</h1>
+					</div>
+					<ol class="breadcrumb">
+						<li><%= link_to 'Carta de apresentação', apresentation_path %></li>
+						<li class="active"><%= link_to 'O secretariado', secretary_path %></li>
+					</ol>				
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.gb-breadcrumb -->	
+		<div class="bg-page-content">
+			<div class="container">
+				<div class="row">
+					<% @crew_blogs.each do |crew_blogs| %>
+					<div class="col-sm-8 col-md-9">
+						<div class="blog-content">
+							<div class="gb-post gb-box-shadow">
+								<div class="entry-header">
+									<div class="entry-thumbnail">
+										<%= (image_tag crew_blogs.photo, class: "img-responsive") %>
+									</div>
+									<span class="read-more"><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></span>
+								</div>
+								<div class="entry-content">
+									<div class="pull-left">
+										<span class="post-date">
+										<%= crew_blogs.created_at.strftime("%d") %>
+										<span><%= crew_blogs.created_at.strftime("%B/%Y") %></span>
+
+										</span>
+										<span class="share"><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></span>
+									</div>
+									<div class="media-body">
+										<h2 class="entry-title"><%= link_to crew_blogs.title, news_path(crew_blogs) %></h2>
+										</br>
+										<div class="entry-summary">
+											<p><%= crew_blogs.introdution %></p>
+										</div>
+									</div>
+								</div>
+							</div><!-- /.gb-post -->
+						</div><!-- /.blog-content -->
+					</div>
+				<% end %>
+					<div class="digg_pagination">
+						<%= will_paginate @crew_blogs %>
+
+					</div>
+			</div>
+		</div><!-- /.container -->
+	</div><!-- /.gb-page-content -->

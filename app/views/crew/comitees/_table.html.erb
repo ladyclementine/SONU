@@ -1,0 +1,63 @@
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box table-responsive">
+      <%=link_to new_crew_category_event_path do %><button type="button" class="btn btn-primary waves-effect w-md waves-light m-b-5 pull-right">Adicionar categorias do comitê</button><% end %><br><br>
+      <%=link_to new_crew_comitee_path do %><button type="button" class="btn btn-primary waves-effect w-md waves-light m-b-5 pull-right">Adicionar Comitê</button><% end %>
+         <h4 class="header-title m-t-0 m-b-30">Gerenciamento de Comitês</h4>
+         <table id="datatable-buttons" class="table table-striped table-bordered">
+            <thead>
+               <tr>
+                  <th>Nome</th>
+                  <th>Tipo de evento</th>
+                  <th>Data</th>
+                  <th>Data Final</th>
+                  <th>Total não cotista</th>
+                  <th>Total cotista</th>
+                  <th>Preço</th>
+                  <th>Preço por Cotas</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tbody>
+               <% @comitees.each do |comitee| %>
+               <tr>
+                  <td><%=comitee.name%></td>
+                  <td><%=comitee.type_event%>/
+                    <% if comitee.dual == true %>
+                        <span>dupla</span>
+                        <% else %>
+                        <span>individual</span> 
+                     <% end %>  
+                  </td>
+                  <td><%=comitee.start_date.strftime("%d/%m/%Y")%></td>
+                  <td><%=comitee.end_date.strftime("%d/%m/%Y")%></td>
+                  <td><%=comitee.users.where(is_cotist:false).count %>/<%=comitee.limit%></td>
+                  <td><%=comitee.users.where(is_cotist:true).count %>/<%=comitee.limit_cotist%></td>
+                  <td><%=comitee.value_not_cotist%></td>
+                  <td><%=comitee.value_cotist%></td>
+
+                  <td><%= link_to  edit_crew_comitee_path(comitee) do %><button data-toggle="tooltip" data-placement="left" title="Editar comitê" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i> </button> <% end %></td>
+
+                     <td><%= link_to  crew_comitee_path(comitee) do %>
+                     <button data-toggle="tooltip" data-placement="left" title="Ver todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-primary m-b-5"> <i class="fa fa-users"></i>  </button><% end %></td>
+
+                      <td><%= link_to crew_comitee_users_unsubscribe_all_path(comitee), method: 'get' do %>
+                      <button data-toggle="tooltip" data-placement="left" title="Remover todos os usuários do comitê" class="btn btn-icon waves-effect waves-light btn-inverse m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-user-times"></i></button><% end %>
+                      </td>
+                      
+                      <td><%=link_to crew_comitee_path(comitee), :method=>:delete, :class=>:destroy, data: {confirm: "Deseja apagar o comitê #{comitee.name}?"} do %>
+                     <button data-toggle="tooltip" data-placement="left" title="Apagar comitê" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %></td>
+
+                  </td>
+               </tr>
+               <% end %>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- end row -->

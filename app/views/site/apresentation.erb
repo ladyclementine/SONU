@@ -1,7 +1,7 @@
 <div class="gb-breadcrumb gb-bg white-color">
 			<div class="container">
 				<div class="breadcrumb-info text-center">
-					<div class="page-title title-white">
+					<div class="title-white">
 						<h1>
 							
 							<span>Carta de apresentação</span>
@@ -9,8 +9,8 @@
 						</h1>
 					</div>
 					<ol class="breadcrumb">
-						<li><a href="index.html">A SONU</a></li>
-						<li class="active">Carta de apresentação</li>
+						<li><%= link_to 'Carta de apresentação', apresentation_path %></li>
+						<li class="active"><%= link_to 'O secretariado', secretary_path %></li>
 					</ol>				
 				</div>
 			</div><!-- /.container -->
@@ -19,24 +19,23 @@
 		<div class="gb-about gb-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="about-info">
-							<h1>Sobre o Projeto</h1>
-							<h2>Lorem ipsum dolor sit amet, consectetuer adipiscing.</h2>
-							<p>O Programa Simulação da Organização das Nações Unidas, veiculado à Pró-Reitoria de Extensão da Universidade Federal do Ceará (UFC) e realizado em parceria com a Universidade de Fortaleza (Unifor), é o primeiro modelo de simulação de organismos internacionais no estado do Ceará, sendo organizada por alunos bolsistas e voluntários de diversas instituições de Ensino Superior de Fortaleza, sob a orientação de docentes da UFC. 
+				               <% @crew_apresentations.each do |crew_apresentation| %>
+				            		<span class="socialmedia">
+				            		<a class="icons" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            		<a class="icons" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            		<a class="icons" href="#"><i class="fa fa-flickr" aria-hidden="true"></i>
+                            		</a>
+                            		</span>
+				                  <h1><%= crew_apresentation.title %></h1>
+				                  </br>
+				                  <p><%= raw crew_apresentation.description %></p>
+				       
+				               <% end %>
 
-Fundada em 2004, a SONU procura recriar todo o ambiente de organismos e tribunais internacionais, principalmente daqueles ligados ao sistema da Organização das Nações Unidas (ONU). Na simulação, os participantes atuam como diplomatas, ministros, juízes, promotores e defendem os interesses dos países ou das partes que representam. Para tornar a experiência ainda mais realista, também são simuladas agências de notícias internacionais, as quais realizam toda a cobertura jornalística das simulações realizadas.
-
- Para além das tradicionais simulações, a SONU também realiza modelos de organismos tradicionais em escolas públicas e particulares de Fortaleza e fornece palestras, minicursos, publicações, campanhas solidárias e outras iniciativas ligadas às relações internacionais através dos demais projetos integrantes do programa SONU: SONU Escolas e SONU Acadêmico. </p>
-							<div class="buttons">
-								<a href="#" class="btn button-red">Register Now</a>
-								<a href="#" class="btn btn-default">Watch Video</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="about-image">
-							<img src="/images/sobresonu.jpg" alt="Image" class=" img-responsive">
+				 
+							</br>
 						</div>
 					</div>
 				</div><!-- /.row -->

@@ -10,6 +10,6 @@
 *= require main.css
 *= require skin.css
 *= require responsive.css
-
-
+*= require admin_template/adminto/css/plugins/toastr/toastr.min.css
+*= require multi-selec/css/multi-select.css
  */
