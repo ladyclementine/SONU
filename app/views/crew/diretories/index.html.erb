@@ -20,7 +20,7 @@
     <tr>
       <td><%= crew_diretory.office.name %></td>
       <td><%= crew_diretory.name %></td>
-      <td><%= image_tag crew_diretory.photo_url(:thumb) %></td>
+      <td><%= image_tag crew_diretory.photo_url(:thumb)unless crew_diretory.photo_url.blank? %></td>
       <td><%= link_to  crew_diretory do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
         <%=  link_to  edit_crew_diretory_path(crew_diretory) do %>
         <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>

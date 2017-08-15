@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4 col-md-3">
-					<% @crew_big_sonu_comitees[0..4].each do |crew_big_sonu_comitee| %>
+					<% @crew_big_sonu_comitees.limit(4).each do |crew_big_sonu_comitee| %>
 						<div class="gb-sidebar">
 							<div class="widget-area">					
 
@@ -24,6 +24,7 @@
 									<h3 class="widget_title">Outros comitês</h3>
 									<ul class="gb-list">
 										<li>
+
 											<span><%= @crew_big_sonu_comitee.name %></span>
 											<p><%= link_to 'Saiba mais', big_sonu_comitees_path(crew_big_sonu_comitee) %></p>
 										</li>

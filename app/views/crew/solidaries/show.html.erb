@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @crew_solidary.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @crew_solidary.description %>
+  <strong>Descrição:</strong>
+  <%= raw @crew_solidary.description %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @crew_solidary.photo %>
+  <strong>Imagem:</strong>
+  <%= image_tag @crew_solidary.photo_url(:small)%>
 </p>
 
 <%= link_to 'Edit', edit_crew_solidary_path(@crew_solidary) %> |
