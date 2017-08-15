@@ -3,7 +3,7 @@ CarrierWave.configure do |config|
     provider:              'AWS',                        # required
     aws_access_key_id:     Rails.application.secrets.s3_access_key_id,            # required
     aws_secret_access_key: Rails.application.secrets.s3_secret_access_key,            # required
-    region:                'sa-east-1',                  # optional, defaults to 'us-east-1'
+    region:                'us-east-1',                  # optional, defaults to 'us-east-1'
   }
   config.fog_directory  = 'sonu2017aws'                          # required
   config.fog_public     = true                                        # optional, defaults to true
