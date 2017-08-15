@@ -96,15 +96,15 @@ Rails.application.routes.draw do
   #ROTAS DO SITE
 
   root 'site#index'
-  get 'site/academic'
-  get 'site/beta'
-  get 'site/certificates'
+  get 'sonu-academico' => 'site#academic', as: :academic
+  get 'sonu-beta' => 'site#beta', as: :beta
+  get 'certificados' => 'site#certificates', as: :certificates
   get '/comites' => 'site#comitees'
   get '/comites/:id' => 'site#show_comitee', as: :big_sonu_comitees
   get '/contato' => 'site#contact', as: :contact
-  get 'site/cronogram'
+  get '/cronograma' => 'site#cronogram', as: :cronogram
   get '/a-diretoria' => 'site#diretory', as: :diretory
-  get 'site/faq'
+  get '/faq' => 'site#faq', as: :faq
   get '/fortaleza' => 'site#fortaleza', as: :fortaleza
   get '/inscricoes'=> 'site#inscription', as: :inscription
   get '/o-que-sao-muns' => 'site#muns', as: :muns
@@ -114,10 +114,10 @@ Rails.application.routes.draw do
   get '/o-secretariado' => 'site#secretary', as: :secretary
   get '/carta-de-apresentacao' => 'site#apresentation', as: :apresentation
   get '/sonu-solidaria' => 'site#solidary', as: :solidary
-  get 'site/speeches'
+  get 'minicursos-e-palestras' => 'site#speeches', as: :speeches
   get '/historia-da-sonu' => 'site#story', as: :story
   get '/noticias' => 'site#news'
-  get 'site/press'
+  get '/imprensa'=>'site#press', as: :press
   get '/noticias/:id' => 'site#show', as: :news
 
 
