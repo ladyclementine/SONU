@@ -8,6 +8,7 @@ class SiteController < ApplicationController
   def index
     @crew_blogs = Crew::Blog.all.order("created_at DESC")
     @partners = Crew::Partner.all
+    
   end
 
   def academic
@@ -35,7 +36,7 @@ class SiteController < ApplicationController
   end
 
   def diretory
-   @crew_diretories = Crew::Diretory.all
+   @offices = Office.all
   end
 
   def faq
@@ -58,6 +59,8 @@ class SiteController < ApplicationController
   end
 
   def partners
+    @category_partners = CategoryPartner.all
+
   end
 
   def perfil
@@ -68,7 +71,7 @@ class SiteController < ApplicationController
   end
 
   def secretary
-    @crew_secretaries = Crew::Secretary.all.order("created_at ASC")
+    @offices = Office.all
   end
 
   def apresentation
@@ -76,6 +79,7 @@ class SiteController < ApplicationController
   end
 
   def solidary
+    @crew_solidaries = Crew::Solidary.all
   end
 
   def speeches

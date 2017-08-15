@@ -38,6 +38,13 @@ class Crew::ComiteesController < Crew::BaseController
     end
   end
 
+  def destroy
+    @comitee.destroy
+    flash[:success] = "Comitê apagado com sucesso."
+    redirect_to crew_comitees_path
+    
+  end
+
   def days3
     data = Time.now.getutc
     @users = User.where('inscription_date <= :three_days_ago', :three_days_ago => Time.now - 3.days
@@ -49,6 +56,7 @@ class Crew::ComiteesController < Crew::BaseController
     @comitee_id = @user.comitee_id
     @user.comitee_id = nil
     @user.cpf_dual = nil
+    @user.categories_ids = nil
     @user.answer_1 = nil
     @user.answer_2 = nil
     @user.answer_3 = nil

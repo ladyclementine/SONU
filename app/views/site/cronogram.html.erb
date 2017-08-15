@@ -1,60 +1,30 @@
 <div class="gb-breadcrumb gb-bg white-color">
 			<div class="container">
 				<div class="breadcrumb-info text-center">
-					<div class="page-title">
+					<div class="page-index">
 						<h1>
 							<span class="before-top"></span>
-							<span>Event Schedule</span>
+							<span>Cronograma do evento</span>
 							<span class="before-bottom"></span>
 						</h1>
-					</div>
-					<ol class="breadcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li class="active">Schedule</li>
-					</ol>				
+					</div>				
 				</div>
 			</div><!-- /.container -->
 		</div><!-- /.gb-breadcrumb -->	
-
-		<div class="gb-schedules gb-section text-center">
+<div class="gb-about gb-section">
 			<div class="container">
-				<% @crew_big_sonu_schedules.each do |crew_big_sonu_schedule| %>
-				<div class="schedule-content text-left">
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab"><span>Day One</span>
-						<%= crew_big_sonu_schedule.start.strftime("%d/%B/%y") %></a></li>
-					</ul>
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="one">
-							<div class="schedule">
-								<ul class="gb-list">
-									
-									<li class="expandable">
-										<div class="row">
-											<div class="col-sm-9 col-md-10">
-												<div class="schedule-info">
-													<h2><%= raw crew_big_sonu_schedule.activity %></h2>
-													<div class="schedule-summary">
-														<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-													</div>
-													<ul class="gb-list">
-														<li><i class="fa fa-clock-o" aria-hidden="true"></i><span>Horário:</span> <%= crew_big_sonu_schedule.start.strftime("%H:%M") %></li>
-														<li><i class="fa fa-google-plus" aria-hidden="true"></i><span>Venue:</span> Hall 1, Building A</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-								
-								</ul>							
-							</div><!-- /.schedule -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="about-info">
+				            	<div class="speaker">
+				            	<div class="speaker-title">
+				                  <h2>EM BREVE</h2>
+				                  </br>
+				       			</div>
+				       			</div>
+							</br>
 						</div>
 					</div>
-
-				</div><!-- /.schedule-content -->		
-				<% end %>		
+				</div><!-- /.row -->
 			</div><!-- /.container -->
-
-		</div><!-- /.gb-section -->
-
-
+		</div><!-- /.gb-about -->	

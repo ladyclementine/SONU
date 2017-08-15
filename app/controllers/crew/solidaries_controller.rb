@@ -1,4 +1,4 @@
-class Crew::SolidariesController < ApplicationController
+class Crew::SolidariesController < Crew::BaseController
   before_action :set_crew_solidary, only: [:show, :edit, :update, :destroy]
 
   # GET /crew/solidaries

@@ -69,6 +69,6 @@ class Crew::DiretoriesController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_diretory_params
-      params.require(:crew_diretory).permit(:office, :name, :description, :photo)
+      params.require(:crew_diretory).permit(:name, :photo, :description, :office_id)
     end
 end

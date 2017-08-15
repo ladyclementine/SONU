@@ -66,16 +66,35 @@
     </div>        
 </div>
 
-<div class="gb-cta-1 gb-section gb-bg">
-    <div class="container">
-        <div class="row"> 
-        </br>
-        <div class="col-md-12 text-center">
-            <iframe width="700" height="350" src="https://www.youtube.com/embed/RTToBS0J8B0" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-</div><!-- /.container -->
-</div><!-- /.gb-cta-1 -->
+        <div class="gb-cta-1 gb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="institucional">
+                            <h1>A SONU</h1>
+                            <h2>Assista nosso vídeo institucional</h2>
+                            <p>Realizada em parceria com a Universidade Federal do Ceará (UFC) e com a Universidade de Fortaleza (UNIFOR), a Simulação da Organização das Nações Unidas - SONU é o primeiro modelo a simular organismos internacionais no estado do Ceará.</p>
+                            <div class="buttons">
+                                <%= link_to apresentation_path, class: "btn button-red"  do %> <span>Carta de apresentação</span>
+                                <% end %>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="">
+                            <figure>
+                            <div class="boxVideo">
+                            <iframe width="600" height="394"  src="https://www.youtube.com/embed/6e9JE14d260" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.gb-about -->   
+
+
 
 <div class="gb-brand gb-section gb-bg ">
     <div class="container">
@@ -88,24 +107,25 @@
         </div>
     </div>
     <div class="brand-slider text-center">
-    <% @partners.each do |part| %>
-    <% part.photos.each do |image| %>
-        <div class="brand">
-            <%= image_tag(image.url(:partners), class: "img-responsive")%>
-        </div>
-    <% end %>
-    <% end %>
-    </div>              
+        <% @partners.each do |partner|%>
+                <%= link_to partners_path do %>
+                    <div class="brand">
+                    <%= image_tag partner.photo_url(:partners) %>
+                    </div>
+                    <% end %>
+                    <% end %>
+               
 </div><!-- /.container -->
 </div><!-- /.gb-brand  -->
 
 <div class="gb-contact text-center">
-    <div id="gmap"></div>
+    <div id="gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381778.25053409673!2d-38.691692528496176!3d-3.7336214633884484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74c3f464c783f%3A0x4661c60a0c6b37ca!2sFortaleza+-+CE!5e0!3m2!1spt-BR!2sbr!4v1502672161402" width="1300" height="600" frameborder="0" style="border:0" allowfullscreen></iframe></div>
     <div class="contact-info">
         <div class="event">
             <h2>Centro, Fortaleza-CE</h2>
             <address><p>Rua Meton de Alencar S/N</p></address>
-            <address><p>contato@sonu.com.br</p></address>
+            <address><p>Faculdade de Direito da UFC</p></address>
+            <address><p>sonu.extensao@gmail.com</p></address>
             <%= link_to contact_path, class: "btn btn-default" do %>
             <span>Fale Conosco</span>
             <% end %>

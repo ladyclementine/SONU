@@ -2329,7 +2329,7 @@ a, input, .btn, .btn:before,
 
 	margin-bottom: 100px;
 	text-align: left;
-	border-left: 30px solid grey;
+	border-left: 10px solid grey;
 }
 
 
@@ -2524,3 +2524,24 @@ a, input, .btn, .btn:before,
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+ figure { width: 90%; min-width: 17.5em; margin:0 auto;}
+figcaption { font: 120% sans-serif; text-align: center;}
+.boxVideo {
+    position: relative;
+    padding-bottom: 56.25%; 
+    padding-top: 25px;
+    height: 0;
+    margin:0 auto;
+}
+.boxVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.institucional h1, .institucional h2, .institucional p{
+	color: #fff;
+}

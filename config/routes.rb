@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :category_event
     resources :big_sonu_comitees
     resources :big_sonu_schedules
+    resources :offices
+    resources :diretories
+    resources :category_partners
+
 
     devise_for :admins,
     controllers:{
@@ -36,6 +40,7 @@ Rails.application.routes.draw do
           get 'unsubscribe_users' => 'comitees#unsubscribe_user_all', as: :users_unsubscribe_all
         end
         resources :users
+         match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
         resources :admins
       end
 

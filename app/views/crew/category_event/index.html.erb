@@ -28,7 +28,11 @@
 
                   <td><%= category_event.name %></td>
                   <td><%= category_event.comitee_id%></td>
-                  <td><%= link_to 'Edit', edit_crew_category_event_path(category_event), class: 'btn btn-warning'  %></td>
+                  <td><%= link_to 'Editar', edit_crew_category_event_path(category_event), class: 'btn btn-warning'  %>
+                  <%= link_to  crew_category_event_index_path(category_event), :method=>:delete, :class=>:destroy, data: { confirm: 'Tem certeza que deseja apagar?' } do %><button data-toggle="tooltip" data-placement="left" title="Apagar" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %>
+                    
+
+                  </td>
                 </tr>
               <% end %>
             </tbody>

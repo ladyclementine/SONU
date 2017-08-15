@@ -32,8 +32,6 @@ class Crew::PartnersController < Crew::BaseController
 
   def update
     respond_to do |format|
-     p crew_partner_params[:photos]
-
       if @crew_partner.update(crew_partner_params)
         format.html { redirect_to @crew_partner, notice: 'Partner was successfully updated.' }
         format.json { render :show, status: :ok, location: @crew_partner }
@@ -58,6 +56,6 @@ class Crew::PartnersController < Crew::BaseController
   end
 
   def crew_partner_params
-    params.require(:crew_partner).permit(:title, {photos: []})
+    params.require(:crew_partner).permit( :name, :photo, :category_partner_id)
   end
 end

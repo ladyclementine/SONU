@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Office:</strong>
-  <%= @crew_diretory.office%>
-</p>
-
-<p>
   <strong>Name:</strong>
-  <%= @crew_diretory.name%>
+  <%= @crew_diretory.name %>
 </p>
 
 <p>
   <strong>Photo:</strong>
-  <%= @crew_diretory.photo_url(:medio) %>
+  <%= @crew_diretory.photo %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crew_diretory.description %>
+</p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @crew_diretory.office %>
 </p>
 
 <%= link_to 'Edit', edit_crew_diretory_path(@crew_diretory) %> |

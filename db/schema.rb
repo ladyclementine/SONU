@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811175912) do
+ActiveRecord::Schema.define(version: 20170814235619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20170811175912) do
   create_table "category_events", force: :cascade do |t|
     t.string   "name"
     t.integer  "comitee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_partners", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -98,6 +104,16 @@ ActiveRecord::Schema.define(version: 20170811175912) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "crew_diretories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.string   "description"
+    t.integer  "office_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["office_id"], name: "index_crew_diretories_on_office_id", using: :btree
+  end
+
   create_table "crew_fortalezas", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -120,10 +136,12 @@ ActiveRecord::Schema.define(version: 20170811175912) do
   end
 
   create_table "crew_partners", force: :cascade do |t|
-    t.string   "title"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "photos",     default: [],              array: true
+    t.string   "name"
+    t.string   "photo"
+    t.integer  "category_partner_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["category_partner_id"], name: "index_crew_partners_on_category_partner_id", using: :btree
   end
 
   create_table "crew_schools", force: :cascade do |t|
@@ -135,12 +153,13 @@ ActiveRecord::Schema.define(version: 20170811175912) do
   end
 
   create_table "crew_secretaries", force: :cascade do |t|
-    t.string   "office"
     t.string   "name"
     t.text     "description"
     t.string   "photo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "office_id"
+    t.index ["office_id"], name: "index_crew_secretaries_on_office_id", using: :btree
   end
 
   create_table "crew_solidaries", force: :cascade do |t|
@@ -156,6 +175,19 @@ ActiveRecord::Schema.define(version: 20170811175912) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "ocupations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.boolean  "is_secretary"
   end
 
   create_table "users", force: :cascade do |t|
@@ -209,10 +241,13 @@ ActiveRecord::Schema.define(version: 20170811175912) do
     t.boolean  "is_cotist",              default: false
     t.string   "payment_status"
     t.integer  "category_events_id"
-    t.integer  "categories_ids"
+    t.string   "categories_ids"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["general_register", "cpf"], name: "index_users_on_general_register_and_cpf", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "crew_diretories", "offices"
+  add_foreign_key "crew_partners", "category_partners"
+  add_foreign_key "crew_secretaries", "offices"
 end

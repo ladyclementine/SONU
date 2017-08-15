@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @crew_blog.title %>
 </p>
 
 <p>
-  <strong>Introdution:</strong>
+  <strong>Introdução:</strong>
   <%= @crew_blog.introdution %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @crew_blog.description %>
+  <strong>Descrição:</strong>
+  <%= raw @crew_blog.description %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= (image_tag @crew_blog.photo) %>
+  <strong>Imagem:</strong>
+  <%= (image_tag @crew_blog.photo_url(:thumb)) %>
 </p>
 
 

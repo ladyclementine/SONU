@@ -1,4 +1,5 @@
 class Crew::Partner < ApplicationRecord
-  mount_uploaders :photos, PhotoUploader
-  validates_presence_of :title, :photos
+  mount_uploader :photo, PhotoUploader
+  validates_presence_of :name, :photo
+  belongs_to :category_partner
 end

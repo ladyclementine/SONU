@@ -54,7 +54,9 @@
 </p>
 <p>
   <strong>Categorias:</strong>
-  </br><%= @user.categories_ids%></br>
+   <% #find_eventcategories_by_ids(@user.categories_ids).each do |p| %>
+   <%#=p.name %></br>
+   <%#end%>
 </p>
 <p>
   <strong>Justificativa:</strong>

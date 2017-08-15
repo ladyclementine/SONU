@@ -2,14 +2,12 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @crew_partner.title %>
+  <%= @crew_partner.name %>
 </p>
 
 <p>
   <strong>Photo:</strong>
-  <% @crew_partners.each do |photo| %>
-  <%= image_tag (photo.photos) %>
-  <% end %>
+  <%= image_tag @crew_partner.photo %>
 </p>
 
 

@@ -70,6 +70,6 @@ class Crew::SecretariesController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_secretary_params
-      params.require(:crew_secretary).permit(:office, :name, :description, :photo)
+      params.require(:crew_secretary).permit(:name, :description, :photo, :office_id)
     end
 end

@@ -1,5 +1,5 @@
 class Crew::UsersController < Crew::BaseController
-  before_action :load_user, only: [:edit, :update, :show]
+  before_action :load_user, only: [:edit, :update, :show, :destroy]
 
   layout 'admin_dashboard'
 
@@ -26,6 +26,13 @@ class Crew::UsersController < Crew::BaseController
     end
   end
 
+   def destroy
+    @users.destroy_attributes(user_params)
+    flash[:success] = "Usuário apagado com sucesso."
+    redirect_to crew_users_path
+    
+  end
+
   # def qualified
   #   @users = User.allocated
   # end
@@ -48,6 +55,44 @@ class Crew::UsersController < Crew::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :is_cotist, :name, :general_register, :cpf, :gender, :birthday, :cep, :state, :adress, :adress_number, :complement, :city, :district, :phone, :cel, :university, :registration_id, :semester, :facebook_profile_link, :justify, :answer_1, :answer_3, :experience, :answer_2, :answer_4, :answer_5)
+    params.require(:user).permit(:email, :password, :name,
+              :general_register,
+                           :cpf,
+                        :gender,
+                      :birthday,
+                           :cep,
+                         :state,
+                        :adress,
+                 :adress_number,
+                    :complement,
+                          :city,
+                      :district,
+                         :phone,
+                           :cel,
+                    :university,
+               :registration_id,
+                      :semester,
+         :facebook_profile_link,
+                      :cpf_dual,
+                      :answer_1 ,
+                      :answer_2 ,
+                      :answer_3 ,
+                      :answer_4 ,
+                      :answer_5,
+                       :justify,
+                    :experience,
+                     :face_link,
+                     :completed,
+                        :active,
+                        :lot_id,
+                       :paid_on,
+                       :room_id,
+                    :lider_dual,
+              :inscription_date,
+                    :comitee_id,
+                     :is_cotist,
+                :payment_status,
+            :category_events_id,
+                :categories_ids => [])
   end
 end

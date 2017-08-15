@@ -29,12 +29,10 @@
                <% end %>
                <div class="form-group">
                   <div class="col-md-10">
-                     <%= f.label :office do%>
-                     <span>Cargo</span>
-                     <% end %>
-                     <%= f.text_field :office,  class: "form-control" %>
-                  </div>
-               </div>
+                <%= f.label :office_id %>
+                 <%= f.select :office_id, Office.where(is_secretary: true).all.collect { |c| [ c.name, c.id ] }, { include_blank: true } , { class: "form-control" }%>
+              </div>
+              </div>
                <div class="form-group">
                   <div class="col-md-10">
                      <%= f.label :name do%>

@@ -38,6 +38,11 @@
                      <% end %>                  
                   </td>
                   <td>
+                     <p>
+                       <%= user.categories_ids%>
+                     </p>
+                  </td>
+                  <td>
                      <%= link_to crew_user_path(user) do %>
                      <button data-toggle="tooltip" data-placement="left" title="Dados da inscrição" class="btn btn-icon waves-effect waves-light btn-inverse m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-book"></i> </button>
                      <% end %>

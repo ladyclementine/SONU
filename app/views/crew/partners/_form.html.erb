@@ -29,20 +29,30 @@
                           </ul>
                         </div>
                       <% end %>
+                      <div class="form-group">
+                <div class="col-md-10">
+                  <%= f.label :category_partner_id do %>
+                  <span>Cargo</span>
+                  <% end %>
+                  <%= f.select :category_partner_id, CategoryPartner.all.collect { |c| [ c.name, c.id ] }, { include_blank: true } , { class: "form-control" }%><br><br>
+                </div>
+              </div>
 
                       <div class="form-group">
                   <div class="col-md-10">
-                     <%= f.label :title do%>
-                     <span>Título</span>
+                     <%= f.label :name do%>
+                     <span>Nome</span>
                      <% end %>
-                     <%= f.text_field :title,  class: "form-control" %>
+                     <%= f.text_field :name,  class: "form-control" %><br><br>
                   </div>
                </div>
 
                       <div class="form-group">
                   <div class="col-md-10">
-                        <%= f.label :photo %>
-                        <%= f.file_field :photos,   class: "dropify", multiple: true   %>
+                        <%= f.label :photo do %>
+                        <span>Imagem</span>
+                        <% end %>
+                        <%= f.file_field :photo,   class: "dropify"%><br><br>
                       </div>
                         </div>
 
