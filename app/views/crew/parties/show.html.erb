@@ -10,5 +10,10 @@
   <%= raw @crew_party.description %>
 </p>
 
+<p>
+	<strong>Imagem:</strong>
+	<%= image_tag @crew_party.photo_url(:small) unless @crew_party.photo_url.blank?  %>
+</p>
+
 <%= link_to 'Edit', edit_crew_party_path(@crew_party) %> |
 <%= link_to 'Back', crew_parties_path %>

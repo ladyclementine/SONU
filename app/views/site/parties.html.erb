@@ -16,27 +16,24 @@
 			</div><!-- /.container -->
 		</div><!-- /.gb-breadcrumb -->	
 
+		
 		<div class="gb-about gb-section">
 			<div class="container">
+					<% @crew_parties.each do |crew_party| %>
 				<div class="row">
-					<div class="col-centered">
-						<div class="about-info">
-				               <% @crew_parties.each do |crew_parties| %>
-				            	<div class="speaker">
-				            	<div class="speaker-title">
-				                  <h2><%= crew_parties.title %></h2>
-				                  </br>
-				                  <p><%= raw crew_parties.description %></p>
-				       			</div>
-				       			</div>
-				               <% end %>
-
-				 
-							</br>
+					<div class="col-md-4">
+						<div class="about-image">
+						<%= image_tag crew_party.photo_url(:medio) unless crew_party.photo_url.blank?  %>
 						</div>
 					</div>
-				</div><!-- /.row -->
+					<div class="col-md-8">
+						<div class="about-info">
+							<h1><%= crew_party.title %></h1>
+							<p><%= raw crew_party.description %></p>
+						</div>
+					</div>
+
+				</div><!-- /.row --><br><br>
+				<% end %>
 			</div><!-- /.container -->
 		</div><!-- /.gb-about -->	
-
-		

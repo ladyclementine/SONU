@@ -69,6 +69,6 @@ class Crew::ApresentationsController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_apresentation_params
-      params.require(:crew_apresentation).permit(:title, :description)
+      params.require(:crew_apresentation).permit(:title, :description, :photo)
     end
 end

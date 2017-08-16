@@ -1457,9 +1457,9 @@ address a {
 	color: #000;
 	line-height: 24px;
 	max-width: 100%;
-	background-color: #eaeaea;
 	padding: 25px;
-	border-bottom: 20px solid #000932;
+	/*background-color: #eaeaea;
+	border-bottom: 20px solid #000932;*/
 }
 
 .about-info h1 {

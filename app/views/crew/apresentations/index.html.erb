@@ -23,6 +23,7 @@
                <% @crew_apresentations.each do |crew_apresentation| %>
                <tr>
                   <td><%= crew_apresentation.title %></td>
+                   <td><%= image_tag crew_apresentation.photo_url(:small)unless crew_apresentation.photo_url.blank?  %></td>
                   <td><%= link_to  crew_apresentation do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
                  <%=  link_to  edit_crew_apresentation_path(crew_apresentation) do %>
                  <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>

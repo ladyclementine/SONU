@@ -69,6 +69,6 @@ class Crew::PartiesController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_party_params
-      params.require(:crew_party).permit(:title, :description)
+      params.require(:crew_party).permit(:title, :description, :photo)
     end
 end

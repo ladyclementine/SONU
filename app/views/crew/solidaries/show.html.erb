@@ -12,7 +12,7 @@
 
 <p>
   <strong>Imagem:</strong>
-  <%= image_tag @crew_solidary.photo_url(:small)%>
+  <%= image_tag @crew_solidary.photo_url(:small) unless @crew_solidary.photo_url.blank?%>
 </p>
 
 <%= link_to 'Edit', edit_crew_solidary_path(@crew_solidary) %> |
