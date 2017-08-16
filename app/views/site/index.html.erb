@@ -96,25 +96,25 @@
 
 
 
-<div class="gb-brand gb-section gb-bg ">
-    <div class="container">
-        <div class="title-index">
-            <h1>
+        <div class="gb-brand gb-section gb-bg ">
+            <div class="container">
+                <div class="title-index">
+                    <h1>
 
-                <span>NOSSOS PARCEIROS</span>
+                        <span>NOSSOS PARCEIROS</span>
 
-            </h1>
-        </div>
+                    </h1>
+                </div>
 
-    <div class="brand-slider text-center">
-        <% @partners.each do |partner|%>
-                <%= link_to partners_path do %>
+                <div class="brand-slider text-center">
+                    <% @partners.each do |partner|%>
+                    <%= link_to partners_path do %>
                     <div class="brand">
-                    <%= image_tag partner.photo_url(:partners) %>
+                        <%= image_tag partner.photo_url(:partners) %>
                     </div>
+                        <% end %>
                     <% end %>
-                    <% end %>
-               </div>
+                </div>
             </div><!-- /.container -->
         </div><!-- /.gb-brand  -->
 
