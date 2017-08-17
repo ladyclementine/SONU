@@ -115,14 +115,10 @@ button {
 
 .btn.btn-login {
 
-	background-color: transparent;
-	border: 1px solid #fff;
+	background-color: #21294C;
+	border: 1px solid #21294C;
 	color: #fff;
 }
-.btn-login:hover {
-	background-color: #21294C;
-}
-
 
 .btn:before,
 .btn:after {
@@ -2472,11 +2468,26 @@ a, input, .btn, .btn:before,
     position: relative;
     width: 420px;
 }
+.wrapper-page-inscription {
+    margin: 5% auto;
+    position: relative;
+    width: 70%;
+}
+.card-box-inscription{
+    
+    background: grey;
+    color: #fff;
 
+}
+.inscricao{
+	background-color: #DCDCDC;
+}
 .card-box{
     border: 1px solid black;
     background: rgba(33, 41, 76, 0.9 );
     color: #fff;
+
+
 }
 .logout-user{
 

@@ -17,7 +17,8 @@ class Comitee < ApplicationRecord
       else
         total += self.value_not_cotist
       end
-      "#{total}R$ + #{self.value_cotist}R$ para a dupla cotista ou #{total}R$ + #{self.value_not_cotist}R$ para a dupla não cotista."
+      "#{total}R$ + #{self.value_cotist}R$ para a dupla cotista ou 
+      #{total}R$ + #{self.value_not_cotist}R$ para a dupla não cotista."
     else
       #comitê individual
       user.is_cotist? ? self.value_cotist : self.value_not_cotist

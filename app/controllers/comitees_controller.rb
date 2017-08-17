@@ -43,7 +43,7 @@ class ComiteesController < ApplicationController
       @user.comitee_id = params[:id_evento]
       @user.inscription_date = Time.now
       if @user.update_attributes(user_params_inscription)
-        flash[:success] = "Você garantiu sua vaga. Agora, complete a inscrição para efetuar o pagamento"
+        flash[:success] = "Você garantiu sua vaga. Agora, efetue o pagamento."
         format.html {  redirect_to show_comitee_path(@user.comitee_id) }
       else
         @user.comitee_id = nil
@@ -57,7 +57,7 @@ class ComiteesController < ApplicationController
     @c = Comitee.find(params[:id_evento])
     if @c.dual?
 
-      if user_params_inscription[:cpf_dual].nil?
+      if user_params[:cpf_dual].nil?
         #ERRO, É NECESSARIO CPF
         flash[:error] = "Este comitê necessita de uma dupla"
         redirect_to show_comitee_path(params[:id_evento])
@@ -85,7 +85,7 @@ class ComiteesController < ApplicationController
     @comitee = Comitee.find(params[:id])
   end
 
-  def user_params_inscription
+  def user_params
     params.require(:user).permit(:cpf_dual, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link, :categories_ids => [])
   end
 
