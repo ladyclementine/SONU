@@ -13,7 +13,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to new_user_session_path
     else
       flash[:error] = 'Um erro ocorreu, não foi possível processar sua inscrição'
-      redirect_to new_user_registration_path
+      respond_to do |format|
+        format.html { render 'new'}
+        format.json {  render json: @user.errors }
+      end
     end
   end
 

@@ -31,7 +31,6 @@ before_action :set_category_event, only: [:show, :edit, :update, :destroy]
 
 
   def update
-    respond_to do |format|
       if  @category_event.update(category_event_params)
         flash[:success] = "Categoria editada com sucesso."
         redirect_to crew_category_event_index_path
@@ -40,7 +39,7 @@ before_action :set_category_event, only: [:show, :edit, :update, :destroy]
         render :new
       end
     end
-  end
+
 
   def destroy
     @category_event.destroy

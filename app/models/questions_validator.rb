@@ -1,6 +1,15 @@
 class QuestionsValidator < ActiveModel::Validator
   def validate(record)
     comitee = Comitee.find(record.comitee_id) if !record.comitee_id.nil?
+    if record.face_link== "" 
+      record.errors[:base] << "'Link Perfil Facebook' precisa ser respondida."
+    end
+    if record.justify == "" 
+      record.errors[:base] << "'Justifique a escolha das três primeiras opções' precisa ser respondida."
+    end
+    if record.experience == "" 
+      record.errors[:base] << "'Escreva suas experiências em simulações' precisa ser respondida."
+    end
     if record.answer_1 == "" && comitee.question_1 != ""
       record.errors[:base] << "A 1° pergunta precisa ser respondida."
     end

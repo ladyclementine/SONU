@@ -52,7 +52,7 @@
                      <% end %>
 
                      <%= link_to crew_comitee_user_unsubscribe_path(@comitee, user), method: 'get', data: {confirm: "Deseja apagar #{user.name} do comitê?"}  do %>
-                     <button class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %>
+                     <button data-toggle="tooltip" data-placement="left" title="Apagar usuário do comitê" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %>
                   </td>
 
                   <% else %>

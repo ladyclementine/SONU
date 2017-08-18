@@ -10,9 +10,7 @@
                   <th>Inscrito</th>
                   <th >Cotista</th>
                   <th>Data de Inscr.</th>
-                  <th class="noExport"></th>
-                  <th class="noExport"></th>
-                  <th class="noExport"></th>
+                  <th></th>
                </tr>
             </thead>
             <tbody>
@@ -24,23 +22,11 @@
                   <td><%= user.type_user%></td>
                   <td><%= user.created_at.strftime("%d/%m/%Y  %H:%M:%S") %></td>
                   <td>
-                     <%= link_to edit_crew_user_path(user) do %>
-                     <button type="button" class="btn btn-block btn-sm">Editar</button>
-                     <% end %>
-                     <%#= link_to users, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                     <a href="">
-                     <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true" style="margin-left: 20px"></span> -->
-                     <%# end %>
-                  </td>
-                  <td>
-                     <%= link_to crew_user_path(user), target: "_blank", method: :get do %>
-                     <button type="button" class="btn btn-block btn-warning btn-sm">Ver</button>
-                     <% end %>
-                  </td>
-                  <td>
-                  
-                     <td><%=link_to crew_admin_destroy_user_path(user), :method=>:delete, data: {confirm: "Deseja apagar o usuário #{user.name}?"} do %>
-                     <button data-toggle="tooltip" data-placement="left" title="Apagar usuário" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %></td>
+                    <%= link_to   crew_user_path(user), target: "_blank", method: :get do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
+                     <%=  link_to  edit_crew_user_path(user) do %>
+                     <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>
+
+                     <%= link_to  crew_user_path(user), :method=>:delete, :class=>:destroy ,data: {confirm: "Deseja apagar o usuário #{user.name}?"} do %><button data-toggle="tooltip" data-placement="left" title="Apagar" class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %>
                   </td>
                </tr>
                <% end %>

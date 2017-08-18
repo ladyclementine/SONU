@@ -24,25 +24,11 @@ class ComiteesController < ApplicationController
       render json: {success: false, msg: "Nada encontrado!"}
     end
   end
-  def completar
-    @users = @comitee.users
-    respond_to do |format|
-      @user.comitee_id = params[:id_evento]
-      if @user.update_attributes(user_params)
-        flash[:success] = "Cadastro completo, realize o pagamento para garantir sua vaga."
-        format.html {  redirect_to show_comitee_path(@user.comitee_id) }
-      else
-        @user.comitee_id = nil
-        format.html { render 'show' }
-        format.json { render json: @user.errors }
-      end
-    end
-  end
   def update
     respond_to do |format|
       @user.comitee_id = params[:id_evento]
       @user.inscription_date = Time.now
-      if @user.update_attributes(user_params_inscription)
+      if @user.update_attributes(user_params)
         flash[:success] = "Você garantiu sua vaga. Agora, efetue o pagamento."
         format.html {  redirect_to show_comitee_path(@user.comitee_id) }
       else

@@ -28,4 +28,3 @@ $('.dropify').dropify({
 		'fileSize': 'The file size is too big (1M max).'
 	}
 });
-

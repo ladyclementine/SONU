@@ -13,9 +13,6 @@ class User < ApplicationRecord
   usar_como_cpf :cpf
 
   #VALIDAÇÕES DO EVENTO
-  validates :justify, presence: true, :allow_nil => true
-  validates :experience, presence: true, :allow_nil => true
-  validates :face_link, presence: true, :allow_nil => true
   validates_presence_of :categories_ids, :allow_nil => true
   validates_with QuestionsValidator
   #EVENTOS ANSWER

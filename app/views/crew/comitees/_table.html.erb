@@ -32,8 +32,8 @@
                         <span>individual</span> 
                      <% end %>  
                   </td>
-                  <td><%=comitee.start_date.strftime("%d/%m/%Y")%></td>
-                  <td><%=comitee.end_date.strftime("%d/%m/%Y")%></td>
+                  <td><%=comitee.start_date.strftime("%d/%m/%Y - %H:%M")%></td>
+                  <td><%=comitee.end_date.strftime("%d/%m/%Y- %H:%M")%></td>
                   <td><%=comitee.users.where(is_cotist:false).count %>/<%=comitee.limit%></td>
                   <td><%=comitee.users.where(is_cotist:true).count %>/<%=comitee.limit_cotist%></td>
                   <td><%=comitee.value_not_cotist%></td>
