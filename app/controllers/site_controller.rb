@@ -36,7 +36,7 @@ class SiteController < ApplicationController
   end
 
   def diretory
-   @offices = Office.all
+   @offices = Office.all.order(name: :asc)
   end
 
   def faq

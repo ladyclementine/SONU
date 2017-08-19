@@ -7,6 +7,8 @@
 //= require  main.js   
 //= require multi-selec/js/jquery.multi-select.js
 
+
+
 $(document).ready(function() {
 
 jQuery(function($){

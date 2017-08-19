@@ -4,7 +4,7 @@ class Crew::DiretoriesController < Crew::BaseController
   # GET /crew/diretories
   # GET /crew/diretories.json
   def index
-    @crew_diretories = Crew::Diretory.all
+    @crew_diretories = Crew::Diretory.all.order(name: :asc)
   end
 
   # GET /crew/diretories/1
