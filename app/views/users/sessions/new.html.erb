@@ -37,7 +37,9 @@
                <div class="checkbox checkbox-custom">
                   <% if devise_mapping.rememberable? -%>
                   <%= f.check_box :remember_me, id: "checkbox-signup" %>
-                  <%= f.label :remember_me, for: "checkbox-signup" %>
+                  <%= f.label :remember_me, for: "checkbox-signup" do %>
+                  <span>Lembrar-me</span>
+                  <% end %>
                   <% end -%>
                </div>
             </div>
