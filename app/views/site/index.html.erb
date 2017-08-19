@@ -4,25 +4,9 @@
         <div class="container">
             <h1>SONU XIII</h1>
             <h2><span>20-24 Setembro</span> Brasil</h2>
-            <a href="#" class="btn button-white">Inscreva-se</a>
-            <ul class="countdown gb-list list-inline">
-                <li>                    
-                    <span class="days">00</span>
-                    <p>days</p>
-                </li>
-                <li>
-                    <span class="hours">00</span>
-                    <p>hours</p>
-                </li>
-                <li>
-                    <span class="minutes">00</span>
-                    <p>minutes</p>
-                </li>
-                <li>
-                    <span class="seconds">00</span>
-                    <p>seconds</p>
-                </li>               
-            </ul><!-- countdown -->                     
+            <%= link_to inscription_path, class: "btn button-white" do %>
+            <span>Inscreva-se</span>
+            <% end %>                   
         </div><!-- /.container -->
     </div><!-- /.banner-info -->
 </div><!-- /.gb-banner -->

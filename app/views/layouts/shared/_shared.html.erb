@@ -7,8 +7,7 @@
                 <a class="icons" href="https://www.flickr.com/sonufotografia/"><i class="fa fa-flickr" aria-hidden="true"></i>
                     </a>
                 <% if user_signed_in? %>
-                            <%= link_to 'Perfil', perfil_user_path, class: "link-top" %>
-                            <%= link_to 'Sair', destroy_user_session_path(current_user), :method=>:delete, :class=>:destroy, class: "link-top" %>
+                           <%= link_to 'PERFIL', perfil_user_path, class: "link-top" %>
                             <% else %>
                 <%= link_to 'Login', new_user_session_path, class: "link-top" %>
                 <%= link_to 'Cadastre-se', new_user_registration_path , class: "link-top" %>

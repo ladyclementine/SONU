@@ -99,7 +99,7 @@
     </span>
   </div>
   <%= link_to show_comitee_path(comitee) do %>
-  <%= image_tag (comitee.photo_url(:thumb))%>
+  <%= image_tag comitee.photo_url(:thumb) if comitee.photo.present?%>
   <% end %>
   <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
   <span class="label label-success">INSCRITO</span>
