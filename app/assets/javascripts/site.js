@@ -6,6 +6,7 @@
 //= require  magnific-popup.min.js
 //= require  main.js   
 //= require multi-selec/js/jquery.multi-select.js
+//= require admin_template/adminto/css/plugins/jQuery-Mask-Plugin/dist/jquery.mask.min.js
 
 
 

@@ -1361,10 +1361,13 @@ address a {
 }
 
 /* Gb Contact */
-
+#gmap{
+	background-image: url(../images/map.png);
+}
 .gb-contact {
 	position: relative;
 	overflow: hidden;
+
 }
 
 #gmap {
