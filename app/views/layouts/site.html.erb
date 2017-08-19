@@ -41,25 +41,18 @@
       <%= javascript_include_tag 'site' %>
 
     <script type="text/javascript">
-      if (GBrowserIsCompatible()) {
-        var map = new GMap2(document.getElementById("gmap"));
-        var latleng =   {"lat": -13.6540303, "lng":-69.7592265};
-
-        map.addControl(new GMapTypeControl());
-        map.addControl(new GLargeMapControl());
-
-        var marker = new GMarker(new GLatLng(latleng));
-
-        GEvent.addListener(marker, "click", function() {
-          marker.openInfoWindowHtml("Texto");
-        });
-
-        map.addOverlay(marker);
-        map.setCenter(point, zoom);
-      }
-        
-
-
+    var geocoder;
+          var map;
+          function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(-13.6540303, -69.7592265);
+            var myOptions = {
+              zoom: 8,
+              center: latlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+          }
 
     </script>
    </body>
