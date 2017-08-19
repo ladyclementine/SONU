@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 	
   validates_presence_of :email, :name ,:general_register,
-  :birthday,:gender,:university, :facebook_profile_link
+  :birthday,:gender,:university
   
   usar_como_cpf :cpf
 
