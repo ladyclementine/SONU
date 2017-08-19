@@ -7,7 +7,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @crew_diretory.photo %>
+  <%= @crew_diretory.photo_url(:small)unless @crew_diretory.photo_url.blank? %></ %>
 </p>
 
 <p>

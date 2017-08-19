@@ -17,9 +17,9 @@
 
 <p>
   <strong>Imagem:</strong>
-  <%= (image_tag @crew_blog.photo_url(:thumb)) %>
+  <%= (image_tag @crew_blog.photo_url(:thumb) unless @crew_blog.photo.blank?) %>
 </p>
 
 
-<%= link_to 'Edit', edit_crew_blog_path(@crew_blog) %> |
-<%= link_to 'Back', crew_blogs_path %>
+<%= link_to 'Editar', edit_crew_blog_path(@crew_blog) %> |
+<%= link_to 'Voltar', crew_blogs_path %>
