@@ -2555,3 +2555,7 @@ figcaption { font: 120% sans-serif; text-align: center;}
 .institucional h1, .institucional h2, .institucional p{
 	color: #fff;
 }
+
+.img-responsive {
+    margin: 0 auto;
+}
