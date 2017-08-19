@@ -9,6 +9,10 @@
   <strong>Descrição:</strong>
   <%= raw @crew_mun.description %>
 </p>
+<p>
+  <strong>Imagem:</strong>
+  <%= @crew_mun.photo_url(:small)unless @crew_mun.photo_url.blank? %></ %>
+</p>
 
 <%= link_to 'Edit', edit_crew_mun_path(@crew_mun) %> |
 <%= link_to 'Back', crew_muns_path %>

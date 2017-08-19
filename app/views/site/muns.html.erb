@@ -22,11 +22,12 @@
 					<div class="col-md-12">
 						<div class="about-info">
 				               <% @crew_muns.each do |crew_muns| %>
+				            					                  <%= image_tag crew_muns.photo, class: "img-responsive"  %><br>
 				            	<div class="speaker">
 				            	<div class="speaker-title">
 				                  <h2><%= crew_muns.title %></h2>
 				                  </br>
-				                  <%= image_tag crew_muns.photo, class: "img-responsive"  %>
+
 				                  <p><%= raw crew_muns.description %></p>
 				       			</div>
 				       			</div>
