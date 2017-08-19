@@ -22,7 +22,7 @@
                   <td><%= user.type_user%></td>
                   <td><%= user.created_at.strftime("%d/%m/%Y  %H:%M:%S") %></td>
                   <td>
-                    <%= link_to   crew_user_path(user), target: "_blank", method: :get do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
+                    <%= link_to   crew_user_path(user), method: :get do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
                      <%=  link_to  edit_crew_user_path(user) do %>
                      <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>
 

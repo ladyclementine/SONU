@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :category_events
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 	
   validates_presence_of :email, :name ,:general_register,
   :birthday,:gender,:university, :facebook_profile_link
