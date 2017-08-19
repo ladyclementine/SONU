@@ -52,13 +52,7 @@
   <span>Resposta 3: </span><%= @user.answer_3%></br>
   <span>Resposta 4: </span><%= @user.answer_4%></br>
 </p>
-<p>
-  <strong>Categorias:</strong>
-   <% find_eventcategories_by_ids(@user.categories_ids).each do |p| %>
-   <%= p.name  %></br>
-   <%end%>
 
-</p>
 <p>
   <strong>Justificativa:</strong>
   </br><%= @user.justify%></br>
