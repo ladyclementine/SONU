@@ -6,10 +6,13 @@
                 <a class="icons" href="https://www.instagram.com/sonu_ufc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <a class="icons" href="https://www.flickr.com/sonufotografia/"><i class="fa fa-flickr" aria-hidden="true"></i>
                     </a>
-   
+                <% if user_signed_in? %>
+                            <li><%= link_to 'Perfil', perfil_user_path%></li>
+                            <li><%= link_to 'Sair', destroy_user_session_path, :method=>:delete, :class=>:destroy%></li>
+                            <% else %>
                 <%= link_to 'Login', new_user_session_path, class: "link-top" %>
                 <%= link_to 'Cadastre-se', new_user_registration_path , class: "link-top" %>
-  
+                <% end %>
             
         </div>
     </div>
@@ -66,9 +69,7 @@
                             <li><%= link_to 'Parceiros', partners_path %></li>
                             <li><%= link_to 'Contato', contact_path %></li>
                             <li><%= link_to 'Inscrições', inscription_path %></li>
-                            <% if user_signed_in? %>
-                            <li><%= link_to 'Perfil', perfil_user_path%></li>
-                            <% end %>
+                            
 
                         </ul>   
                     </div>
