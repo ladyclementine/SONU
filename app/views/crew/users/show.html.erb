@@ -54,11 +54,10 @@
 </p>
 <p>
   <strong>Categorias:</strong>
-   <% if !@user.categories_ids.blank? %>
    <% find_eventcategories_by_ids(@user.categories_ids).each do |p| %>
-   <%=p.name  %></br>
+   <%= p.name  %></br>
    <%end%>
-    <% end %>
+
 </p>
 <p>
   <strong>Justificativa:</strong>

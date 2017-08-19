@@ -4,7 +4,7 @@ before_action :set_category_event, only: [:show, :edit, :update, :destroy]
   
 
   def index
-  	@category_event = CategoryEvent.all
+  	@category_event = CategoryEvent.all.order(name: :asc)
   end
 
   def show

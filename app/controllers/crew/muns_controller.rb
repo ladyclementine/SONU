@@ -69,6 +69,6 @@ class Crew::MunsController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_mun_params
-      params.require(:crew_mun).permit(:title, :description)
+      params.require(:crew_mun).permit(:title, :description, :photo)
     end
 end

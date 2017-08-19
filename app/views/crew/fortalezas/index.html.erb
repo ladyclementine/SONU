@@ -16,6 +16,7 @@
               <% @crew_fortalezas.each do |crew_fortaleza| %>
                 <tr>
                   <td><%= crew_fortaleza.title %></td>
+                  <td><%= image_tag crew_fortaleza.photo_url(:small)unless crew_fortaleza.photo_url.blank?  %></td>
                   <td><%= link_to   crew_fortaleza do %><button data-toggle="tooltip" data-placement="left" title="Ver mais" class="btn btn-icon waves-effect waves-light btn-primary m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-eye"></i></button><% end %>
                      <%=  link_to  edit_crew_fortaleza_path(crew_fortaleza) do %>
                      <button data-toggle="tooltip" data-placement="left" title="Editar" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i></button><% end %>

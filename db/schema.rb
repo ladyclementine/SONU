@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816051603) do
+ActiveRecord::Schema.define(version: 20170819012039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20170816051603) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
   end
 
   create_table "crew_muns", force: :cascade do |t|
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(version: 20170816051603) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
   end
 
   create_table "crew_parties", force: :cascade do |t|
@@ -177,6 +179,7 @@ ActiveRecord::Schema.define(version: 20170816051603) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
   end
 
   create_table "ocupations", force: :cascade do |t|

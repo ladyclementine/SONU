@@ -69,6 +69,6 @@ class Crew::FortalezasController < Crew::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def crew_fortaleza_params
-      params.require(:crew_fortaleza).permit(:title, :description)
+      params.require(:crew_fortaleza).permit(:title, :description, :photo)
     end
 end
