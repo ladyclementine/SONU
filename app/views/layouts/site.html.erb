@@ -43,14 +43,13 @@
     <script type="text/javascript">
       if (GBrowserIsCompatible()) {
         var map = new GMap2(document.getElementById("gmap"));
-        var lat = -13.6540303; // Latitude do marcador
-        var lon = -69.7592265; // Longitude do marcador
+        var latleng =   {"lat": -13.6540303, "lng":-69.7592265};
 
         map.addControl(new GMapTypeControl());
         map.addControl(new GLargeMapControl());
 
-        var marker = new google.maps.LatLng(parseFloat(trader.geo.lat),parseFloat(trader.geo.lon));
-        
+        var marker = new GMarker(new GLatLng(latleng));
+
         GEvent.addListener(marker, "click", function() {
           marker.openInfoWindowHtml("Texto");
         });
