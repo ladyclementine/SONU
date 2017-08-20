@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170819043121) do
     t.datetime "start_date",       null: false
     t.datetime "end_date",         null: false
     t.string   "photo"
+    t.string   "string"
     t.integer  "type_event"
     t.text     "description"
     t.integer  "limit_cotist"
@@ -157,6 +158,7 @@ ActiveRecord::Schema.define(version: 20170819043121) do
   end
 
   create_table "crew_secretaries", force: :cascade do |t|
+    t.string   "office"
     t.string   "name"
     t.text     "description"
     t.string   "photo"
@@ -180,12 +182,6 @@ ActiveRecord::Schema.define(version: 20170819043121) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "photo"
-  end
-
-  create_table "ocupations", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "offices", force: :cascade do |t|
@@ -245,8 +241,6 @@ ActiveRecord::Schema.define(version: 20170819043121) do
     t.integer  "comitee_id"
     t.boolean  "is_cotist",              default: false
     t.string   "payment_status"
-    t.integer  "category_events_id"
-    t.string   "categories_ids"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

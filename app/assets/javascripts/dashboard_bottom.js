@@ -27,15 +27,13 @@
 //= require admin_template/adminto/pages/datatables.init.js
 
 
-
-
 //= require admin_template/adminto/css/plugins/fileuploads/js/dropify.min.js
-
 
 
 //= require admin_template/adminto/js/jquery.core.js
 //= require admin_template/adminto/js/jquery.app.js
 
+//= require crew/users.coffee
 
 $('.dropify').dropify({
 	messages: {
