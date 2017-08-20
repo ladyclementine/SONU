@@ -8,8 +8,8 @@ class UserDatatable < AjaxDatatablesRails::Base
     @view_columns ||= {
       name: { source: "User.name" },
       email: { source: "User.email" },
-      comitee: { source: "Coomitee.name" },
-      type_user: { source: "User.type_user"},
+      comitee: { source: "Comitee.name" },
+      type_user: { source: "User.type_user",  searchable: false, orderable: false},
       buttons: {source: "User.id",  searchable: false, orderable: false},
     }
   end
