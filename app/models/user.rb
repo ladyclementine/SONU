@@ -12,8 +12,7 @@ class User < ApplicationRecord
   
   usar_como_cpf :cpf
 
-  #VALIDAÇÕES DO EVENTO
-  validates_presence_of :categories_ids, :allow_nil => true
+  #VALIDAÇÕES DO EVENT
   validates_with QuestionsValidator
   #EVENTOS ANSWER
   
